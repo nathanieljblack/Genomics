@@ -380,7 +380,233 @@ var breast = [{
     ]
   }
 ];
+
+var neoplasm = [{
+    "name": "Neoplasm of Ovary",
+    "parent": "null",
+    "color": "#7f7f7f",
+    "lightcolor": "#c7c7c7",
+    "type": "disease",
+    "link": "https://en.m.wikipedia.org/wiki/Neoplasm",
+    "children": [
+      {
+        "name": "CYTB",
+        "parent": "Neoplasm of Ovary",
+        "color": "#1f77b4",
+        "lightcolor": "#aec7e8",
+        "type": "gene",
+        "link": "https://en.m.wikipedia.org/wiki/Cytochrome_b",
+        "children": [
+          {
+            "name": "chrMT-15607-G",
+            "parent": "CYTB",
+            "color": "#1f77b4",
+            "lightcolor": "#aec7e8",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/527236210"
+          },
+          {
+            "name": "chrMT-15314-A",
+            "parent": "CYTB",
+            "color": "#1f77b4",
+            "lightcolor": "#aec7e8",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/527236176"
+          },
+          {
+            "name": "chrMT-15511-C",
+            "parent": "CYTB",
+            "color": "#1f77b4",
+            "lightcolor": "#aec7e8",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/527236188"
+          },
+          {
+            "name": "chrMT-15670-C",
+            "parent": "CYTB",
+            "color": "#1f77b4",
+            "lightcolor": "#aec7e8",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/527236211"
+          },
+          {
+            "name": "chrMT-15431-A",
+            "parent": "CYTB",
+            "color": "#1f77b4",
+            "lightcolor": "#aec7e8",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/527236208"
+          },
+          {
+            "name": "chrMT-15148-A",
+            "parent": "CYTB",
+            "color": "#1f77b4",
+            "lightcolor": "#aec7e8",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/527236206"
+          },
+          {
+            "name": "chrMT-15328-G",
+            "parent": "CYTB",
+            "color": "#1f77b4",
+            "lightcolor": "#aec7e8",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/527236178"
+          },
+          {
+            "name": "chrMT-15061-G",
+            "parent": "CYTB",
+            "color": "#1f77b4",
+            "lightcolor": "#aec7e8",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/527236205"
+          },
+          {
+            "name": "chrMT-15098-G",
+            "parent": "CYTB",
+            "color": "#1f77b4",
+            "lightcolor": "#aec7e8",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/527236172"
+          },
+          {
+            "name": "chrMT-14743-G",
+            "parent": "CYTB",
+            "color": "#1f77b4",
+            "lightcolor": "#aec7e8",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/527236161"
+          },
+          {
+            "name": "chrMT-15259-T",
+            "parent": "CYTB",
+            "color": "#1f77b4",
+            "lightcolor": "#aec7e8",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/527236207"
+          }
+          ]
+        }
+        ]
+      }
+      ];
+
+var brain = [{
+    "name": "Brain Pseudoatrophy",
+    "parent": "null",
+    "color": "#7f7f7f",
+    "lightcolor": "#c7c7c7",
+    "type": "disease",
+    "link": "http://medical-dictionary.thefreedictionary.com/pseudoatrophy+of+brain",
+    "children": [
+      {
+        "name": "ATP8",
+        "parent": "Brain Pseudoatrophy",
+        "color": "#d62728",
+        "lightcolor": "#ff9896",
+        "type": "gene",
+        "link": "https://en.m.wikipedia.org/wiki/MT-ATP8",
+        "children": [
+          {
+            "name": "chrMT-8393-T",
+            "parent": "ATP8",
+            "color": "#d62728",
+            "lightcolor": "#ff9896",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/121434446"
+          }
+          ]
+        }
+        ]
+      }];
   
+  var parkinson = [{
+    "name": "Parkinson's Disease",
+    "parent": "null",
+    "color": "#7f7f7f",
+    "lightcolor": "#c7c7c7",
+    "type": "disease",
+    "link": "https://en.m.wikipedia.org/wiki/Parkinson's_disease",
+    "children": [
+      {
+        "name": "ND3",
+        "parent": "Parkinson's Disease",
+        "color": "#8c564b",
+        "lightcolor": "#c49c94",
+        "type": "gene",
+        "link": "https://en.m.wikipedia.org/wiki/MT-ND3",
+        "children": [
+          {
+            "name": "chrMT-10398-G",
+            "parent": "ND3",
+            "color": "#8c564b",
+            "lightcolor": "#c49c94",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/2853826"
+          }
+          ]
+        }
+        ]
+      }];
+
+  var juvenile = [{
+    "name": "Juvenile Myopathy",
+    "parent": "null",
+    "color": "#7f7f7f",
+    "lightcolor": "#c7c7c7",
+    "type": "disease",
+    "link": "https://en.m.wikipedia.org/wiki/Juvenile_dermatomyositis",
+    "children": [
+      {
+        "name": "ND4",
+        "parent": "Juvenile Myopathy",
+        "color": "#e377c2",
+        "lightcolor": "#f7b6d2",
+        "type": "gene",
+        "link": "https://en.m.wikipedia.org/wiki/MT-ND4",
+        "children": [
+          {
+            "name": "chrMT-11084-G",
+            "parent": "ND4",
+            "color": "#e377c2",
+            "lightcolor": "#f7b6d2",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/199476113"
+          }
+          ]
+        }
+        ]
+      }];
+
+  var leigh = [{
+    "name": "Leigh's Disease",
+    "parent": "null",
+    "color": "#7f7f7f",
+    "lightcolor": "#c7c7c7",
+    "type": "disease",
+    "link": "https://en.m.wikipedia.org/wiki/Leigh_disease#/search",
+    "children": [
+      {
+        "name": "ND4",
+        "parent": "Leigh's Disease",
+        "color": "#e377c2",
+        "lightcolor": "#f7b6d2",
+        "type": "gene",
+        "link": "https://en.m.wikipedia.org/wiki/MT-ND4",
+        "children": [
+          {
+            "name": "chrMT-11984-C",
+            "parent": "ND4",
+            "color": "#e377c2",
+            "lightcolor": "#f7b6d2",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/200911567"
+          }
+          ]
+        }
+        ]
+      }];
+
 var margin = {top: 0, right: 20, bottom: 0, left: 200},
   width = 960 - margin.right - margin.left,
   height = 500 - margin.top - margin.bottom;
