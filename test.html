@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Genomics Visualization">
+    <meta name="author" content="Nate Black, Gunnar Kleeman, Malini Mittal">
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <title>Genomics Visualization</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/genomics.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+</head>
+
+<body>
+<select id="mySelect" name="list" size="1">
+<option selected disabled hidden value=''></option>
+<option value="one">Breast Cancer</option>
+<option value="two">Parkinsons</option> 
+<option value="three">Leber Optic Atrophy</option>
+  </select> 
+<br></br>
+<span id="tag"></span>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+
+<script>
+//cache the select and span elements
+var mySelect = document.getElementById("mySelect"),
+    tag = document.getElementById("tag");
+
+//when it changes
+mySelect.onchange = function() {
+       //change the tag innerHTML checking the selected value of the select
+       if(mySelect.value === "one"){
+			tag.innerHTML = "Breast cancer is cancer that develops from breast tissue. Signs of breast cancer may include a lump in the breast, a change in breast shape, dimpling of the skin, fluid coming from the nipple, or a red scaly patch of skin. In those with distant spread of the disease, there may be bone pain, swollen lymph nodes, shortness of breath, or yellow skin.";}
+			 else if(mySelect.value === "two"){
+			tag.innerHTML = "Parkinsons disease is a degenerative disorder of the central nervous system mainly affecting the motor system. Symptoms include shaking, rigidity, slowness of movement and difficulty with walking and gait.";}
+			else if(mySelect.value === "three"){
+			tag.innerHTML = "Leber optic atrophy is a mitochondrially inherited (transmitted from mother to offspring) degeneration of retinal ganglion cells (RGCs) and their axons that leads to an acute or subacute loss of central vision; this affects predominantly young adult males. However, LHON is only transmitted through the mother as it is primarily due to mutations in the mitochondrial (not nuclear) genome and only the egg contributes mitochondria to the embryo. LHON is usually due to one of three pathogenic mitochondrial DNA (mtDNA) point mutations. These mutations are at nucleotide positions 11778 G to A, 3460 G to A and 14484 T to C, respectively in the ND4, ND1 and ND6 subunit genes of complex I of the oxidative phosphorylation chain in mitochondria. Men cannot pass on the disease to their offspring.";}
+			else{
+			tag.innerHTML = "";}
+}
+</script>
+</body>

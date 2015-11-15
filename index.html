@@ -62,17 +62,35 @@
         <hr class="featurette-divider">
 
         <!-- First Featurette -->
-        <div class="featurette" id="visualization">
-            <script type='text/javascript' src='https://public.tableau.com/javascripts/api/viz_v1.js'></script><div class='tableauPlaceholder' style='width: 1104px; height: 1069px;'><noscript><a href='#'><img alt='Genomics ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ge&#47;Genomics&#47;Genomics&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='1104' height='1069' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='Genomics&#47;Genomics' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ge&#47;Genomics&#47;Genomics&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='showVizHome' value='no' /><param name='showTabs' value='y' /><param name='bootstrapWhenNotified' value='true' /></object></div>
+        <div class="featurette" id="viz1">
+            <h2 class="featurette-heading">Summary Level
+                <span class="text-muted small"><em>Select A Demographic</em></span>
+            </h2>
             
-            <p class="lead">Blah blah blah blah.....</p>
+        </div>
+        <div class="featurette" id="viz2">
+            <h2 class="featurette-heading">Disease Level
+                <span class="text-muted small"><em>Select A Disease</em></span>
+            </h2>
+
+            <select id = "opts">
+                <option value="breast" selected="selected">Breast Cancer</option>
+                <option value="leber">Leber Optic Atrophy</option> 
+            </select> 
+        </div>
+    
+        <div class="featurette" id="viz3">
+            <h2 class="featurette-heading">Mutation Level
+                <span class="text-muted small"><em>Select A Mutation</em></span>
+            </h2>
+            <p class="lead">From left to right, the tree below provides additional detail on genes and mutations related to your selected disease. If there are no additional nodes on the tree, there are not any known genes/mutations associated with that disease. Hover over the mutation to find out more information.</p>
+            
         </div>
 
         <hr class="featurette-divider">
 
         <!-- Second Featurette -->
         <div class="featurette" id="about">
-            <img class="featurette-image img-circle img-responsive pull-left" src="http://placehold.it/500x500">
             <h2 class="featurette-heading">About
                 <span class="text-muted small"><em>Making Genomics Accessible</em></span>
             </h2>
@@ -133,6 +151,10 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="js/viz3.js"></script>
 
 </body>
 
