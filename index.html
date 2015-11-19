@@ -56,6 +56,8 @@
         </div>
     </header>
 
+        <!-- Page Content -->
+
     <!-- Page Content -->
     <div class="container">
 
@@ -65,8 +67,8 @@
         <div class="featurette" id="viz1">
             <h2 class="featurette-heading">Summary Level
                 <span class="text-muted small"><em>Select A Demographic</em></span>
+            <p class="lead"> A clustered summary of the 1000 genomes data for the mitrochondrial genome, mutations are color coded for severity (red = pathogenic, white = unclassified and blue = benign). <b> Hover over the image to see an ethnic cluster or just page down to see the whole population. </b> </p>
             </h2>
-            
         </div>
         <div class="featurette" id="viz2">
             <h2 class="featurette-heading">Disease Level
@@ -153,14 +155,21 @@
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/d3.v2.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-
-    <script src="http://d3js.org/d3.v3.min.js"></script>
     <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-    <script src="js/viz3.js"></script>
+    <!-- added in for json import -->
+    <!--<script src="http://d3js.org/d3.v3.min.js"></script>-->
 
+    <script type="text/javascript" src="data/data.js"></script>
+    <script src="js/viz1.js"></script>
+     <script src="js/viz2.js"></script>
+    <!--<script src="js/HeatViz.js"></script> --> 
+    <script src="js/viz3.js"></script>
+    
+    <!--<script src="js/viz2.js"></script>  -->
 </body>
 
 </html>
