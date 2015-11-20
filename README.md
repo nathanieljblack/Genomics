@@ -3,7 +3,7 @@ Genomics Visualization
 
 #Team Members
 - Nate Black  
-- Gunnar Kleeman  
+- Gunnar Kleemann  
 - Malini Mittal  
 
 #Website  
