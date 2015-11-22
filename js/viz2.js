@@ -91,7 +91,11 @@ d3.csv(fname, function(error, data) {
       .attr("transform", function(d) { return "translate(" + x0(d.Disease) + ",0)"; })
       .on("click", function(d) {
          selectedDisease = d.Disease;
-         console.log(selectedDisease)
+         var newData = eval(selectedDisease);
+         root = newData[0];
+         update(root);
+         console.log(selectedDisease);
+         document.location.href = "#viz3";
       });
 
   disease.selectAll("rect")
@@ -126,7 +130,7 @@ d3.csv(fname, function(error, data) {
          var newData = eval(selectedDisease);
          root = newData[0];
          update(root);
-         console.log(selectedDisease)
+         console.log(selectedDisease);
          document.location.href = "#viz3";
       });
 
