@@ -1,0 +1,13 @@
+BC,Breast Cancer
+LOA,Leber's Optic Atrophy
+NO,Neoplasm of Ovary
+BP,Brain Pseudoatrophy
+PD,Parkinson
+JM,Juvenile Myopathy
+LD,Leigh's
+COD,Cytochrome-c Oxidase Deficiency
+CM,Cardiomyopathy
+SDM,Sensorineural Deafness and Migraine
+HCM,Hypertrophic Cardiomyopathy
+DF,Deafness
+SIDS,Sudden Infant Death Syndrome
