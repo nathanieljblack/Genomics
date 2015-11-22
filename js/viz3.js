@@ -836,7 +836,6 @@ var svg = d3.select("#viz3").append("svg")
 
 svg.call(tip);
 
-root = BC[0];
 root.x0 = height / 2;
 root.y0 = 0;
   

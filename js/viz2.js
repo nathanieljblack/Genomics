@@ -1,4 +1,5 @@
-var selectedDisease = 'BC'
+var selectedDisease = 'BC';
+var root = BC[0];
 
 var margin2 = {top: 20, right: 20, bottom: 30, left: 40},
     width2 = 960 - margin2.left - margin2.right,
