@@ -893,11 +893,11 @@ d3.csv(fname, function(error, data) {
       .attr('class', 'y label')
       .attr("transform", "rotate(-90)")
       .attr("y", 2)
-      .attr("dy", "1.0em")
+      .attr("dy", "0.75em")
       .style("text-anchor", "end")
       .style("font", "sans-serif")
       .style("font-size","12px")
-      .text("Percent");
+      .text("Percentage of Group with Disease");
 
   var disease = svg2.selectAll(".disease")
       .data(data)
