@@ -237,8 +237,10 @@ footer {
 
 .x.axis path {
   display: none;
+  font: 12px sans-serif;
 }
 
 #viz2 {
   font-size: 10px;
+  font: 12px sans-serif;
 }
