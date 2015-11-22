@@ -882,6 +882,7 @@ d3.csv(fname, function(error, data) {
           v = d.percents[pkey].value;
           nv.push(v);
           nv.push(d.numbers[key].num_value);
+          nv.push(d.Disease);
           arr.push({name: n, value: nv})
           break;
         }
@@ -937,9 +938,11 @@ d3.csv(fname, function(error, data) {
       .attr("height", function(d) { return height2 - y(d.value[0]); })
       .style("fill", function(d) { return color(d.name); })
       .on("mouseover", function(d) {
+         ds = d.value[2];
+         var nd = eval(ds);
          tooltip.transition()
             .style('opacity', .9);
-         tooltip.html(d.value[0] + "% of " + d.value[1])
+         tooltip.html(nd[0].name + " " + d.value[0] + "% of " + d.value[1])
             .style('left', (d3.event.pageX - 15) + 'px') //position of the tooltip
             .style('top', (d3.event.pageY - 20) + 'px');
 
