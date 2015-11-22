@@ -123,7 +123,11 @@ d3.csv(fname, function(error, data) {
       .selectAll('.tick')
       .on('click', function(d) {
          selectedDisease = d;
+         var newData = eval(selectedDisease);
+         root = newData[0];
+         update(root);
          console.log(selectedDisease)
+         document.location.href = "#viz3";
       });
 
   var legend = svg2.selectAll(".legend")
@@ -146,5 +150,4 @@ d3.csv(fname, function(error, data) {
       .text(function(d) { return d; });
 
 });
-
 

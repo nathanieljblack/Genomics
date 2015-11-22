@@ -5,7 +5,7 @@ var tip = d3.tip()
             return "<a href=" + d.link + " style='text-decoration: none' target='_blank'><span style='color:" + d.color + "'><strong><center>Click here for more info on the " + d.type + "</center></strong></span></a>";
           });
 
-var leber = [
+var LOA = [
   {
     "name": "Leber's Optic Atrophy",
     "parent": "null",
@@ -199,7 +199,7 @@ var leber = [
   }
 ];
 
-var breast = [{
+var BC = [{
     "name": "Breast Cancer",
     "parent": "null",
     "color": "#7f7f7f",
@@ -381,7 +381,7 @@ var breast = [{
   }
 ];
 
-var neoplasm = [{
+var NO = [{
     "name": "Neoplasm of Ovary",
     "parent": "null",
     "color": "#7f7f7f",
@@ -491,7 +491,7 @@ var neoplasm = [{
       }
       ];
 
-var brain = [{
+var BP = [{
     "name": "Brain Pseudoatrophy",
     "parent": "null",
     "color": "#7f7f7f",
@@ -520,7 +520,7 @@ var brain = [{
         ]
       }];
   
-  var parkinson = [{
+  var PD = [{
     "name": "Parkinson's Disease",
     "parent": "null",
     "color": "#7f7f7f",
@@ -549,7 +549,7 @@ var brain = [{
         ]
       }];
 
-  var juvenile = [{
+  var JM = [{
     "name": "Juvenile Myopathy",
     "parent": "null",
     "color": "#7f7f7f",
@@ -578,7 +578,7 @@ var brain = [{
         ]
       }];
 
-  var leigh = [{
+  var LD = [{
     "name": "Leigh's Disease",
     "parent": "null",
     "color": "#7f7f7f",
@@ -607,7 +607,217 @@ var brain = [{
         ]
       }];
 
-var margin = {top: 0, right: 20, bottom: 0, left: 200},
+var COD = [{
+    "name": "Cytochrome-c Oxidase Deficiency",
+    "parent": "null",
+    "color": "#7f7f7f",
+    "lightcolor": "#c7c7c7",
+    "type": "disease",
+    "link": "http://ghr.nlm.nih.gov/condition/cytochrome-c-oxidase-deficiency",
+    "children": [
+      {
+        "name": "COX1",
+        "parent": "Cytochrome-c Oxidase Deficiency",
+        "color": "#bcbd22",
+        "lightcolor": "#dbdb8d",
+        "type": "gene",
+        "link": "https://en.wikipedia.org/wiki/PTGS1",
+        "children": [
+          {
+            "name": "chrMT-6480-A",
+            "parent": "COX1",
+            "color": "#bcbd22",
+            "lightcolor": "#dbdb8d",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/199476128"
+          }
+          ]
+        }
+        ]
+      }];
+
+var CM = [{
+    "name": "Cardiomyopathy",
+    "parent": "null",
+    "color": "#7f7f7f",
+    "lightcolor": "#c7c7c7",
+    "type": "disease",
+    "link": "https://en.wikipedia.org/wiki/Cardiomyopathy",
+    "children": [
+      {
+        "name": "Unknown",
+        "parent": "Cardiomyopathy",
+        "color": "#393b79",
+        "lightcolor": "#6b6ecf",
+        "type": "gene",
+        "link": "",
+        "children": [
+          {
+            "name": "chrMT-12192-A",
+            "parent": "Unknown",
+            "color": "#393b79",
+            "lightcolor": "#6b6ecf",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/3134560"
+          }
+          ]
+        }
+        ]
+      }];
+
+var SDM = [{
+    "name": "Sensorineural Deafness and Migraine",
+    "parent": "null",
+    "color": "#7f7f7f",
+    "lightcolor": "#c7c7c7",
+    "type": "disease",
+    "link": "https://en.wikipedia.org/wiki/Sensorineural_hearing_loss",
+    "children": [
+      {
+        "name": "Unknown",
+        "parent": "Sensorineural Deafness and Migraine",
+        "color": "#393b79",
+        "lightcolor": "#6b6ecf",
+        "type": "gene",
+        "link": "",
+        "children": [
+          {
+            "name": "chrMT-4336-C",
+            "parent": "Unknown",
+            "color": "#393b79",
+            "lightcolor": "#6b6ecf",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/41456348"
+          }
+          ]
+        }
+        ]
+      }];
+var HCM = [{
+    "name": "Hypertrophic Cardiomyopathy",
+    "parent": "null",
+    "color": "#7f7f7f",
+    "lightcolor": "#c7c7c7",
+    "type": "disease",
+    "link": "https://en.m.wikipedia.org/wiki/Hypertrophic_cardiomyopathy",
+    "children": [
+      {
+        "name": "Unknown",
+        "parent": "Hypertrophic Cardiomyopathy",
+        "color": "#393b79",
+        "lightcolor": "#6b6ecf",
+        "type": "gene",
+        "link": "",
+        "children": [
+          {
+            "name": "chrMT-4295-G",
+            "parent": "Unknown",
+            "color": "#393b79",
+            "lightcolor": "#6b6ecf",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/121434467"
+          }
+          ]
+        }
+        ]
+      }];
+
+var SIDS = [{
+    "name": "Sudden Infant Death Syndrome",
+    "parent": "null",
+    "color": "#7f7f7f",
+    "lightcolor": "#c7c7c7",
+    "type": "disease",
+    "link": "https://en.wikipedia.org/wiki/Sudden_infant_death_syndrome",
+    "children": [
+      {
+        "name": "Unknown",
+        "parent": "Sudden Infant Death Syndrome",
+        "color": "#393b79",
+        "lightcolor": "#6b6ecf",
+        "type": "gene",
+        "link": "",
+        "children": [
+          {
+            "name": "chrMT-3290-C",
+            "parent": "Unknown",
+            "color": "#393b79",
+            "lightcolor": "#6b6ecf",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/199474665"
+          }
+          ]
+        }
+        ]
+      }];
+
+var OB= [{
+    "name": "Obesity",
+    "parent": "null",
+    "color": "#7f7f7f",
+    "lightcolor": "#c7c7c7",
+    "type": "disease",
+    "link": "https://en.wikipedia.org/wiki/Obesity",
+    "children": [
+      {
+        "name": "CYTB",
+        "parent": "Obesity",
+        "color": '#1f77b4',
+        "lightcolor": '#aec7e8',
+        "type": "gene",
+        "link": "",
+        "children": [
+          {
+            "name": "chrMT-15497-A",
+            "parent": "CYTB",
+            "color": '#1f77b4',
+            "lightcolor": '#aec7e8',
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/199951903"
+          }
+          ]
+        }
+        ]
+      }];
+
+var DF = [{
+    "name": "Deafness",
+    "parent": "null",
+    "color": "#7f7f7f",
+    "lightcolor": "#c7c7c7",
+    "type": "disease",
+    "link": "https://en.wikipedia.org/wiki/Hearing_loss",
+    "children": [
+      {
+        "name": "Unknown",
+        "parent": "Deafness",
+        "color": "#393b79",
+        "lightcolor": "#6b6ecf",
+        "type": "gene",
+        "link": "",
+        "children": [
+          {
+            "name": "chrMT-961-C,G",
+            "parent": "Unknown",
+            "color": "#393b79",
+            "lightcolor": "#6b6ecf",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/3888511"
+          },
+          {
+            "name": "chrMT-827-G",
+            "parent": "Unknown",
+            "color": "#393b79",
+            "lightcolor": "#6b6ecf",
+            "type": "mutation",
+            "link": "http://www.ncbi.nlm.nih.gov/snp/28358569"
+          }
+          ]
+        }
+        ]
+      }];
+
+var margin = {top: 0, right: 20, bottom: 0, left: 250},
   width = 960 - margin.right - margin.left,
   height = 500 - margin.top - margin.bottom;
   
@@ -626,18 +836,11 @@ var svg = d3.select("#viz3").append("svg")
 
 svg.call(tip);
 
-root = leber[0];
+root = BC[0];
 root.x0 = height / 2;
 root.y0 = 0;
   
 update(root);
-
-d3.select('#opts')
-  .on('change', function() {
-    var newData = eval(d3.select(this).property('value'));
-    root = newData[0];
-    update(root);
-});
 
 d3.select(self.frameElement).style("height", "500px");
 function update(source) {
