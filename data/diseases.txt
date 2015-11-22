@@ -11,3 +11,4 @@ SDM,Sensorineural Deafness and Migraine
 HCM,Hypertrophic Cardiomyopathy
 DF,Deafness
 SIDS,Sudden Infant Death Syndrome
+OB,Obesity
