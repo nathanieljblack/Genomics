@@ -238,3 +238,7 @@ footer {
 .x.axis path {
   display: none;
 }
+
+#viz2 {
+  font-size: 10px;
+}
