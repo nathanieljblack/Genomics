@@ -68,6 +68,7 @@ d3.csv(fname, function(error, data) {
   y.domain([0, d3.max(data, function(d) { return d3.max(d.percents, function(d) { return d.value[0]; }); })]);
 
   svg2.append("g")
+      .attr("id", "xaxis2")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height2 + ")")
       .call(xAxis);
@@ -90,6 +91,7 @@ d3.csv(fname, function(error, data) {
       .attr("transform", function(d) { return "translate(" + x0(d.Disease) + ",0)"; })
       .on("click", function(d) {
          selectedDisease = d.Disease;
+         console.log(selectedDisease)
       });
 
   disease.selectAll("rect")
@@ -117,9 +119,11 @@ d3.csv(fname, function(error, data) {
             .style('opacity',1)
       });
 
-  disease.selectAll('tick')
+  d3.select('#xaxis2')
+      .selectAll('.tick')
       .on('click', function(d) {
-         console.log(d)
+         selectedDisease = d;
+         console.log(selectedDisease)
       });
 
   var legend = svg2.selectAll(".legend")
