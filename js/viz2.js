@@ -1,6 +1,8 @@
-var margin = {top: 20, right: 20, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+var selectedDisease = 'BC'
+
+var margin2 = {top: 20, right: 20, bottom: 30, left: 40},
+    width2 = 960 - margin2.left - margin2.right,
+    height2 = 500 - margin2.top - margin2.bottom;
 
 var tooltip = d3.select('#viz2').append('div')
        .style('position','absolute') //To allow d3 to follow the position absolute to the relationship to the page
@@ -9,12 +11,12 @@ var tooltip = d3.select('#viz2').append('div')
        .style('opacity',0); // 0 as we don't want to show when the graphic first loads up
 
 var x0 = d3.scale.ordinal()
-    .rangeRoundBands([0, width], .1);
+    .rangeRoundBands([0, width2], .1);
 
 var x1 = d3.scale.ordinal();
 
 var y = d3.scale.linear()
-    .range([height, 0]);
+    .range([height2, 0]);
 
 var color = d3.scale.ordinal()
     .range(["#8a89a6", "#d0743c"]);
@@ -29,12 +31,14 @@ var yAxis = d3.svg.axis()
     .tickFormat(d3.format(".2s"));
 
 var svg2 = d3.select("#viz2").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", width2 + margin2.left + margin2.right)
+    .attr("height", height2 + margin2.top + margin2.bottom)
   .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
 
-d3.csv("data/a.csv", function(error, data) {
+var fname = 'data/FIN.csv'
+
+d3.csv(fname, function(error, data) {
   var categories = d3.keys(data[0]).filter(function(key) { return key !== "Disease" && key.indexOf('num') == -1; });
   var numbers = d3.keys(data[0]).filter(function(key) { return key.indexOf('num') != -1; });
 
@@ -65,7 +69,7 @@ d3.csv("data/a.csv", function(error, data) {
 
   svg2.append("g")
       .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
+      .attr("transform", "translate(0," + height2 + ")")
       .call(xAxis);
 
   svg2.append("g")
@@ -85,7 +89,7 @@ d3.csv("data/a.csv", function(error, data) {
       .attr("class", "g")
       .attr("transform", function(d) { return "translate(" + x0(d.Disease) + ",0)"; })
       .on("click", function(d) {
-         console.log(d.Disease)
+         selectedDisease = d.Disease;
       });
 
   disease.selectAll("rect")
@@ -94,7 +98,7 @@ d3.csv("data/a.csv", function(error, data) {
       .attr("width", x1.rangeBand())
       .attr("x", function(d) { return x1(d.name); })
       .attr("y", function(d) { return y(d.value[0]); })
-      .attr("height", function(d) { return height - y(d.value[0]); })
+      .attr("height", function(d) { return height2 - y(d.value[0]); })
       .style("fill", function(d) { return color(d.name); })
       .on("mouseover", function(d) {
          tooltip.transition()
@@ -125,13 +129,13 @@ d3.csv("data/a.csv", function(error, data) {
       .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
   legend.append("rect")
-      .attr("x", width - 18)
+      .attr("x", width2 - 18)
       .attr("width", 18)
       .attr("height", 18)
       .style("fill", color);
 
   legend.append("text")
-      .attr("x", width - 24)
+      .attr("x", width2 - 24)
       .attr("y", 9)
       .attr("dy", ".35em")
       .style("text-anchor", "end")
