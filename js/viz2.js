@@ -940,6 +940,7 @@ d3.csv(fname, function(error, data) {
 
   d3.select('#xaxis2')
       .selectAll('.tick')
+      .style("cursor","pointer")
       .on('click', function(d) {
          selectedDisease = d;
          var newData = eval(selectedDisease);
