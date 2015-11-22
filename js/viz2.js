@@ -893,7 +893,7 @@ d3.csv(fname, function(error, data) {
       .attr('class', 'y label')
       .attr("transform", "rotate(-90)")
       .attr("y", 2)
-      .attr("dy", ".71em")
+      .attr("dy", "1.0em")
       .style("text-anchor", "end")
       .style("font", "sans-serif")
       .style("font-size","12px")
