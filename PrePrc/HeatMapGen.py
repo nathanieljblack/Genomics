@@ -6,7 +6,7 @@ import scipy.spatial.distance as dist
 
 #import the data into a native 2d python array
 inFile = open(sys.argv[1],'r')
-colHeaders=inFile.next()   ## << this is used when the index is on top >>
+#colHeaders=inFile.next()   ## << this is used when the index is on top >>
 colHeaders=inFile.next().strip().split()[1:]
 rowHeaders = []
 dataMatrix = []
