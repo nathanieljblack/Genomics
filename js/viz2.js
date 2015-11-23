@@ -10,9 +10,26 @@ var diseaseDescriptionMap = {"LOA": "Leber’s hereditary optic neuropathy (LHON
                             "SDM": "Sensorineural hearing loss (SNHL) is a type of hearing loss, or deafness, in which the root cause lies in the inner ear (cochlea and associated structures), vestibulocochlear nerve (cranial nerve VIII), or central auditory processing centers of the brain. SNHL accounts for about 90% of hearing loss reported. (source: Wikipedia)",
                             "HCM": "Hypertrophic cardiomyopathy (HCM) is a primary disease of the myocardium (the muscle of the heart) in which a portion of the myocardium is hypertrophied (thickened) without any obvious cause, creating functional impairment of the cardiac muscle. It is a leading cause of sudden cardiac death in young athletes. (source: Wikipedia)",
                             "DF": "A deaf person may be described as hard of hearing. A deaf person has little to no hearing. Deafness may occur in one or both ears. (source: Wikipedia)",
-                            "SIDS": "Sudden infant death syndrome (SIDS), also known as cot death or crib death, is the sudden unexplained death of a child less than one year of age. It requires that the death remains unexplained even after a thorough autopsy and detailed death scene investigation. SIDS usually occurs during sleep. (source: Wikipedia)"
+                            "SIDS": "Sudden infant death syndrome (SIDS), also known as cot death or crib death, is the sudden unexplained death of a child less than one year of age. It requires that the death remains unexplained even after a thorough autopsy and detailed death scene investigation. SIDS usually occurs during sleep. (source: Wikipedia)",
                             "OB": "Obesity is a medical condition in which excess body fat has accumulated to the extent that it may have a negative effect on health, leading to reduced life expectancy and/or increased health problems. In Western countries, people are considered obese when their body mass index (BMI), a measurement obtained by dividing a person's weight by the square of the person's height, exceeds 30 kg/m2, with the range 25-30 kg/m2 defined as overweight. Some East Asian countries use stricter criteria. (source: Wikipedia)"
                             }
+
+var populationMap = {"ACB": "African Caribbean in Barbados",
+                     "BEB": "Bengali in Bangladesh",
+                     "CDX": "Chinese Dai in Xishuangbanna, China",
+                     "CHS": "Southern Han Chinese, China",
+                     "CLM": "Colombian in Medellin, Colombia",
+                     "ESN": "Esan in Nigeria",
+                     "FIN": "Finnish in Finland",
+                     "GBR": "British in England and Scotland",
+                     "GWD": "Gambian in Western Division, The Gambia",
+                     "IBS": "Iberian populations in Spain",
+                     "KHV": "Kinh in Ho Chi Minh City, Vietnam",
+                     "MSL": "Mende in Sierra Leone",
+                     "PEL": "Peruvian in Lima, Peru",
+                     "PJL": "Punjabi in Lahore,Pakistan",
+                     "PUR": "Puerto Rican in Puerto Rico"
+                    }
 var LOA = [
   {
     "name": "Leber's Optic Atrophy",
@@ -974,7 +991,23 @@ d3.csv(fname, function(error, data) {
       .data(categories.slice().reverse())
     .enter().append("g")
       .attr("class", "legend")
-      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+      .attr("transform", function(d, i) { return "translate(1," + i * 20 + ")"; })
+      .on("mouseover", function(d) {
+         tooltip.transition()
+            .style('opacity', .9);
+         tooltip.html(populationMap[d])
+            .style('left', (d3.event.pageX + 10) + 'px') //position of the tooltip
+            .style('top', (d3.event.pageY - 25) + 'px');
+
+         d3.select(this)
+            .style('opacity',.5)
+      })
+      //To reset the color, hence opacity = 1
+      .on('mouseout',function(d){
+         tooltip.transition().style('opacity', 0)
+         d3.select(this)
+            .style('opacity',1)
+      });
 
   legend.append("rect")
       .attr("x", width2 - 18)
