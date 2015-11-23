@@ -955,6 +955,7 @@ d3.csv(fname, function(error, data) {
       .attr("y", function(d) { return y(d.value[0]); })
       .attr("height", function(d) { return height2 - y(d.value[0]); })
       .style("fill", function(d) { return color(d.name); })
+      .style("cursor","pointer")
       .on("mouseover", function(d) {
          /*
          ds = d.value[2];
