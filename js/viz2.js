@@ -956,11 +956,14 @@ d3.csv(fname, function(error, data) {
       .attr("height", function(d) { return height2 - y(d.value[0]); })
       .style("fill", function(d) { return color(d.name); })
       .on("mouseover", function(d) {
+         /*
          ds = d.value[2];
          var nd = eval(ds);
+         */
          tooltip.transition()
             .style('opacity', .9);
-         tooltip.html(nd[0].name + " " + d.value[0] + "% of " + d.value[1])
+         /*tooltip.html(nd[0].name + " " + d.value[0] + "% of " + d.value[1])*/
+         tooltip.html(d.value[0] + "% of " + d.value[1])
             .style('left', (d3.event.pageX - 15) + 'px') //position of the tooltip
             .style('top', (d3.event.pageY - 20) + 'px');
 
@@ -985,6 +988,24 @@ d3.csv(fname, function(error, data) {
          update(root);
          console.log(selectedDisease);
          document.location.href = "#viz3";
+      })
+      .on("mouseover", function(d) {
+         nd = eval(d)
+         console.log(nd)
+         tooltip.transition()
+            .style('opacity', .9);
+         tooltip.html(nd[0].name)
+            .style('left', (d3.event.pageX - 30) + 'px') //position of the tooltip
+            .style('top', (d3.event.pageY + 20) + 'px');
+
+         d3.select(this)
+            .style('opacity',.5)
+      })
+      //To reset the color, hence opacity = 1
+      .on('mouseout',function(d){
+         tooltip.transition().style('opacity', 0)
+         d3.select(this)
+            .style('opacity',1)
       });
 
   var legend = svg2.selectAll(".legend")
@@ -996,7 +1017,7 @@ d3.csv(fname, function(error, data) {
          tooltip.transition()
             .style('opacity', .9);
          tooltip.html(populationMap[d])
-            .style('left', (d3.event.pageX + 10) + 'px') //position of the tooltip
+            .style('left', (d3.event.pageX + 15) + 'px') //position of the tooltip
             .style('top', (d3.event.pageY - 25) + 'px');
 
          d3.select(this)
