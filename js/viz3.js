@@ -2,7 +2,7 @@ var tip = d3.tip()
           .attr('class', 'd3-tip')
           .offset([-5,0])
           .html(function(d) {
-            return "<a href=" + d.link + " style='text-decoration: none' target='_blank'><span style='color:" + d.color + "'><strong><center>Click the text for more info on the " + d.type + "</center></strong></span></a>";
+            return "<a href=" + d.link + " style='text-decoration: none' target='_blank'><span style='color:black'><strong><center>Click the text for more info on the " + d.type + "</center></strong></span></a>";
           });
 
 var margin = {top: 0, right: 20, bottom: 0, left: 250},
