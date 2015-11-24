@@ -670,7 +670,7 @@ var CM = [{
     "link": "https://en.wikipedia.org/wiki/Cardiomyopathy",
     "children": [
       {
-        "name": "Intergenic Region",
+        "name": "Intergenic",
         "parent": "Cardiomyopathy",
         "color": "#ce6dbd",
         "lightcolor": "#de9ed6",
@@ -679,7 +679,7 @@ var CM = [{
         "children": [
           {
             "name": "chrMT-12192-A",
-            "parent": "Intergenic Region",
+            "parent": "Intergenic",
             "color": "#ce6dbd",
             "lightcolor": "#de9ed6",
             "type": "mutation",
@@ -699,7 +699,7 @@ var SDM = [{
     "link": "https://en.wikipedia.org/wiki/Sensorineural_hearing_loss",
     "children": [
       {
-        "name": "Intergenic Region",
+        "name": "Intergenic",
         "parent": "Sensorineural Deafness and Migraine",
         "color": "#ce6dbd",
         "lightcolor": "#de9ed6",
@@ -708,7 +708,7 @@ var SDM = [{
         "children": [
           {
             "name": "chrMT-4336-C",
-            "parent": "Intergenic Region",
+            "parent": "Intergenic",
             "color": "#ce6dbd",
             "lightcolor": "#de9ed6",
             "type": "mutation",
@@ -727,7 +727,7 @@ var HCM = [{
     "link": "https://en.m.wikipedia.org/wiki/Hypertrophic_cardiomyopathy",
     "children": [
       {
-        "name": "Intergenic Region",
+        "name": "Intergenic",
         "parent": "Hypertrophic Cardiomyopathy",
         "color": "#ce6dbd",
         "lightcolor": "#de9ed6",
@@ -736,7 +736,7 @@ var HCM = [{
         "children": [
           {
             "name": "chrMT-4295-G",
-            "parent": "Intergenic Region",
+            "parent": "Intergenic",
             "color": "#ce6dbd",
             "lightcolor": "#de9ed6",
             "type": "mutation",
@@ -756,7 +756,7 @@ var SIDS = [{
     "link": "https://en.wikipedia.org/wiki/Sudden_infant_death_syndrome",
     "children": [
       {
-        "name": "Intergenic Region",
+        "name": "Intergenic",
         "parent": "Sudden Infant Death Syndrome",
         "color": "#ce6dbd",
         "lightcolor": "#de9ed6",
@@ -765,7 +765,7 @@ var SIDS = [{
         "children": [
           {
             "name": "chrMT-3290-C",
-            "parent": "Intergenic Region",
+            "parent": "Intergenic",
             "color": "#ce6dbd",
             "lightcolor": "#de9ed6",
             "type": "mutation",
@@ -814,7 +814,7 @@ var DF = [{
     "link": "https://en.wikipedia.org/wiki/Hearing_loss",
     "children": [
       {
-        "name": "Intergenic Region",
+        "name": "Intergenic",
         "parent": "Deafness",
         "color": "#ce6dbd",
         "lightcolor": "#de9ed6",
@@ -823,7 +823,7 @@ var DF = [{
         "children": [
           {
             "name": "chrMT-961-C,G",
-            "parent": "Intergenic Region",
+            "parent": "Intergenic",
             "color": "#ce6dbd",
             "lightcolor": "#de9ed6",
             "type": "mutation",
@@ -831,7 +831,7 @@ var DF = [{
           },
           {
             "name": "chrMT-827-G",
-            "parent": "Intergenic Region",
+            "parent": "Intergenic",
             "color": "#ce6dbd",
             "lightcolor": "#de9ed6",
             "type": "mutation",
