@@ -70,16 +70,22 @@
             <p class="lead"> A clustered summary of the 1000 genomes data for the mitrochondrial genome, mutations are color coded for severity (red = pathogenic, white = unclassified and blue = benign). <b> Hover over the image to see an ethnic cluster or just page down to see the whole population. </b> </p>
             </h2>
         <div class="row">
-
           <div class="col-xs-12 col-md-8">
             <img class='img-responsive center-block' src='img/Heatmap.png' alt=""/></div>
 
           <div class="col-xs-6 col-md-4">
-            <div class="featurette" id="viz4">
-            <h2 class="featurette-heading">Summary Level
-            </h2>
-        </div>
 
+            <h2 class="featurette-heading">Disease Level
+                <span class="text-muted small"><em>Select ethnicity</em></span>
+            </h2>
+
+            <select id = "opts">
+                <option value="FIN" selected="selected">Finnish</option>
+                <option value="PUR">Puerto Rican</option>
+                <option value="GBR">British</option> 
+                <option value="CHS">Han Chinese</option> 
+                <option value="CDX">Chinese Dai in Xishuangbanna</option> 
+            </select> 
 
           </div>
         </div>
@@ -171,11 +177,11 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 
-    <script type="text/javascript" src="data/dataOLDTS.js"></script>
-    <script src="js/test1.js"></script>
+    <script type="text/javascript" src="data/data.js"></script>
     <script src="js/viz1.js"></script>
     <script src="js/viz2.js"></script>
     <script src="js/viz3.js"></script>
+
     
 </body>
 
