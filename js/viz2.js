@@ -670,18 +670,18 @@ var CM = [{
     "link": "https://en.wikipedia.org/wiki/Cardiomyopathy",
     "children": [
       {
-        "name": "Unknown",
+        "name": "Intergenic Region",
         "parent": "Cardiomyopathy",
-        "color": "#393b79",
-        "lightcolor": "#6b6ecf",
+        "color": "#ce6dbd",
+        "lightcolor": "#de9ed6",
         "type": "gene",
-        "link": "",
+        "link": "https://en.wikipedia.org/wiki/Intergenic_region",
         "children": [
           {
             "name": "chrMT-12192-A",
-            "parent": "Unknown",
-            "color": "#393b79",
-            "lightcolor": "#6b6ecf",
+            "parent": "Intergenic Region",
+            "color": "#ce6dbd",
+            "lightcolor": "#de9ed6",
             "type": "mutation",
             "link": "http://www.ncbi.nlm.nih.gov/snp/3134560"
           }
@@ -699,18 +699,18 @@ var SDM = [{
     "link": "https://en.wikipedia.org/wiki/Sensorineural_hearing_loss",
     "children": [
       {
-        "name": "Unknown",
+        "name": "Intergenic Region",
         "parent": "Sensorineural Deafness and Migraine",
-        "color": "#393b79",
-        "lightcolor": "#6b6ecf",
+        "color": "#ce6dbd",
+        "lightcolor": "#de9ed6",
         "type": "gene",
-        "link": "",
+        "link": "https://en.wikipedia.org/wiki/Intergenic_region",
         "children": [
           {
             "name": "chrMT-4336-C",
-            "parent": "Unknown",
-            "color": "#393b79",
-            "lightcolor": "#6b6ecf",
+            "parent": "Intergenic Region",
+            "color": "#ce6dbd",
+            "lightcolor": "#de9ed6",
             "type": "mutation",
             "link": "http://www.ncbi.nlm.nih.gov/snp/41456348"
           }
@@ -727,18 +727,18 @@ var HCM = [{
     "link": "https://en.m.wikipedia.org/wiki/Hypertrophic_cardiomyopathy",
     "children": [
       {
-        "name": "Unknown",
+        "name": "Intergenic Region",
         "parent": "Hypertrophic Cardiomyopathy",
-        "color": "#393b79",
-        "lightcolor": "#6b6ecf",
+        "color": "#ce6dbd",
+        "lightcolor": "#de9ed6",
         "type": "gene",
-        "link": "",
+        "link": "https://en.wikipedia.org/wiki/Intergenic_region",
         "children": [
           {
             "name": "chrMT-4295-G",
-            "parent": "Unknown",
-            "color": "#393b79",
-            "lightcolor": "#6b6ecf",
+            "parent": "Intergenic Region",
+            "color": "#ce6dbd",
+            "lightcolor": "#de9ed6",
             "type": "mutation",
             "link": "http://www.ncbi.nlm.nih.gov/snp/121434467"
           }
@@ -756,18 +756,18 @@ var SIDS = [{
     "link": "https://en.wikipedia.org/wiki/Sudden_infant_death_syndrome",
     "children": [
       {
-        "name": "Unknown",
+        "name": "Intergenic Region",
         "parent": "Sudden Infant Death Syndrome",
-        "color": "#393b79",
-        "lightcolor": "#6b6ecf",
+        "color": "#ce6dbd",
+        "lightcolor": "#de9ed6",
         "type": "gene",
-        "link": "",
+        "link": "https://en.wikipedia.org/wiki/Intergenic_region",
         "children": [
           {
             "name": "chrMT-3290-C",
-            "parent": "Unknown",
-            "color": "#393b79",
-            "lightcolor": "#6b6ecf",
+            "parent": "Intergenic Region",
+            "color": "#ce6dbd",
+            "lightcolor": "#de9ed6",
             "type": "mutation",
             "link": "http://www.ncbi.nlm.nih.gov/snp/199474665"
           }
@@ -790,7 +790,7 @@ var OB= [{
         "color": '#1f77b4',
         "lightcolor": '#aec7e8',
         "type": "gene",
-        "link": "",
+        "link": "https://en.wikipedia.org/wiki/Cytochrome_b",
         "children": [
           {
             "name": "chrMT-15497-A",
@@ -814,26 +814,26 @@ var DF = [{
     "link": "https://en.wikipedia.org/wiki/Hearing_loss",
     "children": [
       {
-        "name": "Unknown",
+        "name": "Intergenic Region",
         "parent": "Deafness",
-        "color": "#393b79",
-        "lightcolor": "#6b6ecf",
+        "color": "#ce6dbd",
+        "lightcolor": "#de9ed6",
         "type": "gene",
-        "link": "",
+        "link": "https://en.wikipedia.org/wiki/Intergenic_region",
         "children": [
           {
             "name": "chrMT-961-C,G",
-            "parent": "Unknown",
-            "color": "#393b79",
-            "lightcolor": "#6b6ecf",
+            "parent": "Intergenic Region",
+            "color": "#ce6dbd",
+            "lightcolor": "#de9ed6",
             "type": "mutation",
             "link": "http://www.ncbi.nlm.nih.gov/snp/3888511"
           },
           {
             "name": "chrMT-827-G",
-            "parent": "Unknown",
-            "color": "#393b79",
-            "lightcolor": "#6b6ecf",
+            "parent": "Intergenic Region",
+            "color": "#ce6dbd",
+            "lightcolor": "#de9ed6",
             "type": "mutation",
             "link": "http://www.ncbi.nlm.nih.gov/snp/28358569"
           }
