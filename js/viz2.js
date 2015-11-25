@@ -924,6 +924,8 @@ d3.csv(fname, function(error, data) {
   svg2.append("g")
       .attr("class", "y axis")
       .call(yAxis)
+      .style("font", "sans-serif")
+      .style("font-size","12px")
     .append("text")
       .attr('class', 'y label')
       .attr("transform", "rotate(-90)")
@@ -1043,6 +1045,8 @@ d3.csv(fname, function(error, data) {
       .attr("x", width2 - 24)
       .attr("y", 9)
       .attr("dy", ".35em")
+      .style("font", "sans-serif")
+      .style("font-size","12px")
       .style("text-anchor", "end")
       .text(function(d) { return d; });
 
