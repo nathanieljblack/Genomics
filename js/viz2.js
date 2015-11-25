@@ -949,7 +949,7 @@ d3.csv(fname, function(error, data) {
          root.children.forEach(collapse);
          update(root);
          console.log(selectedDisease);
-         document.location.href = "#viz3";
+         document.location.href = "#part3";
       });
 
   disease.selectAll("rect")
@@ -994,7 +994,7 @@ d3.csv(fname, function(error, data) {
          root.children.forEach(collapse);
          update(root);
          console.log(selectedDisease);
-         document.location.href = "#viz3";
+         document.location.href = "#part3";
       })
       .on("mouseover", function(d) {
          nd = eval(d)
