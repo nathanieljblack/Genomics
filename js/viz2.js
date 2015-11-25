@@ -917,6 +917,8 @@ d3.csv(fname, function(error, data) {
       .attr("id", "xaxis2")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height2 + ")")
+      .style("font", "sans-serif")
+      .style("font-size","12px")
       .call(xAxis);
 
   svg2.append("g")

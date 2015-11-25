@@ -103,8 +103,6 @@ function update(source) {
 
   svg.selectAll(".node")
   .select("text")
-  .on('mouseover', tip.show)
-  .on('mouseout', tip.hide)
   .on('click', function(d) { window.open(d.link);} );
 
 }
