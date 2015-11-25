@@ -26,8 +26,7 @@ svg.call(tip);
 
 root.x0 = height / 2;
 root.y0 = 0;
-  
-update(root);
+
 
 function collapse(d) {
     if (d.children) {
@@ -36,7 +35,10 @@ function collapse(d) {
       d.children = null;
     }
   }
-  
+
+root.children.forEach(collapse);
+update(root);
+
 d3.select(self.frameElement).style("height", "500px");
 function update(source) {
   // Compute the new tree layout.
