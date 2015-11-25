@@ -79,28 +79,29 @@
             <h2 class="featurette-heading">Summary Level
                 <span class="text-muted small"><em>Select A Demographic</em></span>
             </h2>
-            <p class="lead"> A clustered summary of the 1000 genomes data for the mitrochondrial genome, mutations are color coded for severity (red = pathogenic, white = unclassified and blue = benign). <b>Hover over the image to see an ethnic cluster or just page down to see the whole population.</b> </p>
+            <p class="lead"> A clustered summary of the one thousand genomes data for the mitrochondrial genome, mutations are color coded for severity (red = pathogenic, white = unclassified and blue = benign). <b>Hover over the image to see an ethnic cluster or just page down to see the whole population.</b> </p>
         
-            <div class="row">
-              <div class="col-xs-12 col-md-8">
+           <div class="row">
+                <div class="col-xs-12 col-md-8">
                 <img class='img-responsive center-block' src='img/Heatmap.png' alt=""/></div>
 
-              <div class="col-xs-6 col-md-4">
+                <div class="col-xs-6 col-md-4">
+                    <div class="featurette" id="viz4">
 
-                <h2 class="featurette-heading">Population level
-                    <span class="text-muted small"><em>Select ethnicity</em></span>
-                </h2>
-
-                <select id = "opts">
-                    <option value="FIN" selected="selected">Finnish</option>
-                    <option value="PUR">Puerto Rican</option>
-                    <option value="GBR">British</option> 
-                    <option value="CHS">Han Chinese</option> 
-                    <option value="CDX">Chinese Dai in Xishuangbanna</option> 
-                </select> 
-
-              </div>
-            </div>
+                        
+                    </div>
+                </div>
+            </div> 
+            <h2 class="featurette-heading">Population level
+                <span class="text-muted small"><em>Select ethnicity</em></span>
+            </h2>
+            <select id = "opts">
+                <option value="FIN" selected="selected">Finnish</option>
+                <option value="PUR">Puerto Rican</option>
+                <option value="GBR">British</option> 
+                <option value="CHS">Han Chinese</option> 
+                <option value="CDX">Chinese Dai in Xishuangbanna</option>
+            </select> 
         </div>
 
         <hr class="featurette-divider">
@@ -110,7 +111,6 @@
                 <span class="text-muted small"><em>Select A Disease</em></span>
             </h2>
             <p class="lead">A comparison of the prevalence of diseases within the population of the selected individual with that of the total population is presented in the chart below. <b>Hover on the bars to see the prevalence, or click on the bars to find out more information about the disease.</b></p>
-
         </div>
         <hr class="featurette-divider">
         <div class="featurette" id="vizXXXX">
@@ -254,6 +254,7 @@
     <script src="js/viz1.js"></script>
     <script src="js/viz2.js"></script>
     <script src="js/viz3.js"></script>
+    <script src="js/viz4.js"></script>
 
     
 </body>
