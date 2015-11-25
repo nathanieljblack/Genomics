@@ -946,6 +946,7 @@ d3.csv(fname, function(error, data) {
          var newData = eval(selectedDisease);
          document.getElementById("diseaseDesc").innerHTML = diseaseDescriptionMap[selectedDisease];
          root = newData[0];
+         root.children.forEach(collapse);
          update(root);
          console.log(selectedDisease);
          document.location.href = "#viz3";

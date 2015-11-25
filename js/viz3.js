@@ -29,6 +29,14 @@ root.y0 = 0;
   
 update(root);
 
+function collapse(d) {
+    if (d.children) {
+      d._children = d.children;
+      d._children.forEach(collapse);
+      d.children = null;
+    }
+  }
+  
 d3.select(self.frameElement).style("height", "500px");
 function update(source) {
   // Compute the new tree layout.
