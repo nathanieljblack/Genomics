@@ -56,13 +56,19 @@
         </div>
     </header>
 
-        <!-- Page Content -->
-
     <!-- Page Content -->
     <div class="container">
 
         <hr class="featurette-divider">
 
+        <div class="featurette" id="about">
+            <h2 class="featurette-heading">About
+                <span class="text-muted small"><em>Making Genomics Accessible</em></span>
+            </h2>
+            <p class="lead">Genomics is a burgeoning field in genetics allowing researchers to analyze the function and structure of the genome. The field is highly technical and often inaccessible to the non-PhDs of the world. We aim to improve the accessibility of genomics through an easy-to-use visualization.</p>
+        </div>
+
+        <hr class="featurette-divider">
         <!-- First Featurette -->
         <div class="featurette" id="test1">
             <h2 class="featurette-heading">Summary Level
@@ -70,29 +76,30 @@
             </h2>
             <p class="lead"> A clustered summary of the 1000 genomes data for the mitrochondrial genome, mutations are color coded for severity (red = pathogenic, white = unclassified and blue = benign). <b> Hover over the image to see an ethnic cluster or just page down to see the whole population. </b> </p>
         
-        <div class="row">
-          <div class="col-xs-12 col-md-8">
-            <img class='img-responsive center-block' src='img/Heatmap.png' alt=""/></div>
+            <div class="row">
+              <div class="col-xs-12 col-md-8">
+                <img class='img-responsive center-block' src='img/Heatmap.png' alt=""/></div>
 
-          <div class="col-xs-6 col-md-4">
+              <div class="col-xs-6 col-md-4">
 
-            <h2 class="featurette-heading">Population level
-                <span class="text-muted small"><em>Select ethnicity</em></span>
-            </h2>
+                <h2 class="featurette-heading">Population level
+                    <span class="text-muted small"><em>Select ethnicity</em></span>
+                </h2>
 
-            <select id = "opts">
-                <option value="FIN" selected="selected">Finnish</option>
-                <option value="PUR">Puerto Rican</option>
-                <option value="GBR">British</option> 
-                <option value="CHS">Han Chinese</option> 
-                <option value="CDX">Chinese Dai in Xishuangbanna</option> 
-            </select> 
+                <select id = "opts">
+                    <option value="FIN" selected="selected">Finnish</option>
+                    <option value="PUR">Puerto Rican</option>
+                    <option value="GBR">British</option> 
+                    <option value="CHS">Han Chinese</option> 
+                    <option value="CDX">Chinese Dai in Xishuangbanna</option> 
+                </select> 
 
-          </div>
+              </div>
+            </div>
         </div>
-
-        </div>
+        
         <hr class="featurette-divider">
+
         <div class="featurette" id="viz2">
             <h2 class="featurette-heading">Disease Level
                 <span class="text-muted small"><em>Select A Disease</em></span>
@@ -105,21 +112,13 @@
             <h2 class="featurette-heading">Mutation Level
                 <span class="text-muted small"><em>Select A Mutation</em></span>
             </h2>
-            <p class="lead">From left to right, the tree below provides additional detail on genes and mutations related to your selected disease. If there are no additional nodes on the tree, there are not any known genes/mutations associated with that disease. <b>Click on the mutation to find out more information.</b></p>
+            <p class="lead">From left to right, the tree below provides additional detail on genes and mutations related to your selected disease. If there are no additional nodes on the tree, there are not any known genes/mutations associated with that disease. <b>Click on a colored node to see the mutations associated with that gene.Click on the text of the disease/gene/mutation to get more information.</b></p>
             
             <br></br>
             <blockquote id="diseaseDesc"></blockquote>
         </div>
 
         <hr class="featurette-divider">
-
-        <!-- Second Featurette -->
-        <div class="featurette" id="about">
-            <h2 class="featurette-heading">About
-                <span class="text-muted small"><em>Making Genomics Accessible</em></span>
-            </h2>
-            <p class="lead">Genomics is a burgeoning field in genetics allowing researchers to analyze the function and structure of the genome. The field is highly technical and often inaccessible to the non-PhDs of the world. We aim to improve the accessibility of genomics through an easy-to-use visualization.</p>
-        </div>
 
         <div class="container">
             <div class="row">
@@ -169,7 +168,7 @@
                           </a>
                           <a href="http://www.d3js.org" class="list-group-item">
                             <h4 class="list-group-item-heading" align="center">d3.js</h4>
-                            <p class="list-group-item-text" align="center">Data-driven documents library used for graphs</p>
+                            <p class="list-group-item-text" align="center">Javascript library for visualizations</p>
                           </a>
                           <a href="http://www.tableau.com" class="list-group-item">
                             <h4 class="list-group-item-heading" align="center">Tableau</h4>
