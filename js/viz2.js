@@ -882,8 +882,9 @@ var root = BC[0];
       .attr("height", height2 + margin2.top + margin2.bottom)
       .append("g")
       .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
-      
+
 function updateBarChart(pop) {
+  disease.selectAll("rect").remove();
   
   var fname = 'data/' + pop + '.csv'
 
