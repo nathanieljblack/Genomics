@@ -846,17 +846,25 @@ var selectedDisease = 'BC';
 document.getElementById("diseaseDesc").innerHTML = diseaseDescriptionMap[selectedDisease];
 var root = BC[0];
 
+var margin2 = {top: 20, right: 20, bottom: 30, left: 40},
+    width2 = 960 - margin2.left - margin2.right,
+    height2 = 500 - margin2.top - margin2.bottom;
+
+var tooltip = d3.select('#viz2').append('div')
+       .style('position','absolute') //To allow d3 to follow the position absolute to the relationship to the page
+       .style('padding','0 10px') //To do padding on the toop tip. 0 on the top and bottom and 10px on each side
+       .style('background','white')
+       .style('opacity',0);
+
+var svg2 = d3.select("#viz2").append("svg")
+    .attr("width", width2 + margin2.left + margin2.right)
+    .attr("height", height2 + margin2.top + margin2.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+
 function updateBarChart(pop) {
 
-  var margin2 = {top: 20, right: 20, bottom: 30, left: 40},
-      width2 = 960 - margin2.left - margin2.right,
-      height2 = 500 - margin2.top - margin2.bottom;
-
-  var tooltip = d3.select('#viz2').append('div')
-         .style('position','absolute') //To allow d3 to follow the position absolute to the relationship to the page
-         .style('padding','0 10px') //To do padding on the toop tip. 0 on the top and bottom and 10px on each side
-         .style('background','white')
-         .style('opacity',0); // 0 as we don't want to show when the graphic first loads up
+ // 0 as we don't want to show when the graphic first loads up
 
   var x0 = d3.scale.ordinal()
       .rangeRoundBands([0, width2], .1);
@@ -877,13 +885,6 @@ function updateBarChart(pop) {
       .scale(y)
       .orient("left")
       .tickFormat(d3.format(".2s"));
-
-
-  svg2 = d3.select("#viz2").append("svg")
-      .attr("width", width2 + margin2.left + margin2.right)
-      .attr("height", height2 + margin2.top + margin2.bottom)
-    .append("g")
-      .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
   
   var fname = 'data/' + pop + '.csv'
 
