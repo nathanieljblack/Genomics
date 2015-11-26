@@ -850,6 +850,26 @@ var margin2 = {top: 20, right: 20, bottom: 30, left: 40},
     width2 = 960 - margin2.left - margin2.right,
     height2 = 500 - margin2.top - margin2.bottom;
 
+var x0 = d3.scale.ordinal()
+    .rangeRoundBands([0, width2], .1);
+
+var x1 = d3.scale.ordinal();
+
+var y = d3.scale.linear()
+    .range([height2, 0]);
+
+var color = d3.scale.ordinal()
+    .range(["#8a89a6", "#d0743c"]);
+
+var xAxis = d3.svg.axis()
+    .scale(x0)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left")
+    .tickFormat(d3.format(".2s"));
+      
 var tooltip = d3.select('#viz2').append('div')
        .style('position','absolute') //To allow d3 to follow the position absolute to the relationship to the page
        .style('padding','0 10px') //To do padding on the toop tip. 0 on the top and bottom and 10px on each side
@@ -865,26 +885,6 @@ var svg2 = d3.select("#viz2").append("svg")
 function updateBarChart(pop) {
 
  // 0 as we don't want to show when the graphic first loads up
-
-  var x0 = d3.scale.ordinal()
-      .rangeRoundBands([0, width2], .1);
-
-  var x1 = d3.scale.ordinal();
-
-  var y = d3.scale.linear()
-      .range([height2, 0]);
-
-  var color = d3.scale.ordinal()
-      .range(["#8a89a6", "#d0743c"]);
-
-  var xAxis = d3.svg.axis()
-      .scale(x0)
-      .orient("bottom");
-
-  var yAxis = d3.svg.axis()
-      .scale(y)
-      .orient("left")
-      .tickFormat(d3.format(".2s"));
   
   var fname = 'data/' + pop + '.csv'
 
