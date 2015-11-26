@@ -255,9 +255,8 @@
         $(function() {
                 $('#selector button').click( function() {
                     $(this).addClass('active').siblings().removeClass('active');
+                    d3.select("#viz2").remove();
                 });
-
-            d3.select("#viz2").remove();
         });
 
         function grabPopulation(clicked_id){
