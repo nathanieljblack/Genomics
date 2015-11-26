@@ -261,6 +261,7 @@
         function grabPopulation(clicked_id){
                 selectedPopulation = clicked_id;
                 console.log(selectedPopulation);
+                d3.select("#viz2").remove();
                 updateBarChart(selectedPopulation);
         }
     </script>
