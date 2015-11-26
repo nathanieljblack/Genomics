@@ -843,6 +843,7 @@ var DF = [{
       }];
 
 var selectedDisease = 'BC';
+document.getElementById("diseaseDesc").innerHTML = diseaseDescriptionMap[selectedDisease];
 var root = BC[0];
 
 var margin2 = {top: 20, right: 20, bottom: 30, left: 40},
