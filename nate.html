@@ -82,9 +82,9 @@
             <p class="lead"> A clustered summary of the one thousand genomes data for the mitrochondrial genome, mutations are color coded for severity (red = pathogenic, white = unclassified and blue = benign). <b>Hover over the image to see an ethnic cluster or just page down to see the whole population.</b> </p>
             
             <div align="center" id="selector" class="btn-group">
-                <button type="button" class="btn btn-default active" value="GBR">GBR</button>      
-                <button type="button" class="btn btn-default" value="FIN">FIN</button>
-                <button type="button" class="btn btn-default" value="CHS">CHS</button>   
+                <button type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)">GBR</button>      
+                <button type="button" class="btn btn-default" value="FIN" onClick="grabPopulation(this.value)">FIN</button>
+                <button type="button" class="btn btn-default" value="CHS" onClick="grabPopulation(this.value)">CHS</button>   
                 <button type="button" class="btn btn-default" value="PUR">PUR</button>   
                 <button type="button" class="btn btn-default" value="CDX">CDX</button>   
                 <button type="button" class="btn btn-default" value="CLM">CLM</button>   
@@ -251,14 +251,19 @@
     <script src="js/viz2.js"></script>
     <script src="js/viz3.js"></script>
     <script src="js/viz4.js"></script>
-    <script>
+    <script type="text/javascript">
         var selectedPopulation =  "GBR";
+
         $(function() {
                 $('#selector button').click( function() {
             $(this).addClass('active').siblings().removeClass('active');
-            selectedPopulation = $(this).value;
           });
         });
+
+        function grabPopulation(clicked_id){
+                selectedPopulation = clicked_id;
+                console.log(selectedPopulation);
+        }
     </script>
 
     
