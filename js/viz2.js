@@ -846,8 +846,6 @@ var selectedDisease = 'BC';
 document.getElementById("diseaseDesc").innerHTML = diseaseDescriptionMap[selectedDisease];
 var root = BC[0];
 
-function updateBarChart(pop) {
-
   var margin2 = {top: 20, right: 20, bottom: 30, left: 40},
       width2 = 960 - margin2.left - margin2.right,
       height2 = 500 - margin2.top - margin2.bottom;
@@ -882,8 +880,10 @@ function updateBarChart(pop) {
   svg2 = d3.select("#viz2").append("svg")
       .attr("width", width2 + margin2.left + margin2.right)
       .attr("height", height2 + margin2.top + margin2.bottom)
-    .append("g")
+      .append("g")
       .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+      
+function updateBarChart(pop) {
   
   var fname = 'data/' + pop + '.csv'
 
