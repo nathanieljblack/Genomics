@@ -846,212 +846,212 @@ var selectedDisease = 'BC';
 document.getElementById("diseaseDesc").innerHTML = diseaseDescriptionMap[selectedDisease];
 var root = BC[0];
 
-var margin2 = {top: 20, right: 20, bottom: 30, left: 40},
-    width2 = 960 - margin2.left - margin2.right,
-    height2 = 500 - margin2.top - margin2.bottom;
+function updateBarChart(pop) {
 
-var tooltip = d3.select('#viz2').append('div')
-       .style('position','absolute') //To allow d3 to follow the position absolute to the relationship to the page
-       .style('padding','0 10px') //To do padding on the toop tip. 0 on the top and bottom and 10px on each side
-       .style('background','white')
-       .style('opacity',0); // 0 as we don't want to show when the graphic first loads up
+  var margin2 = {top: 20, right: 20, bottom: 30, left: 40},
+      width2 = 960 - margin2.left - margin2.right,
+      height2 = 500 - margin2.top - margin2.bottom;
 
-var x0 = d3.scale.ordinal()
-    .rangeRoundBands([0, width2], .1);
+  var tooltip = d3.select('#viz2').append('div')
+         .style('position','absolute') //To allow d3 to follow the position absolute to the relationship to the page
+         .style('padding','0 10px') //To do padding on the toop tip. 0 on the top and bottom and 10px on each side
+         .style('background','white')
+         .style('opacity',0); // 0 as we don't want to show when the graphic first loads up
 
-var x1 = d3.scale.ordinal();
+  var x0 = d3.scale.ordinal()
+      .rangeRoundBands([0, width2], .1);
 
-var y = d3.scale.linear()
-    .range([height2, 0]);
+  var x1 = d3.scale.ordinal();
 
-var color = d3.scale.ordinal()
-    .range(["#8a89a6", "#d0743c"]);
+  var y = d3.scale.linear()
+      .range([height2, 0]);
 
-var xAxis = d3.svg.axis()
-    .scale(x0)
-    .orient("bottom");
+  var color = d3.scale.ordinal()
+      .range(["#8a89a6", "#d0743c"]);
 
-var yAxis = d3.svg.axis()
-    .scale(y)
-    .orient("left")
-    .tickFormat(d3.format(".2s"));
+  var xAxis = d3.svg.axis()
+      .scale(x0)
+      .orient("bottom");
 
-var svg2 = d3.select("#viz2").append("svg")
-    .attr("width", width2 + margin2.left + margin2.right)
-    .attr("height", height2 + margin2.top + margin2.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+  var yAxis = d3.svg.axis()
+      .scale(y)
+      .orient("left")
+      .tickFormat(d3.format(".2s"));
 
-var fname = 'data/FIN.csv'
 
-d3.csv(fname, function(error, data) {
-  var categories = d3.keys(data[0]).filter(function(key) { return key !== "Disease" && key.indexOf('num') == -1; });
-  var numbers = d3.keys(data[0]).filter(function(key) { return key.indexOf('num') != -1; });
+  svg2 = d3.select("#viz2").append("svg")
+      .attr("width", width2 + margin2.left + margin2.right)
+      .attr("height", height2 + margin2.top + margin2.bottom)
+    .append("g")
+      .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
+  
+  var fname = 'data/' + pop + '.csv'
 
-  data.forEach(function(d) {
-    d.percents = categories.map(function(name) { return {name: name, value: +d[name]}; });
-    d.numbers = numbers.map(function(name) { tn = name.split('_')[0]; return {"num_name": tn, "num_value": +d[name]}; });
-    arr = []
-    for (var key in d.numbers) {
-      nv = []
-      n = d.numbers[key].num_name;
-      for (var pkey in d.percents) {
-        pn = d.percents[pkey].name;
-        if (pn == n) {
-          v = d.percents[pkey].value;
-          nv.push(v);
-          nv.push(d.numbers[key].num_value);
-          nv.push(d.Disease);
-          arr.push({name: n, value: nv})
-          break;
+  d3.csv(fname, function(error, data) {
+    var categories = d3.keys(data[0]).filter(function(key) { return key !== "Disease" && key.indexOf('num') == -1; });
+    var numbers = d3.keys(data[0]).filter(function(key) { return key.indexOf('num') != -1; });
+
+    data.forEach(function(d) {
+      d.percents = categories.map(function(name) { return {name: name, value: +d[name]}; });
+      d.numbers = numbers.map(function(name) { tn = name.split('_')[0]; return {"num_name": tn, "num_value": +d[name]}; });
+      arr = []
+      for (var key in d.numbers) {
+        nv = []
+        n = d.numbers[key].num_name;
+        for (var pkey in d.percents) {
+          pn = d.percents[pkey].name;
+          if (pn == n) {
+            v = d.percents[pkey].value;
+            nv.push(v);
+            nv.push(d.numbers[key].num_value);
+            nv.push(d.Disease);
+            arr.push({name: n, value: nv})
+            break;
+          }
         }
       }
-    }
-    d.percents = arr;
+      d.percents = arr;
+    });
+
+    x0.domain(data.map(function(d) { return d.Disease; }));
+    x1.domain(categories).rangeRoundBands([0, x0.rangeBand()]);
+    y.domain([0, d3.max(data, function(d) { return d3.max(d.percents, function(d) { return d.value[0]; }); })]);
+
+    svg2.append("g")
+        .attr("id", "xaxis2")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height2 + ")")
+        .style("font", "sans-serif")
+        .style("font-size","12px")
+        .call(xAxis);
+
+    svg2.append("g")
+        .attr("class", "y axis")
+        .call(yAxis)
+        .style("font", "sans-serif")
+        .style("font-size","12px")
+      .append("text")
+        .attr('class', 'y label')
+        .attr("transform", "rotate(-90)")
+        .attr("y", 2)
+        .attr("dy", "0.75em")
+        .style("text-anchor", "end")
+        .style("font", "sans-serif")
+        .style("font-size","12px")
+        .text("Percentage of Group with Disease");
+
+    var disease = svg2.selectAll(".disease")
+        .data(data)
+      .enter().append("g")
+        .attr("class", "g")
+        .attr("transform", function(d) { return "translate(" + x0(d.Disease) + ",0)"; })
+        .on("click", function(d) {
+           selectedDisease = d.Disease;
+           var newData = eval(selectedDisease);
+           document.getElementById("diseaseDesc").innerHTML = diseaseDescriptionMap[selectedDisease];
+           root = newData[0];
+           root.children.forEach(collapse);
+           update(root);
+           console.log(selectedDisease);
+           document.location.href = "#part3";
+        });
+
+    disease.selectAll("rect")
+        .data(function(d) { return d.percents; })
+      .enter().append("rect")
+        .attr("width", x1.rangeBand())
+        .attr("x", function(d) { return x1(d.name); })
+        .attr("y", function(d) { return y(d.value[0]); })
+        .attr("height", function(d) { return height2 - y(d.value[0]); })
+        .style("fill", function(d) { console.log(color(d.name)); return color(d.name); })
+        .style("cursor","pointer")
+        .on("mouseover", function(d) {
+           tooltip.transition()
+              .style('opacity', .9);
+           tooltip.html(d.value[0] + "% of " + d.value[1])
+              .style('left', (d3.event.pageX - 15) + 'px') //position of the tooltip
+              .style('top', (d3.event.pageY - 20) + 'px');
+
+           d3.select(this)
+              .style('opacity',.5)
+        })
+        //To reset the color, hence opacity = 1
+        .on('mouseout',function(d){
+           tooltip.transition().style('opacity', 0)
+           d3.select(this)
+              .style('opacity',1)
+        });
+
+    d3.select('#xaxis2')
+        .selectAll('.tick')
+        .style("cursor","pointer")
+        .on('click', function(d) {
+           selectedDisease = d;
+           var newData = eval(selectedDisease);
+           document.getElementById("diseaseDesc").innerHTML = diseaseDescriptionMap[selectedDisease];
+           root = newData[0];
+           root.children.forEach(collapse);
+           update(root);
+           console.log(selectedDisease);
+           document.location.href = "#part3";
+        })
+        .on("mouseover", function(d) {
+           nd = eval(d)
+           console.log(nd)
+           tooltip.transition()
+              .style('opacity', .9);
+           tooltip.html(nd[0].name)
+              .style('left', (d3.event.pageX - 30) + 'px') //position of the tooltip
+              .style('top', (d3.event.pageY + 20) + 'px');
+
+           d3.select(this)
+              .style('opacity',.5)
+        })
+        //To reset the color, hence opacity = 1
+        .on('mouseout',function(d){
+           tooltip.transition().style('opacity', 0)
+           d3.select(this)
+              .style('opacity',1)
+        });
+
+    console.log(categories.slice().reverse())
+    var legend = svg2.selectAll(".legend")
+        .data(categories.slice().reverse())
+      .enter().append("g")
+        .attr("class", "legend")
+        .attr("transform", function(d, i) { return "translate(1," + i * 20 + ")"; })
+        .on("mouseover", function(d) {
+           tooltip.transition()
+              .style('opacity', .9);
+           tooltip.html(populationMap[d])
+              .style('left', (d3.event.pageX + 15) + 'px') //position of the tooltip
+              .style('top', (d3.event.pageY - 25) + 'px');
+
+           d3.select(this)
+              .style('opacity',.5)
+        })
+        //To reset the color, hence opacity = 1
+        .on('mouseout',function(d){
+           tooltip.transition().style('opacity', 0)
+           d3.select(this)
+              .style('opacity',1)
+        });
+
+    legend.append("rect")
+        .attr("x", width2 - 18)
+        .attr("width", 18)
+        .attr("height", 18)
+        .style("fill", color);
+
+    legend.append("text")
+        .attr("x", width2 - 24)
+        .attr("y", 9)
+        .attr("dy", ".35em")
+        .style("font", "sans-serif")
+        .style("font-size","12px")
+        .style("text-anchor", "end")
+        .text(function(d) { return d; });
   });
+};
 
-  x0.domain(data.map(function(d) { return d.Disease; }));
-  x1.domain(categories).rangeRoundBands([0, x0.rangeBand()]);
-  y.domain([0, d3.max(data, function(d) { return d3.max(d.percents, function(d) { return d.value[0]; }); })]);
-
-  svg2.append("g")
-      .attr("id", "xaxis2")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height2 + ")")
-      .style("font", "sans-serif")
-      .style("font-size","12px")
-      .call(xAxis);
-
-  svg2.append("g")
-      .attr("class", "y axis")
-      .call(yAxis)
-      .style("font", "sans-serif")
-      .style("font-size","12px")
-    .append("text")
-      .attr('class', 'y label')
-      .attr("transform", "rotate(-90)")
-      .attr("y", 2)
-      .attr("dy", "0.75em")
-      .style("text-anchor", "end")
-      .style("font", "sans-serif")
-      .style("font-size","12px")
-      .text("Percentage of Group with Disease");
-
-  var disease = svg2.selectAll(".disease")
-      .data(data)
-    .enter().append("g")
-      .attr("class", "g")
-      .attr("transform", function(d) { return "translate(" + x0(d.Disease) + ",0)"; })
-      .on("click", function(d) {
-         selectedDisease = d.Disease;
-         var newData = eval(selectedDisease);
-         document.getElementById("diseaseDesc").innerHTML = diseaseDescriptionMap[selectedDisease];
-         root = newData[0];
-         root.children.forEach(collapse);
-         update(root);
-         console.log(selectedDisease);
-         document.location.href = "#part3";
-      });
-
-  disease.selectAll("rect")
-      .data(function(d) { return d.percents; })
-    .enter().append("rect")
-      .attr("width", x1.rangeBand())
-      .attr("x", function(d) { return x1(d.name); })
-      .attr("y", function(d) { return y(d.value[0]); })
-      .attr("height", function(d) { return height2 - y(d.value[0]); })
-      .style("fill", function(d) { return color(d.name); })
-      .style("cursor","pointer")
-      .on("mouseover", function(d) {
-         /*
-         ds = d.value[2];
-         var nd = eval(ds);
-         */
-         tooltip.transition()
-            .style('opacity', .9);
-         /*tooltip.html(nd[0].name + " " + d.value[0] + "% of " + d.value[1])*/
-         tooltip.html(d.value[0] + "% of " + d.value[1])
-            .style('left', (d3.event.pageX - 15) + 'px') //position of the tooltip
-            .style('top', (d3.event.pageY - 20) + 'px');
-
-         d3.select(this)
-            .style('opacity',.5)
-      })
-      //To reset the color, hence opacity = 1
-      .on('mouseout',function(d){
-         tooltip.transition().style('opacity', 0)
-         d3.select(this)
-            .style('opacity',1)
-      });
-
-  d3.select('#xaxis2')
-      .selectAll('.tick')
-      .style("cursor","pointer")
-      .on('click', function(d) {
-         selectedDisease = d;
-         var newData = eval(selectedDisease);
-         document.getElementById("diseaseDesc").innerHTML = diseaseDescriptionMap[selectedDisease];
-         root = newData[0];
-         root.children.forEach(collapse);
-         update(root);
-         console.log(selectedDisease);
-         document.location.href = "#part3";
-      })
-      .on("mouseover", function(d) {
-         nd = eval(d)
-         console.log(nd)
-         tooltip.transition()
-            .style('opacity', .9);
-         tooltip.html(nd[0].name)
-            .style('left', (d3.event.pageX - 30) + 'px') //position of the tooltip
-            .style('top', (d3.event.pageY + 20) + 'px');
-
-         d3.select(this)
-            .style('opacity',.5)
-      })
-      //To reset the color, hence opacity = 1
-      .on('mouseout',function(d){
-         tooltip.transition().style('opacity', 0)
-         d3.select(this)
-            .style('opacity',1)
-      });
-
-  var legend = svg2.selectAll(".legend")
-      .data(categories.slice().reverse())
-    .enter().append("g")
-      .attr("class", "legend")
-      .attr("transform", function(d, i) { return "translate(1," + i * 20 + ")"; })
-      .on("mouseover", function(d) {
-         tooltip.transition()
-            .style('opacity', .9);
-         tooltip.html(populationMap[d])
-            .style('left', (d3.event.pageX + 15) + 'px') //position of the tooltip
-            .style('top', (d3.event.pageY - 25) + 'px');
-
-         d3.select(this)
-            .style('opacity',.5)
-      })
-      //To reset the color, hence opacity = 1
-      .on('mouseout',function(d){
-         tooltip.transition().style('opacity', 0)
-         d3.select(this)
-            .style('opacity',1)
-      });
-
-  legend.append("rect")
-      .attr("x", width2 - 18)
-      .attr("width", 18)
-      .attr("height", 18)
-      .style("fill", color);
-
-  legend.append("text")
-      .attr("x", width2 - 24)
-      .attr("y", 9)
-      .attr("dy", ".35em")
-      .style("font", "sans-serif")
-      .style("font-size","12px")
-      .style("text-anchor", "end")
-      .text(function(d) { return d; });
-
-});
-
+updateBarChart('GBR');
