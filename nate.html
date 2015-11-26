@@ -81,9 +81,9 @@
             </h2>
             <p class="lead"> A clustered summary of the one thousand genomes data for the mitrochondrial genome, mutations are color coded for severity (red = pathogenic, white = unclassified and blue = benign). <b>Hover over the image to see an ethnic cluster or just page down to see the whole population.</b> </p>
             
-            <div align="center" id="selector" class="btn-group text-center">
-                <button type="button" class="btn btn-default">GBR</button>      
-                <button type="button" class="btn btn-default active">FIN</button>
+            <div align="center" id="selector" class="btn-group">
+                <button type="button" class="btn btn-default active">GBR</button>      
+                <button type="button" class="btn btn-default">FIN</button>
                 <button type="button" class="btn btn-default">CHS</button>   
                 <button type="button" class="btn btn-default">PUR</button>   
                 <button type="button" class="btn btn-default">CDX</button>   
@@ -251,10 +251,12 @@
     <script src="js/viz2.js"></script>
     <script src="js/viz3.js"></script>
     <script src="js/viz4.js"></script>
-    <script> 
+    <script>
+        var selectedPopulation =  "GBR";
         $(function() {
                 $('#selector button').click( function() {
             $(this).addClass('active').siblings().removeClass('active');
+            selectedPopulation = $(this).value;
           });
         });
     </script>
