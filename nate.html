@@ -255,6 +255,7 @@
         $(function() {
                 $('#selector button').click( function() {
                     $(this).addClass('active').siblings().removeClass('active');
+                    d3.select("#viz2SVG").remove();
                 });
         });
 
