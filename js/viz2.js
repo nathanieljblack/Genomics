@@ -953,7 +953,6 @@ function updateBarChart(pop) {
            root = newData[0];
            root.children.forEach(collapse);
            update(root);
-           console.log(selectedDisease);
            document.location.href = "#part3";
         });
 
@@ -962,10 +961,8 @@ function updateBarChart(pop) {
       .enter().append("rect")
         .attr("width", x1.rangeBand())
         .attr("x", function(d) { return x1(d.name); })
-        .attr("y", function(d) { return y(d.value[0]); })
-        .attr("height", function(d) { return height2 - y(d.value[0]); })
-        .style("fill", function(d) { console.log(color(d.name)); return color(d.name); })
         .style("cursor","pointer")
+        .style("fill", function(d) { return color(d.name); })
         .on("mouseover", function(d) {
            tooltip.transition()
               .style('opacity', .9);
@@ -981,7 +978,13 @@ function updateBarChart(pop) {
            tooltip.transition().style('opacity', 0)
            d3.select(this)
               .style('opacity',1)
-        });
+        })
+        .attr("y", height2)
+        .attr("height", 0)
+        .transition().duration(700)
+        .delay(function(d, i) {return i*100; })
+        .attr("y", function(d) { return y(d.value[0]); })
+        .attr("height", function(d) { return height2 - y(d.value[0]); });
 
     d3.select('#xaxis2')
         .selectAll('.tick')
@@ -993,12 +996,10 @@ function updateBarChart(pop) {
            root = newData[0];
            root.children.forEach(collapse);
            update(root);
-           console.log(selectedDisease);
            document.location.href = "#part3";
         })
         .on("mouseover", function(d) {
            nd = eval(d)
-           console.log(nd)
            tooltip.transition()
               .style('opacity', .9);
            tooltip.html(nd[0].name)
@@ -1015,7 +1016,6 @@ function updateBarChart(pop) {
               .style('opacity',1)
         });
 
-    console.log(categories.slice().reverse())
     var legend = svg2.selectAll(".legend")
         .data(categories.slice().reverse())
       .enter().append("g")
