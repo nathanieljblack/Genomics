@@ -939,7 +939,7 @@ function updateBarChart(pop) {
         .style("text-anchor", "end")
         .style("font", "sans-serif")
         .style("font-size","12px")
-        .text("Percentage of Group with Disease");
+        .text("Percentage of Mutations in Population");
 
     var disease = svg2.selectAll(".disease")
         .data(data)
