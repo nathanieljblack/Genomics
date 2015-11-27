@@ -882,7 +882,7 @@ function updateBarChart(pop) {
   svg2 = d3.select("#viz2").append("svg")
       .attr("width", width2 + margin2.left + margin2.right)
       .attr("height", height2 + margin2.top + margin2.bottom)
-      .append("g")
+    .append("g")
       .attr("transform", "translate(" + margin2.left + "," + margin2.top + ")");
   
   var fname = 'data/' + pop + '.csv'
