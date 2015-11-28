@@ -245,3 +245,7 @@ footer {
   font-size: 10px;
   font: 12px sans-serif;
 }
+
+.btn-group-wrap {
+    text-align: center;
+}
