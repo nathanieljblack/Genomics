@@ -13,7 +13,7 @@ var dataBlanks = [];
     dataBlanks[i] = 0; 
     console.log(i);}
 
-d3.csv("gbr_heatmap.csv",
+d3.csv("data/GBR_heatmap.csv",
 function(d) {
   return {
     row:   +d.row,
