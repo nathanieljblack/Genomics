@@ -73,7 +73,7 @@
 
         <hr class="featurette-divider">
         <!-- First Featurette -->
-        <div class="featurette" id="test1">
+        <div class="featurette" id="viz1">
             <h2 class="featurette-heading">Summary Level
                 <span class="text-muted small"><em>Select A Demographic</em></span>
             </h2>
@@ -97,6 +97,9 @@
                     <button type="button" class="btn btn-default" value="ACB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="African Caribbean in Barbados">ACB</button>  
                 </div>          
             </div>
+        <div id="tooltip1" class="hidden">
+        <p><span id="value"></p>
+        </div>
         </div>
 
         <hr class="featurette-divider">
@@ -249,7 +252,8 @@
     <script src="js/viz1.js"></script>
     <script src="js/viz2.js"></script>
     <script src="js/viz3.js"></script>
-    <script src="js/viz4.js"></script>
+    <script src="js/heatmap.js"></script>
+
     <script type="text/javascript">
         var selectedPopulation =  "GBR";
 
