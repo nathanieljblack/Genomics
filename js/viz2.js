@@ -996,7 +996,7 @@ function updateBarChart(pop) {
            root = newData[0];
            root.children.forEach(collapse);
            update(root);
-           document.location.href = "#vizXXXX";
+           document.location.href = "#viz3";
         })
         .on("mouseover", function(d) {
            nd = eval(d)
