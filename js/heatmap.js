@@ -28,7 +28,7 @@ function(error, data) {
       .domain([ -2, 0, 2])
       .range(colors);
   
-  var svg1 = d3.select("#viz1").append("svg")
+  var svg1 = d3.select("#chart1").append("svg")
       .attr("width", width1 + margin.left + margin.right)
       .attr("height", height1 + margin.top + margin.bottom)
       .append("g")
@@ -52,16 +52,16 @@ function(error, data) {
         .on("mouseover", function(d){
                d3.select(this).classed("cell-hover",true);
 
-               d3.select("#tooltip")
+               d3.select("#tooltip1")
                  .style("left", (d3.event.pageX+10) + "px")
                  .style("top", (d3.event.pageY-10) + "px")
                  .select("#value")
                  .text("\nMutation:"+d.Mut+"\nPerson:"+d.Sample);  
-               d3.select("#tooltip").classed("hidden", false);
+               d3.select("#tooltip1").classed("hidden", false);
         })
         .on("mouseout", function(){
                d3.select(this).classed("cell-hover",false);
-               d3.select("#tooltip").classed("hidden", true);
+               d3.select("#tooltip1").classed("hidden", true);
         })
         ;
 
