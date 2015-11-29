@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Genomics Visualization">
+    <meta name="author" content="Nate Black, Gunnar Kleeman, Malini Mittal">
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <title>Genomics Visualization</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/genomics.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+<script>
+    var shiftWindow = function() { scrollBy(0, -50) };
+    window.addEventListener("hashchange", shiftWindow);
+    function load() { if (window.location.hash) shiftWindow(); }
+  </script>
+</head>
+
+<body onload="load()">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Genomics Visualization</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#viz1">Visualization</a>
+                    </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#team">Team</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/nathanieljblack/Genomics">Github</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="featurette" id="about">
+            <h2 class="featurette-heading">About
+                <span class="text-muted small"><em>Making Genomics Accessible</em></span>
+            </h2>
+            <p class="lead">Genomics is a burgeoning field in genetics allowing researchers to analyze the function and structure of the genome. The field is highly technical and often inaccessible to the non-PhDs of the world. We aim to improve the accessibility of genomics through an easy-to-use visualization.</p>
+        </div>
+
+        <hr class="featurette-divider">
+        <!-- First Featurette -->
+        <div class="featurette" id="viz1">
+            <h2 class="featurette-heading">Summary Level
+                <span class="text-muted small"><em>Select A Demographic</em></span>
+            </h2>
+            <p class="lead"> A clustered summary of the one thousand genomes data for the mitrochondrial genome, mutations are color coded for severity (red = pathogenic, white = unclassified and blue = benign). <b>Select a population to view the individual mutations within that population.</b> </p>
+            <div class="btn-group-wrap">
+                <div id="selector" class="btn-group">
+                    <button type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="British in England and Scotland">GBR</button>      
+                    <button type="button" class="btn btn-default" value="FIN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Finnish in Finland">FIN</button>
+                    <button type="button" class="btn btn-default" value="CHS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Southern Han Chinese, China">CHS</button>   
+                    <button type="button" class="btn btn-default" value="PUR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Puerto Rican in Puerto Rico">PUR</button>   
+                    <button type="button" class="btn btn-default" value="CDX" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Chinese Dai in Xishuangbanna, China">CDX</button>   
+                    <button type="button" class="btn btn-default" value="CLM" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Colombian in Medellin, Colombia">CLM</button>   
+                    <button type="button" class="btn btn-default" value="IBS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Iberian populations in Spain">IBS</button>   
+                    <button type="button" class="btn btn-default" value="PEL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Peruvian in Lima, Peru">PEL</button>   
+                    <button type="button" class="btn btn-default" value="PJL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Punjabi in Lahore,Pakistan">PJL</button>   
+                    <button type="button" class="btn btn-default" value="KHV" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Kinh in Ho Chi Minh City, Vietnam">KHV</button> 
+                    <button type="button" class="btn btn-default" value="GWD" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Gambian in Western Division, The Gambia">GWD</button>   
+                    <button type="button" class="btn btn-default" value="ESN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Esan in Nigeria">ESN</button>   
+                    <button type="button" class="btn btn-default" value="BEB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Bengali in Bangladesh">BEB</button>   
+                    <button type="button" class="btn btn-default" value="MSL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Mende in Sierra Leone">MSL</button>     
+                    <button type="button" class="btn btn-default" value="ACB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="African Caribbean in Barbados">ACB</button>  
+                </div>          
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="featurette" id="viz2">
+            <h2 class="featurette-heading">Disease Level
+                <span class="text-muted small"><em>Select A Disease</em></span>
+            </h2>
+            <p class="lead">A comparison of the prevalence of diseases within the selected sub-population with that of the total population is presented in the chart below. The x-axis represents the various diseases, while the y-axis represents the percentage of mutations. There are a total of 5112 mutations in the overall population of genomes in the data. As an example, 44.05% of the 5112 mutations in the overall population, and 35.93% of the 295 mutations for the GBR population are associated with breast cancer.<br><br><b>Hover on the bars to see the prevalence, or hover on the disease label to see the full disease name, or click on the bars or the disease label to find out more information about the disease.</b></p>
+        
+        
+
+        <div class="container" id="part2">
+                <br></br>
+                <div class="row">
+                    <div class="col-xs-8 col-md-6"><div id="tooltip1" class="hidden">
+                        <p><span id="value"></p>
+                        </div>
+                        <div id="chart1" style='overflow:auto; width:1080px; height:700px;'></div>
+                        </div></div>
+                    <div class="col-xs-10 col-md-6" id="viz2"></div>
+                </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <div class="featurette" id="vizXXXX">
+            <h2 class="featurette-heading">Mutation Level
+                <span class="text-muted small"><em>Select A Mutation</em></span>
+            </h2>
+            <p class="lead">From left to right, the tree below provides additional detail on genes and mutations related to your selected disease. <b>Click on a colored node to see the mutations associated with that gene or click on the text of the disease/gene/mutation to get more information.</b></p>
+            <!--<blockquote id="diseaseDesc"></blockquote>-->
+        </div>
+
+        <hr class="featurette-divider">
+            <div class="container" id="part3">
+                <br></br>
+                <div class="row">
+                    <div class="col-xs-8 col-md-6"><h2><span class="lead" id="diseaseDesc"></span></h2></div>
+                    <div class="col-xs-10 col-md-6" id="viz3"></div>
+                </div>
+            </div>
+
+        <hr class="featurette-divider">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h2 align="center"><span class="text-muted small" align="center"><em>Data</em></span></h2>
+                    <div class="list-group">
+                          <a class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Size</h4>
+                            <p class="list-group-item-text" align="center">X MB, 2,500 individuals</p>
+                          </a>
+                          <a class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Source</h4>
+                            <p class="list-group-item-text" align="center">1000 Genome and ClinVar</p>
+                          </a>
+                          <a class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Description</h4>
+                            <p class="list-group-item-text" align="center">X ethnicities, Y diseases, & Z mutations</p>
+                          </a>
+                        </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <h2 align="center"><span class="text-muted small"><em>Goals</em></span></h2>
+                        <div class="list-group">
+                          <a class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Explore</h4>
+                            <p class="list-group-item-text" align="center">Explore trends across demographics</p>
+                          </a>
+                          <a class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Inform</h4>
+                            <p class="list-group-item-text" align="center">Retrieve more information on disease mutations</p>
+                          </a>
+                          <a class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Link</h4>
+                            <p class="list-group-item-text" align="center">Clearly link demographic, disease, and mutation</p>
+                          </a>
+                        </div>
+
+                </div>
+
+                <div class="col-sm-4">
+                    <h2 align="center"><span class="text-muted small" align="center"><em>Tools</em></span></h2>
+                        <div class="list-group">
+                          <a href="http://getbootstrap.com/" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Bootstrap</h4>
+                            <p class="list-group-item-text" align="center">Responsive web framework toolkit</p>
+                          </a>
+                          <a href="http://www.d3js.org" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">d3.js</h4>
+                            <p class="list-group-item-text" align="center">Javascript library for visualizations</p>
+                          </a>
+                          <a href="http://pandas.pydata.org/" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Pandas</h4>
+                            <p class="list-group-item-text" align="center">Python library used for data wrangling</p>
+                          </a>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="container" id="team">
+          <div class="row">
+            <div class="col-sm-4">
+                <div class="team-member">
+              <img class='img-circle img-responsive center-block' src='img/nate.jpeg' alt=""/>
+              <h3>Nate Black</h3>
+              <a href="https://github.com/nathanieljblack"><i class="fa fa-github fa-4x"></i></a>
+              <a href="https://www.linkedin.com/pub/nate-black/12/aa1/576"><i class="fa fa-linkedin-square fa-4x"></i></a>
+              <a href="mailto:nathaniel.black@ischool.berkeley.edu"><i class="fa fa-envelope fa-4x"></i></a>
+                </div>
+
+            </div>
+            <div class="col-sm-4">
+                <div class="team-member">
+              <img class='img-circle img-responsive center-block' src='img/gunnar.jpeg' alt=""/>
+              <h3>Gunnar Kleeman</h3>
+              <a href="https://github.com/gunnarklee"><i class="fa fa-github fa-4x"></i></a>
+              <a href="https://www.linkedin.com/in/gunnarkleemann"><i class="fa fa-linkedin-square fa-4x"></i></a>
+              <a href="mailto:gunnarklee@ischool.berkeley.edu"><i class="fa fa-envelope fa-4x"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="team-member">
+              <img class='img-circle img-responsive center-block' src='img/malini.jpeg' alt=""/>
+              <h3>Malini Mittal</h3>        
+              <a href="https://github.com/malinimittal"><i class="fa fa-github fa-4x"></i></a>
+              <a href="https://www.linkedin.com/in/malinimittal"><i class="fa fa-linkedin-square fa-4x"></i></a>
+              <a href="mailto:malini.mittal@ischool.berkeley.edu"><i class="fa fa-envelope fa-4x"></i></a>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Genomics Visualization 2015</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/d3.js"></script>
+    <script type="text/javascript" src="js/d3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+    <script type="text/javascript" src="data/data.js"></script>
+    <script src="js/viz2.js"></script>
+    <script src="js/viz3.js"></script>
+    <script src="js/heatmap.js"></script>
+
+    <script type="text/javascript">
+        var selectedPopulation =  "GBR";
+
+        $(function() {
+                $('#selector button').click( function() {
+                    $(this).addClass('active').siblings().removeClass('active');
+                });
+        });
+
+        function grabPopulation(clicked_id){
+                selectedPopulation = clicked_id;
+                d3.select("#viz2SVG").remove();
+                d3.select("#viz1SVG").remove();
+		document.location.href = '#viz2';
+                updateHeatMap(selectedPopulation);
+                updateBarChart(selectedPopulation);
+        }
+
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+        });
+    </script>
+
+    
+</body>
+
+</html>
