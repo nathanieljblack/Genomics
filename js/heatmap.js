@@ -19,7 +19,7 @@ function updateHeatMap(pop) {
   var margin = { top: 50, right: 50, bottom: 100, left: 50 },
     cellSize=5;
     col_number=111;
-    row_number= popRows[selectedPopulation];
+    row_number= popRows[pop];
     width1 = cellSize*col_number, 
     height1 = cellSize*row_number , 
     legendElementWidth = cellSize*10,
