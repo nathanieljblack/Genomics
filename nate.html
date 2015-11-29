@@ -266,7 +266,7 @@
         function grabPopulation(clicked_id){
                 selectedPopulation = clicked_id;
                 d3.select("#viz2SVG").remove();
-                d3.select("#chart1").remove();
+                d3.select("#viz1SVG").remove();
 		document.location.href = '#viz2';
                 updateHeatMap(selectedPopulation);
                 updateBarChart(selectedPopulation);

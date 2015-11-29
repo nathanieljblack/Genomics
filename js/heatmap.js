@@ -49,6 +49,7 @@ function updateHeatMap(pop) {
         .range(colors);
     
     var svg1 = d3.select("#chart1").append("svg")
+        .attr('id', 'viz1SVG')
         .attr("width", width1 + margin.left + margin.right)
         .attr("height", height1 + margin.top + margin.bottom)
         .append("g")
