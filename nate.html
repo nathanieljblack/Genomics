@@ -262,6 +262,7 @@
         function grabPopulation(clicked_id){
                 selectedPopulation = clicked_id;
                 d3.select("#viz2SVG").remove();
+		document.location.href = '#viz2';
                 updateBarChart(selectedPopulation);
         }
 
