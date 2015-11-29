@@ -1,7 +1,25 @@
+var popRows = 
+        {'CLM': 93, 
+        'PJL': 70,
+        'BEB': 3,
+        'CDX': 97, 
+        'GWD': 97, 
+        'KHV': 100, 
+        'PEL': 85, 
+        'ACB': 87, 
+        'CHS': 103, 
+        'GBR': 88, 
+        'MSL': 59, 
+        'ESN': 81, 
+        'IBS': 104, 
+        'FIN': 96, 
+        'PUR': 94};
+
+
 var margin = { top: 50, right: 50, bottom: 100, left: 50 },
   cellSize=5;
   col_number=111;
-  row_number=88;
+  row_number= popRows[selectedPopulation];
   width1 = cellSize*col_number, 
   height1 = cellSize*row_number , 
   legendElementWidth = cellSize*10,
