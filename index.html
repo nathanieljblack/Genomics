@@ -87,14 +87,16 @@
         
         <div class="row">
                 <div class="col-xs-12 col-md-8">
-                <img class='img-responsive center-block' src='img/Heatmap.png' alt="" style='width:550px; height:300px;'/></div>
+                <img class='img-responsive center-block' src='img/Heatmap.png' alt="" style='width:550px; height:300px;'/>
+                </div>
                 <div class="col-xs-6 col-md-4">
                     <div class="featurette" id="viz4">
                         <div id="tooltip2" class="hidden"><p><span id="value"></span></p></div>
                         <div id="chart2" style='width:200px; height:400px;'></div>
                     </div>
 
-        </div> 
+                </div> 
+        </div>
 
 
         <h2 class="featurette-heading">Population level
@@ -149,9 +151,7 @@
                     </div>
                 </div>          
             </div>
-        </div>
 
-        </div>
 
  
         <hr class="featurette-divider">
@@ -161,19 +161,7 @@
                 <span class="text-muted small"><em>Select A Disease</em></span>
             </h2>
             <p class="lead">A comparison of the prevalence of diseases within the selected sub-population with that of the total population is presented in the chart below. The x-axis represents the various diseases, while the y-axis represents the percentage of mutations. There are a total of 5112 mutations in the overall population of genomes in the data. As an example, 44.05% of the 5112 mutations in the overall population, and 35.93% of the 295 mutations for the GBR population are associated with breast cancer.<br><br><b>Hover on the bars to see the prevalence, or hover on the disease label to see the full disease name, or click on the bars or the disease label to find out more information about the disease.</b></p>
-        
-        
 
-       <div class="container" id="viz2Split">
-                <br></br>
-                <div class="row">
-                 <!--    <div class="col-md-6" id="viz2Left">
-                        <div id="tooltip1" class="hidden"><p><span id="value"></span></p></div>
-                        <div id="chart1" style='overflow:auto; width:540px; height:600px;'></div>
-                    </div> -->
-                    <div class="col-md-6" id="viz2Right"></div>
-                </div>
-        </div>
         </div>
 
         <hr class="featurette-divider">
@@ -318,7 +306,6 @@
     <script type="text/javascript" src="data/data.js"></script>
     <script src="js/viz2.js"></script>
     <script src="js/viz3.js"></script>
-    <script src="js/heatmap.js"></script>
     <script src="js/Sidebar.js"></script>
     <script type="text/javascript">
         var selectedPopulation =  "GBR";
@@ -332,9 +319,7 @@
         function grabPopulation(clicked_id){
                 selectedPopulation = clicked_id;
                 d3.select("#viz2SVG").remove();
-                d3.select("#viz1SVG").remove();
         document.location.href = '#viz2';
-                updateHeatMap(selectedPopulation);
                 updateBarChart(selectedPopulation);
         }
 
