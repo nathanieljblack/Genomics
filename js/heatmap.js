@@ -88,7 +88,7 @@ function updateHeatMap(pop) {
 
     svg1.append("text")
       .attr("class", "x label")
-      .attr("x", width1)
+      .attr("x", width1 - 20)
       .attr("y", height1 + margin.bottom-5)
       .attr("text-anchor", "end")
       .text("Position on Chromosome")
