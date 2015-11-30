@@ -848,9 +848,9 @@ var root = BC[0];
 
 function updateBarChart(pop) {
 
-  var margin2 = {top: 20, right: 20, bottom: 20, left: 50},
-      width2 = 900 - margin2.left - margin2.right,
-      height2 = 900 - margin2.top - margin2.bottom;
+  var margin2 = {top: 50, right: 50, bottom: 50, left: 50},
+      width2 = 1080 - margin2.left - margin2.right,
+      height2 = 700 - margin2.top - margin2.bottom;
 
   var tooltip = d3.select('#viz2').append('div')
          .style('position','absolute') //To allow d3 to follow the position absolute to the relationship to the page
