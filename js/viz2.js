@@ -935,7 +935,7 @@ function updateBarChart(pop) {
         .attr('class', 'y label')
         .attr("transform", "rotate(-90)")
         .attr("y", 2)
-        .attr("dy", "0.75em")
+        .attr("dy", "0.9em")
         .style("text-anchor", "end")
         .style("font", "sans-serif")
         .style("font-size","12px")
