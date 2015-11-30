@@ -1039,13 +1039,13 @@ function updateBarChart(pop) {
         });
 
     legend.append("rect")
-        .attr("x", width2 - 18)
+        .attr("x", width2 - 50)
         .attr("width", 18)
         .attr("height", 18)
         .style("fill", color);
 
     legend.append("text")
-        .attr("x", width2 - 24)
+        .attr("x", width2 - 56)
         .attr("y", 9)
         .attr("dy", ".35em")
         .style("font", "sans-serif")
