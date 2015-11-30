@@ -849,7 +849,7 @@ var root = BC[0];
 function updateBarChart(pop) {
 
   var margin2 = {top: 20, right: 20, bottom: 20, left: 50},
-      width2 = 550 - margin2.left - margin2.right,
+      width2 = 540 - margin2.left - margin2.right,
       height2 = 600 - margin2.top - margin2.bottom;
 
   var tooltip = d3.select('#viz2Right').append('div')
@@ -1039,13 +1039,13 @@ function updateBarChart(pop) {
         });
 
     legend.append("rect")
-        .attr("x", width2 - 50)
+        .attr("x", width2 - 70)
         .attr("width", 18)
         .attr("height", 18)
         .style("fill", color);
 
     legend.append("text")
-        .attr("x", width2 - 56)
+        .attr("x", width2 - 76)
         .attr("y", 9)
         .attr("dy", ".35em")
         .style("font", "sans-serif")
