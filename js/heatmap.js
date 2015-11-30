@@ -16,7 +16,7 @@ var popRows =
         'PUR': 94};
 
 function updateHeatMap(pop) {
-  var margin = { top: 20, right: 20, bottom: 50, left: 10 },
+  var margin = { top: 50, right: 20, bottom: 20, left: 10 },
     cellSize=5;
     col_number=111;
     row_number= popRows[pop];
