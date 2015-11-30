@@ -5145,6 +5145,7 @@ a.thumbnail.active {
   margin-bottom: -1px;
   background-color: #fff;
   border: 1px solid #ddd;
+  width: 95%;
 }
 .list-group-item:first-child {
   border-top-left-radius: 4px;
