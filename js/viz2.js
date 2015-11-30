@@ -848,8 +848,8 @@ var root = BC[0];
 
 function updateBarChart(pop) {
 
-  var margin2 = {top: 20, right: 20, bottom: 20, left: 25},
-      width2 = 600 - margin2.left - margin2.right,
+  var margin2 = {top: 20, right: 20, bottom: 20, left: 30},
+      width2 = 650 - margin2.left - margin2.right,
       height2 = 600 - margin2.top - margin2.bottom;
 
   var tooltip = d3.select('#viz2').append('div')
