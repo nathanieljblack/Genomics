@@ -169,50 +169,21 @@
             
             <div class="btn-group-wrap">
                 <div id="selector" class="btn-group">
-                    <button type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="British in England and Scotland">GBR</button>   
-                    </div> 
-                <div id="selector" class="btn-group">   
+                    <button type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="British in England and Scotland">GBR</button>     
                     <button type="button" class="btn btn-default" value="FIN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Finnish in Finland">FIN</button>
-                    </div> 
-                <div id="selector" class="btn-group">
                     <button type="button" class="btn btn-default" value="CHS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Southern Han Chinese, China">CHS</button>  
-                    </div> 
-                <div id="selector" class="btn-group">   
                     <button type="button" class="btn btn-default" value="PUR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Puerto Rican in Puerto Rico">PUR</button> 
-                    </div>  
-                <div id="selector" class="btn-group">
                     <button type="button" class="btn btn-default" value="CDX" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Chinese Dai in Xishuangbanna, China">CDX</button>  
-                    </div> 
-                <div id="selector" class="btn-group">
                     <button type="button" class="btn btn-default" value="CLM" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Colombian in Medellin, Colombia">CLM</button> 
-                    </div>  
-                <div id="selector" class="btn-group">
                     <button type="button" class="btn btn-default" value="IBS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Iberian populations in Spain">IBS</button> 
-                    </div>  
-                <div id="selector" class="btn-group">
                     <button type="button" class="btn btn-default" value="PEL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Peruvian in Lima, Peru">PEL</button> 
-                    </div>  
-                <div id="selector" class="btn-group">
                     <button type="button" class="btn btn-default" value="PJL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Punjabi in Lahore,Pakistan">PJL</button> 
-                    </div>  
-                <div id="selector" class="btn-group">
                     <button type="button" class="btn btn-default" value="KHV" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Kinh in Ho Chi Minh City, Vietnam">KHV</button> 
-                    </div>
-                <div id="selector" class="btn-group">
-                    <button type="button" class="btn btn-default" value="GWD" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Gambian in Western Division, The Gambia">GWD</button> 
-                    </div>  
-                <div id="selector" class="btn-group">    
+                    <button type="button" class="btn btn-default" value="GWD" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Gambian in Western Division, The Gambia">GWD</button>  
                     <button type="button" class="btn btn-default" value="ESN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Esan in Nigeria">ESN</button>  
-                    </div> 
-                <div id="selector" class="btn-group">    
-                    <button type="button" class="btn btn-default" value="BEB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Bengali in Bangladesh">BEB</button> 
-                    </div>  
-                <div id="selector" class="btn-group">    
-                    <button type="button" class="btn btn-default" value="MSL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Mende in Sierra Leone">MSL</button>   
-                    </div>  
-                <div id="selector" class="btn-group">    
+                    <button type="button" class="btn btn-default" value="BEB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Bengali in Bangladesh">BEB</button>  
+                    <button type="button" class="btn btn-default" value="MSL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Mende in Sierra Leone">MSL</button>     
                     <button type="button" class="btn btn-default" value="ACB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="African Caribbean in Barbados">ACB</button>  
-                    </div>
                 </div>          
             </div>
 
@@ -326,12 +297,12 @@
                 $('#selector button').click( function() {
                     $(this).addClass('active').siblings().removeClass('active');
                 });
-        });
+        });         
 
         function grabPopulation(clicked_id){
                 selectedPopulation = clicked_id;
                 d3.select("#viz2SVG").remove();
-        document.location.href = '#viz2';
+            document.location.href = '#viz2';
                 updateBarChart(selectedPopulation);
         }
 
