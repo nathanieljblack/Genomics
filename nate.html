@@ -80,7 +80,7 @@
             <p class="lead"> A clustered summary of the one thousand genomes data for the mitrochondrial genome, mutations are color coded for severity (red = pathogenic, white = unclassified and blue = benign). <b>Select a population to view the individual mutations within that population.</b> </p>
             <div class="btn-group-wrap">
                 <div id="selector" class="btn-group">
-                    <button type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="British in England and Scotland">GBR</button>      
+                    <button id='GBR' type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="British in England and Scotland" data-alt-src="/img/GBR.png">GBR</button>      
                     <button type="button" class="btn btn-default" value="FIN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Finnish in Finland">FIN</button>
                     <button type="button" class="btn btn-default" value="CHS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Southern Han Chinese, China">CHS</button>   
                     <button type="button" class="btn btn-default" value="PUR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Puerto Rican in Puerto Rico">PUR</button>   
@@ -97,7 +97,7 @@
                     <button type="button" class="btn btn-default" value="ACB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="African Caribbean in Barbados">ACB</button>  
                 </div>          
             </div>
-        <img class="img-responsive center-block" src="img/BASE.png" alt="" width="1080" height="800"> 
+        <img id='heat' class="heat img-responsive center-block" src="img/BASE.png" alt="" width="1080" height="800"> 
         </div>
 
         <hr class="featurette-divider">
@@ -262,6 +262,17 @@
                 $('#selector button').click( function() {
                     $(this).addClass('active').siblings().removeClass('active');
                 });
+        });
+
+        var imageSwap = function () {
+        var $this = $(this);
+        var newSource = $this.data('alt-src');
+        $this.data('alt-src', $this.attr('src'));
+        $('#heat').attr('src', newSource);
+    }
+
+        $(function () {
+            $('img.heat').hover(sourceSwap, sourceSwap);
         });
 
         function grabPopulation(clicked_id){
