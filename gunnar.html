@@ -19,12 +19,17 @@
     function load() { if (window.location.hash) shiftWindow(); }
 
     //Width and height
-            var w = 500;
-            var h = 100;
-            var barPadding = 1;
-            
-            var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
-                            11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+    var w = 100;
+    var h = 500;
+    var barPadding = 1;
+    var diseaseDt = ['Brain_pseudoatrophy', 'Breast cancer','Cardiomyopathy',
+                'Colorectal_cancer','Cyto_C_deficient','Deafness',
+                'Glomerulosclerosis and cardiomyopathy','Juvenile_myopathy',
+                'Lebers_optic_atrophy','Leighs_disease',
+                'No disease in ClinVar','Obesity','Ovary cancer',
+                'Parkinson_disease','SIDS', 'Sudden death'];      
+    var BarSzDt = [ 1, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+                    11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
             
             //Create SVG element
             var svg = d3.select("body")
@@ -77,7 +82,7 @@
                         <a href="https://github.com/nathanieljblack/Genomics">Github</a>
                     </li>
                     <li>
-                        <a href="#faq">FAQ</a>
+                        <a href="http://nathanieljblack.github.io/Genomics/FAQ.html">FAQ</a>
                     </li>
                 </ul>
             </div>
