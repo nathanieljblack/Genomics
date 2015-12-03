@@ -152,8 +152,8 @@
             
             <div class="btn-group-wrap">
                 <div id="selector" class="btn-group">
-                    <button id="GBR" type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="British in England and Scotland">GBR</button>     
-                    <button id="GBR" type="button" class="btn btn-default" value="FIN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Finnish in Finland">FIN</button>
+                    <button type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="British in England and Scotland">GBR</button>     
+                    <button type="button" class="btn btn-default" value="FIN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Finnish in Finland">FIN</button>
                     <button type="button" class="btn btn-default" value="CHS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Southern Han Chinese, China">CHS</button>  
                     <button type="button" class="btn btn-default" value="PUR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Puerto Rican in Puerto Rico">PUR</button> 
                     <button type="button" class="btn btn-default" value="CDX" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Chinese Dai in Xishuangbanna, China">CDX</button>  
@@ -344,11 +344,12 @@
             $('[data-toggle="tooltip"]').tooltip({container: 'body'});   
         });
 
-        $('#GBR').mouseover(function() {
-            $('#heat').attr("src","img/heatmaps/GBR.png");
+        $('.btn').mouseover(function() {
+            var newImage = "img/heatmaps/".concat($(this).value);
+            $('#heat').attr("src", newImage);
             });
 
-        $('#GBR').mouseout(function() {
+        $('.btn').mouseout(function() {
              $('#heat').attr("src","img/heatmaps/BASE.png");
         });
     </script>
