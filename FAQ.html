@@ -1,0 +1,111 @@
+   
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Genomics Visualization FAQ">
+    <meta name="author" content="Nate Black, Gunnar Kleemann, Malini Mittal">
+    <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+    <title>Genomics Visualization FAQ</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/genomics.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+<script>
+    var shiftWindow = function() { scrollBy(0, -50) };
+    window.addEventListener("hashchange", shiftWindow);
+    function load() { if (window.location.hash) shiftWindow(); }
+  </script>
+</head>
+
+
+
+
+   <hr class="featurette-divider">
+
+        <div class="featurette" id="viz2">
+            <h2 class="featurette-heading">Disease Level
+                <span class="text-muted small"><em>Select A Disease</em></span>
+            </h2>
+            <p class="lead">A comparison of the prevalence of diseases within the selected sub-population with that of the total population is presented in the chart below. The x-axis represents the various diseases, while the y-axis represents the percentage of mutations. There are a total of 5112 mutations in the overall population of genomes in the data. As an example, 44.05% of the 5112 mutations in the overall population, and 35.93% of the 295 mutations for the GBR population are associated with breast cancer.<br><br><b>Hover on the bars to see the prevalence, or hover on the disease label to see the full disease name, or click on the bars or the disease label to find out more information about the disease.</b></p>
+
+        </div>
+
+        <hr class="featurette-divider">
+        
+        <div class="featurette" id="vizXXXX">
+            <h2 class="featurette-heading">Mutation Level
+                <span class="text-muted small"><em>Select A Mutation</em></span>
+            </h2>
+            <p class="lead">From left to right, the tree below provides additional detail on genes and mutations related to your selected disease. <b>Click on a colored node to see the mutations associated with that gene or click on the text of the disease/gene/mutation to get more information.</b></p>
+        </div>
+
+            <div class="container" id="part3">
+                <h3><span class="text-muted">Disease Description</span></h3>
+                <blockquote><h2><span class="lead" id="diseaseDesc"></span></h2></blockquote>
+                <div id="viz3"></div>
+            </div>
+
+        <hr class="featurette-divider">
+
+        <div class="featurette" id="faq">
+
+            <h2 class="featurette-heading">Frequently Asked Questions</h2>
+
+        <h3><span class="text-muted"><em>What am I looking at?</em></span></h3>
+            <p class="lead"> This page presents genetic data and associated disease risks for a diverse set of more than 2500 people. What you see is a small subset of the DNA in the human body. In particular these data are from the mitochondrial DNA which serves as the bodies power plant.</p>
+
+            <h3><span class="text-muted"><em>It is hard to interpret the heatmap- how should I explore the visualization?</em></span></h3>
+            <p class="lead"> Think of the heatmap as an overview of many people's mitochondrial genomes. You can see each genome as a row and the 110 mutations shown here as columns. In addition, mutation columns are arranged by disease so for example you can see the left portion of the graph shows pathogenic mutations associated with breast cancer. </p>
+
+            <h3><span class="text-muted"><em>How do I use this page?</em></span></h3>
+            <p class="lead"> This is an exploration tool meant to inspire curiosity  further research. The <strong> overview panel </strong> presents a birds-eye-view of genetic differences across global populations. Mutations with disease associations are coded in red. Mutations often segregate with ethnic group. Explore the distribution of disease associated mutations in specific populations by clicking buttons on top of the overview panel.</p>
+
+            <p class="lead">The <strong> disease panel </strong> shows total and subpopulation frequency of mutations associated with a specific disease. You can get an idea of how prevalent mutations for a specific disease are. By clicking a bar or label for an associated disease you can drill down further and go to the mutations panel</p>
+
+            <p class="lead">The <strong> mutations panel </strong> shows mutations associated with a single disease as tree. Mutations are represented as "leaves". The disease view allows linking out to more detailed resources about mutations or specific diseases. </p>
+
+            <h3><span class="text-muted"><em>What is genomics?</em></span></h3>
+            <p class="lead"> While classical genetics is concerned with how genes in our DNA affects inherited traits, genomics is concerned with how all genes in our DNA affect traits and biological processes.</p>
+     
+            <h3><span class="text-muted"><em>What is a gene?</em></span></h3>
+            <p class="lead"> A genome is a copy of all </p>
+            
+      
+            <h3><span class="text-muted"><em>What is a chromosome?</em></span></h3>
+            <p class="lead"> A chromosome is a molecule of DNA that is comprised of genes and regions between genes. the human genome has 23 pairs of chromosomes. Additionally humans carry mitochindria which have thier own genome (mtDNA). While the mitochndrial DNA is not counted in the 23 pairs of human chromosomes, it is considered part of the human genome and mutations in mtDNA cause a number of human diseases <http://ghr.nlm.nih.gov/mitochondrial-dna/show/Conditions> </p>
+            
+
+            <h3><span class="text-muted"><em>What is a genome?</em></span></h3>
+            <p class="lead"> A genome is a copy of all of the DNA in an organism. It represents every gene and mutaion that contributes to the traits of that individual.</p>
+
+            <h3><span class="text-muted"><em>How is a genome different from a gene?</em></span></h3>
+            <p class="lead">A genome is a collection of genes as well as other DNA.</p>
+
+            <h3><span class="text-muted"><em>What does chrMT-XXXX-X mean?</em></span></h3>
+            <p class="lead"> This is the distict code that this web page uses for each mutation. It represents the 
+                1) chromosome 
+                2) position of the mutation on the chromosome (in base pair number)
+                3) The variant nucleotide (base pair)
+            For example chrMT-235947-A means that the mutation is found on the mitochondrial chromosome at the 235,847th base pair, and Adenine (A) is found instead of the reference base.</p>
+            
+            <h3><span class="text-muted"><em>What is a mutation?</em></span></h3>
+            <p class="lead">A mutation is a difference in the DNA from a reference genome (often referred to as "wild type"). genes within our DNA are the the blueprints for the physical structures that comprise our bodies. When these instructions are randomly changed they may not function as expected (think of a remote control that is missing a random button) and can cause a disease state. </p>
+
+            <h3><span class="text-muted"><em>Do mutations mean I will contract the disease associated with that mutation?</em></span></h3>
+            <p class="lead"> Any mutation functions as part of a the complex system that is the human body. Because of this it is hard to say that having a mutation for a specific disease will lead to that disease. Instead of thinking of the effect of a mutation as absolute think of it as changing the odds of developing a particilar disease state</p>
+
+                        <h3><span class="text-muted"><em>What is meant by clinical severity?</em></span></h3>
+            <p class="lead"> Answer...</p>
+
+            <h3><span class="text-muted"><em>What is a chromosome?</em></span></h3>
+            <p class="lead"> Answer...</p>
+    
+
+                        <h3><span class="text-muted"><em>Where can I learn more about genomics?</em></span></h3>
+            <p class="lead"> Answer...</p>
+
+        </div>

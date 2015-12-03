@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Genomics Visualization">
-    <meta name="author" content="Nate Black, Gunnar Kleeman, Malini Mittal">
+    <meta name="author" content="Nate Black, Gunnar Kleemann, Malini Mittal">
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
     <title>Genomics Visualization</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -17,6 +17,36 @@
     var shiftWindow = function() { scrollBy(0, -50) };
     window.addEventListener("hashchange", shiftWindow);
     function load() { if (window.location.hash) shiftWindow(); }
+
+    //Width and height
+            var w = 500;
+            var h = 100;
+            var barPadding = 1;
+            
+            var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+                            11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+            
+            //Create SVG element
+            var svg = d3.select("body")
+                        .append("svg")
+                        .attr("width", w)
+                        .attr("height", h);
+
+            svg.selectAll("rect")
+               .data(dataset)
+               .enter()
+               .append("rect")
+               .attr("x", function(d, i) {
+                    return i * (w / dataset.length);
+               })
+               .attr("y", function(d) {
+                    return h - (d * 4);
+               })
+               .attr("width", w / dataset.length - barPadding)
+               .attr("height", function(d) {
+                    return d * 4;
+               });
+
   </script>
 </head>
 
@@ -54,7 +84,7 @@
         </div>
     </nav>
 
-    <!-- Header/Banner -->
+    <!-- 
     <header class="header-image">
         <div class="headline">
             <div class="container">
@@ -63,29 +93,156 @@
             </div>
         </div>
     </header>
-
+    -->
     <!-- Page Content -->
     <div class="container">
 
+        <hr>
+
+        <div> <h2 class="featurette" id="about"> Making Genomics Accessible
+            </h2> 
+            <p class="lead">As human genetic data becomes more accessible, there is a need to provide insight into what human gentic data means. Our tool provides an entry into medical genetic data </p>
+        </div>
+
+        <hr>
+        <!-- First Featurette -->
+        <div class="featurette" id="viz1">
+
+            <div class="btn-group-wrap">
+                <div id="selector" class="btn-group">
+                    <button type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="British in England and Scotland">GBR</button>     
+                    <button type="button" class="btn btn-default" value="FIN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Finnish in Finland">FIN</button>
+                    <button type="button" class="btn btn-default" value="CHS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Southern Han Chinese, China">CHS</button>  
+                    <button type="button" class="btn btn-default" value="PUR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Puerto Rican in Puerto Rico">PUR</button> 
+                    <button type="button" class="btn btn-default" value="CDX" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Chinese Dai in Xishuangbanna, China">CDX</button>  
+                    <button type="button" class="btn btn-default" value="CLM" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Colombian in Medellin, Colombia">CLM</button> 
+                    <button type="button" class="btn btn-default" value="IBS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Iberian populations in Spain">IBS</button> 
+                    <button type="button" class="btn btn-default" value="PEL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Peruvian in Lima, Peru">PEL</button> 
+                    <button type="button" class="btn btn-default" value="PJL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Punjabi in Lahore,Pakistan">PJL</button> 
+                    <button type="button" class="btn btn-default" value="KHV" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Kinh in Ho Chi Minh City, Vietnam">KHV</button> 
+                    <button type="button" class="btn btn-default" value="GWD" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Gambian in Western Division, The Gambia">GWD</button>  
+                    <button type="button" class="btn btn-default" value="ESN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Esan in Nigeria">ESN</button>  
+                    <button type="button" class="btn btn-default" value="BEB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Bengali in Bangladesh">BEB</button>  
+                    <button type="button" class="btn btn-default" value="MSL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Mende in Sierra Leone">MSL</button>     
+                    <button type="button" class="btn btn-default" value="ACB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="African Caribbean in Barbados">ACB</button>  
+                </div>          
+            </div>
+
+            <div>
+            <script type="text/javascript">
+
+            //Width and height
+            var w = 500;
+            var h = 100;
+            var barPadding = 1;
+            
+            var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+                            11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+            
+            //Create SVG element
+            var svg = d3.select("body")
+                        .append("svg")
+                        .attr("width", w)
+                        .attr("height", h);
+
+            svg.selectAll("rect")
+               .data(dataset)
+               .enter()
+               .append("rect")
+               .attr("x", function(d, i) {
+                    return i * (w / dataset.length);
+               })
+               .attr("y", function(d) {
+                    return h - (d * 4);
+               })
+               .attr("width", w / dataset.length - barPadding)
+               .attr("height", function(d) {
+                    return d * 4;
+               });
+            
+        </script>
+        </div>
+
+
+            <img id='heat' class="heat img-responsive center-block" src="img/heatmaps/BASE.png" alt="" width="1080" height="800"> 
+
+
+            <p class="lead"> A summary of mutations found on the mitrochondrial genome. Genomes are shown on rows and and mutations are shown in columns. Blue highlighted mutations are benign, and red mutations are pathogenic. </p>
+    
+   <hr class="featurette-divider">
+
+        <div class="featurette" id="viz2">
+            <h2 class="featurette-heading">Disease Level
+                <span class="text-muted small"><em>Select A Disease</em></span>
+            </h2>
+            <p class="lead">A comparison of the prevalence of diseases within the selected sub-population with that of the total population is presented in the chart below. The x-axis represents the various diseases, while the y-axis represents the percentage of mutations. There are a total of 5112 mutations in the overall population of genomes in the data. As an example, 44.05% of the 5112 mutations in the overall population, and 35.93% of the 295 mutations for the GBR population are associated with breast cancer.<br><br><b>Hover on the bars to see the prevalence, or hover on the disease label to see the full disease name, or click on the bars or the disease label to find out more information about the disease.</b></p>
+
+        </div>
+
+        <hr class="featurette-divider">
+        
+        <div class="featurette" id="vizXXXX">
+            <h2 class="featurette-heading">Mutation Level
+                <span class="text-muted small"><em>Select A Mutation</em></span>
+            </h2>
+            <p class="lead">From left to right, the tree below provides additional detail on genes and mutations related to your selected disease. <b>Click on a colored node to see the mutations associated with that gene or click on the text of the disease/gene/mutation to get more information.</b></p>
+        </div>
+
+            <div class="container" id="part3">
+                <h3><span class="text-muted">Disease Description</span></h3>
+                <blockquote><h2><span class="lead" id="diseaseDesc"></span></h2></blockquote>
+                <div id="viz3"></div>
+            </div>
+
         <hr class="featurette-divider">
 
-        <div class="featurette" id="about">
-            <h2 class="featurette-heading">About
-                <span class="text-muted small"><em>Making Genomics Accessible</em></span>
-            </h2>
 
-            <p class="lead">As human genetic data is becoming more accessible, people need to grapple with complicated and medical literature if they want to undertsand what this information means for thier probability of developing specific diseases. </p> 
+        <hr class="featurette-divider">
 
-            <p class="lead"> <strong>We have built a tool that provides an entry to this data</strong>, starting with a broad overview of mutations, then showing which disease risks are enriched in different ethnic populations, and finally which mutations map to which diseases. With this tool, we aim to improve the accessibility of genomics through an easy-to-use visualization.</p>
+        <div class="container" id="team">
+          <br></br>
+          <div class="row">
+            <div class="col-sm-4">
+                <div class="team-member">
+              <img class='img-circle img-responsive center-block' src='img/nate.jpeg' alt=""/>
+              <h3>Nate Black</h3>
+              <a href="https://github.com/nathanieljblack"><i class="fa fa-github fa-4x"></i></a>
+              <a href="https://www.linkedin.com/pub/nate-black/12/aa1/576"><i class="fa fa-linkedin-square fa-4x"></i></a>
+              <a href="mailto:nathaniel.black@ischool.berkeley.edu"><i class="fa fa-envelope fa-4x"></i></a>
+                </div>
 
-            <div class="container">
+            </div>
+            <div class="col-sm-4">
+                <div class="team-member">
+              <img class='img-circle img-responsive center-block' src='img/gunnar.jpeg' alt=""/>
+              <h3>Gunnar Kleeman</h3>
+              <a href="https://github.com/gunnarklee"><i class="fa fa-github fa-4x"></i></a>
+              <a href="https://www.linkedin.com/in/gunnarkleemann"><i class="fa fa-linkedin-square fa-4x"></i></a>
+              <a href="mailto:gunnarklee@ischool.berkeley.edu"><i class="fa fa-envelope fa-4x"></i></a>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="team-member">
+              <img class='img-circle img-responsive center-block' src='img/malini.jpeg' alt=""/>
+              <h3>Malini Mittal</h3>        
+              <a href="https://github.com/malinimittal"><i class="fa fa-github fa-4x"></i></a>
+              <a href="https://www.linkedin.com/in/malinimittal"><i class="fa fa-linkedin-square fa-4x"></i></a>
+              <a href="mailto:malini.mittal@ischool.berkeley.edu"><i class="fa fa-envelope fa-4x"></i></a>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        div class="container">
         <div class="row">
                 <div class="col-sm-4">
                     <h2 align="center"><span class="text-muted small" align="center"><em>Data</em></span></h2>
                     <div class="list-group">
                           <a class="list-group-item">
                             <h4 class="list-group-item-heading" align="center">Size</h4>
-                            <p class="list-group-item-text" align="center">X MB, 2,500 individuals</p>
+                            <p class="list-group-item-text" align="center">19.8 MB, 2,532 individuals</p>
                           </a>
                           <a class="list-group-item">
                             <h4 class="list-group-item-heading" align="center">Source</h4>
@@ -93,7 +250,7 @@
                           </a>
                           <a class="list-group-item">
                             <h4 class="list-group-item-heading" align="center">Description</h4>
-                            <p class="list-group-item-text" align="center">X ethnicities, Y diseases, & Z mutations</p>
+                            <p class="list-group-item-text" align="center">15 ethnicities, 16 diseases, & 109 mutations</p>
                           </a>
                         </div>
                 </div>
@@ -137,172 +294,6 @@
 
             </div>
         </div>
-            
-        </div>
-
-        <hr class="featurette-divider">
-        <!-- First Featurette -->
-        <div class="featurette" id="viz1">
-
-            <h2 class="featurette-heading">Summary Level
-                <span class="text-muted small"><em>Select A Demographic</em></span>
-            </h2>
-            <p class="lead"> A summary of mutations found on the mitrochondrial genome. Genomes are shown on rows and and mutations are shown in columns. Blue highlighted mutations are benign, and red mutations are pathogenic. </p>
-            <img class='img-responsive center-block' src='img/Heatmap.png' alt="" style='width:550px; height:300px;'/>
-        
-        <!--<div class="row">
-                <div class="col-xs-12 col-md-8">
-                <img class='img-responsive center-block' src='img/Heatmap.png' alt="" style='width:550px; height:300px;'/>
-                </div>
-                <div class="col-xs-6 col-md-4">
-                    <div class="featurette" id="viz4">
-                        <div id="tooltip2" class="hidden"><p><span id="value"></span></p></div>
-                        <div id="chart2" style='width:200px; height:400px;'></div>
-                    </div>
-
-                </div> 
-        </div>-->
-
-        <!--
-        <h2 class="featurette-heading">Population level
-            <span class="text-muted small"><em>Select ethnicity</em></span>
-        </h2>
-        -->
-            
-            <div class="btn-group-wrap">
-                <div id="selector" class="btn-group">
-                    <button type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="British in England and Scotland">GBR</button>     
-                    <button type="button" class="btn btn-default" value="FIN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Finnish in Finland">FIN</button>
-                    <button type="button" class="btn btn-default" value="CHS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Southern Han Chinese, China">CHS</button>  
-                    <button type="button" class="btn btn-default" value="PUR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Puerto Rican in Puerto Rico">PUR</button> 
-                    <button type="button" class="btn btn-default" value="CDX" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Chinese Dai in Xishuangbanna, China">CDX</button>  
-                    <button type="button" class="btn btn-default" value="CLM" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Colombian in Medellin, Colombia">CLM</button> 
-                    <button type="button" class="btn btn-default" value="IBS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Iberian populations in Spain">IBS</button> 
-                    <button type="button" class="btn btn-default" value="PEL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Peruvian in Lima, Peru">PEL</button> 
-                    <button type="button" class="btn btn-default" value="PJL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Punjabi in Lahore,Pakistan">PJL</button> 
-                    <button type="button" class="btn btn-default" value="KHV" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Kinh in Ho Chi Minh City, Vietnam">KHV</button> 
-                    <button type="button" class="btn btn-default" value="GWD" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Gambian in Western Division, The Gambia">GWD</button>  
-                    <button type="button" class="btn btn-default" value="ESN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Esan in Nigeria">ESN</button>  
-                    <button type="button" class="btn btn-default" value="BEB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Bengali in Bangladesh">BEB</button>  
-                    <button type="button" class="btn btn-default" value="MSL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Mende in Sierra Leone">MSL</button>     
-                    <button type="button" class="btn btn-default" value="ACB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="African Caribbean in Barbados">ACB</button>  
-                </div>          
-            </div>
-
-
- 
-        <hr class="featurette-divider">
-
-        <div class="featurette" id="viz2">
-            <h2 class="featurette-heading">Disease Level
-                <span class="text-muted small"><em>Select A Disease</em></span>
-            </h2>
-            <p class="lead">A comparison of the prevalence of diseases within the selected sub-population with that of the total population is presented in the chart below. The x-axis represents the various diseases, while the y-axis represents the percentage of mutations. There are a total of 5112 mutations in the overall population of genomes in the data. As an example, 44.05% of the 5112 mutations in the overall population, and 35.93% of the 295 mutations for the GBR population are associated with breast cancer.<br><br><b>Hover on the bars to see the prevalence, or hover on the disease label to see the full disease name, or click on the bars or the disease label to find out more information about the disease.</b></p>
-
-        </div>
-
-        <hr class="featurette-divider">
-        
-        <div class="featurette" id="vizXXXX">
-            <h2 class="featurette-heading">Mutation Level
-                <span class="text-muted small"><em>Select A Mutation</em></span>
-            </h2>
-            <p class="lead">From left to right, the tree below provides additional detail on genes and mutations related to your selected disease. <b>Click on a colored node to see the mutations associated with that gene or click on the text of the disease/gene/mutation to get more information.</b></p>
-        </div>
-
-        <hr class="featurette-divider">
-            <div class="container" id="part3">
-                <br></br>
-                <div class="row">
-                    <div class="col-xs-8 col-md-6"><h2><span class="lead" id="diseaseDesc"></span></h2></div>
-                    <div class="col-xs-10 col-md-6" id="viz3"></div>
-                </div>
-            </div>
-
-        <hr class="featurette-divider">
-
-        <div class="featurette" id="faq">
-
-            <h2 class="featurette-heading">Frequently Asked Questions</h2>
-
-            <h3><span class="text-muted"><em>What am I looking at?</em></span></h3>
-            <p class="lead"> This page presents genetic data and associated disease risks for a diverse set of more than 2500 people. What you see is a small subset of the DNA in the human body. In particular these data are from the mitochondrial DNA which serves as the bodies powerplant.</p>
-
-            <h3><span class="text-muted"><em>It is hard to interpret the heatmap- how should I explore the visualization?</em></span></h3>
-            <p class="lead"> Think of the heatmap as an overview of many people's mitochondiral genomes. you can see each genome as a row and the 110 mutations shown here as columns. In addition, mutation columns are arranged by disease so for example you can see the left portion of te graph shows pathogenic mutations associated with breast cancer. </p>
-
-            <h3><span class="text-muted"><em>How do I use this page?</em></span></h3>
-            <p class="lead"> This is an exploration tool meant to inpire curiosity  furhter research. The top panel presents a birds-eye-view of genetic differences across global populations. Mutations with disease associations are coded in red. Mutations often segregate with ethnic group. Explore the distribution of disease associated mutations in specific populations by clicking buttons on top of the overview panel.</p>
-
-            <p class="lead">In the disease panel you see the total and subpopulation frequency of mutations associated with a specific disease. You can get an idea of how prevalent mutations for a specific disease are. By clicking a bar or label for an associated disease you can drill down further and go to the mutations panel</p>
-
-            <p class="lead">In the mutations panel there is information for one disease and a tree of all of the mitochondrial mutations assocaited with that disease. Mutations are represented as "leaves". The diesase view allows linking out to more detailed resources about mutaions or specific diseases. </p>
-
-            <h3><span class="text-muted"><em>What is genomics?</em></span></h3>
-            <p class="lead"> DNA forms the blueprint for the physical structures that comprise our bodies. While classical genetics is concerned with how genes in our DNA affects inherited traits, genomics is concerned with how all genes in our DNA affect traits and biological processes.</p>
-     
-            <h3><span class="text-muted"><em>What is a gene?</em></span></h3>
-            <p class="lead"> A genome is a copy of all </p>
-            
-      
-            <h3><span class="text-muted"><em>What is a chromosome?</em></span></h3>
-            <p class="lead"> Answer...</p>
-            <h3><span class="text-muted"><em>What is a What is a genome?</em></span></h3>
-            <p class="lead"> A genome is a copy of all of the </p>
-            <h3><span class="text-muted"><em>What is a chromosome?</em></span></h3>
-            <p class="lead"> Answer...</p>
-            
-            
-
-What does chrMT-XXXX-X mean?
-What is a mutation and what is meant by severity?
-what is mitochondria?
-How is a genome different from a gene?
-
-Do mutations mean I will contract the disease associated with that mutation?
-
-Where can I learn more about genomics?
-
-
-        </div>
-
-        <hr class="featurette-divider">
-
-        <div class="container" id="team">
-          <br></br>
-          <div class="row">
-            <div class="col-sm-4">
-                <div class="team-member">
-              <img class='img-circle img-responsive center-block' src='img/nate.jpeg' alt=""/>
-              <h3>Nate Black</h3>
-              <a href="https://github.com/nathanieljblack"><i class="fa fa-github fa-4x"></i></a>
-              <a href="https://www.linkedin.com/pub/nate-black/12/aa1/576"><i class="fa fa-linkedin-square fa-4x"></i></a>
-              <a href="mailto:nathaniel.black@ischool.berkeley.edu"><i class="fa fa-envelope fa-4x"></i></a>
-                </div>
-
-            </div>
-            <div class="col-sm-4">
-                <div class="team-member">
-              <img class='img-circle img-responsive center-block' src='img/gunnar.jpeg' alt=""/>
-              <h3>Gunnar Kleeman</h3>
-              <a href="https://github.com/gunnarklee"><i class="fa fa-github fa-4x"></i></a>
-              <a href="https://www.linkedin.com/in/gunnarkleemann"><i class="fa fa-linkedin-square fa-4x"></i></a>
-              <a href="mailto:gunnarklee@ischool.berkeley.edu"><i class="fa fa-envelope fa-4x"></i></a>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="team-member">
-              <img class='img-circle img-responsive center-block' src='img/malini.jpeg' alt=""/>
-              <h3>Malini Mittal</h3>        
-              <a href="https://github.com/malinimittal"><i class="fa fa-github fa-4x"></i></a>
-              <a href="https://www.linkedin.com/in/malinimittal"><i class="fa fa-linkedin-square fa-4x"></i></a>
-              <a href="mailto:malini.mittal@ischool.berkeley.edu"><i class="fa fa-envelope fa-4x"></i></a>
-                </div>
-            </div>
-          </div>
-        </div>
-
-        <hr class="featurette-divider">
 
         <!-- Footer -->
         <footer>
@@ -346,7 +337,18 @@ Where can I learn more about genomics?
         }
 
         $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
+            $('[data-toggle="tooltip"]').tooltip({container: 'body'});   
+        });
+
+        $('.btn').mouseover(function() {
+            var dir = "img/heatmaps/";
+            var f = $(this).val();
+            var newImage = dir.concat(f, ".png");
+            $('#heat').attr("src", newImage);
+            });
+
+        $('.btn').mouseout(function() {
+             $('#heat').attr("src","img/heatmaps/BASE.png");
         });
     </script>
 
