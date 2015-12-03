@@ -353,7 +353,37 @@
              $('#heat').attr("src","img/heatmaps/BASE.png");
         });
     </script>
-
+ <!-- Preload images-->
+ <div class="hidden">
+    <script type="text/javascript">
+        <!--//--><![CDATA[//><!--
+            var images = new Array()
+            function preload() {
+                for (i = 0; i < preload.arguments.length; i++) {
+                    images[i] = new Image()
+                    images[i].src = preload.arguments[i]
+                }
+            }
+            preload(
+                "img/heatmaps/GBR.png",
+                "img/heatmaps/ACB.png",
+                "img/heatmaps/BEB.png",
+                "img/heatmaps/CDX.png",
+                "img/heatmaps/CHS.png",
+                "img/heatmaps/CLM.png",
+                "img/heatmaps/ESN.png",
+                "img/heatmaps/FIN.png",
+                "img/heatmaps/GWD.png",
+                "img/heatmaps/IBS.png",
+                "img/heatmaps/KHV.png",
+                "img/heatmaps/MSL.png",
+                "img/heatmaps/PEL.png",
+                "img/heatmaps/PJL.png",
+                "img/heatmaps/PUR.png"
+            )
+        //--><!]]>
+    </script>
+</div>
     
 </body>
 
