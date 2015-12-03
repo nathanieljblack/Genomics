@@ -345,7 +345,8 @@
         });
 
         $('.btn').mouseover(function() {
-            var newImage = "img/heatmaps/".concat($(this).val());
+            var dir = "img/heatmaps/";
+            var newImage = dir.concat($(this).val());
             $('#heat').attr("src", newImage);
             });
 
