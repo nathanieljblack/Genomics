@@ -952,7 +952,6 @@ function updateBarChart(pop) {
            var newData = eval(selectedDisease);
            document.getElementById("diseaseDesc").innerHTML = diseaseDescriptionMap[selectedDisease];
            root = newData[0];
-           root.children.forEach(collapse);
            update(root);
            document.location.href = "#vizXXXX";
         });
@@ -995,7 +994,6 @@ function updateBarChart(pop) {
            var newData = eval(selectedDisease);
            document.getElementById("diseaseDesc").innerHTML = diseaseDescriptionMap[selectedDisease];
            root = newData[0];
-           root.children.forEach(collapse);
            update(root);
            document.location.href = "#vizXXXX";
         })

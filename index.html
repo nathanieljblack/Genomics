@@ -212,11 +212,8 @@
 
         <hr class="featurette-divider">
             <div class="container" id="part3">
-                <br></br>
-                <div class="row">
-                    <div class="col-xs-8 col-md-6"><h2><span class="lead" id="diseaseDesc"></span></h2></div>
-                    <div class="col-xs-10 col-md-6" id="viz3"></div>
-                </div>
+                <div align='center'><h2><span class="lead" id="diseaseDesc"></span></h2></div>
+                <div align='center' id="viz3"></div>
             </div>
 
         <hr class="featurette-divider">
@@ -373,7 +370,7 @@
         }
 
         $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();   
+            $('[data-toggle="tooltip"]').tooltip({container: 'body'});   
         });
     </script>
 
