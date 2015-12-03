@@ -345,8 +345,10 @@
         });
 
         $('.btn').mouseover(function() {
-            console.log($(this).val());
-            $('#heat').attr("src", "img/heatmaps/GBR.png");
+            var dir = "img/heatmaps/";
+            var f = $(this).val();
+            var newImage = dir.concat(f, ".png");
+            $('#heat').attr("src", newImage);
             });
 
         $('.btn').mouseout(function() {
