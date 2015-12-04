@@ -5,9 +5,9 @@ var tip = d3.tip()
             return "<a href=" + d.link + " style='text-decoration: none' target='_blank'><span style='color:black'><center>Click the text for more info on the " + d.type + "</center></span></a>";
           });
 
-var margin = {top: 0, right: 20, bottom: 0, left: 250},
-  width = 750 - margin.right - margin.left,
-  height = 500 - margin.top - margin.bottom;
+var margin = {top: 50, right: 50, bottom: 50, left: 250},
+  width = 960 - margin.right - margin.left,
+  height = 600 - margin.top - margin.bottom;
   
 var i = 0,
   duration = 750,
