@@ -6,7 +6,7 @@ var tip = d3.tip()
           });
 
 var margin = {top: 50, right: 50, bottom: 50, left: 250},
-  width = 960 - margin.right - margin.left,
+  width = 800 - margin.right - margin.left,
   height = 600 - margin.top - margin.bottom;
   
 var i = 0,
