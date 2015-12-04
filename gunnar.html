@@ -16,41 +16,7 @@
 <script>
     var shiftWindow = function() { scrollBy(0, -50) };
     window.addEventListener("hashchange", shiftWindow);
-    function load() { if (window.location.hash) shiftWindow(); }
-
-    //Width and height
-    var w = 100;
-    var h = 500;
-    var barPadding = 1;
-    var diseaseDt = ['Brain_pseudoatrophy', 'Breast cancer','Cardiomyopathy',
-                'Colorectal_cancer','Cyto_C_deficient','Deafness',
-                'Glomerulosclerosis and cardiomyopathy','Juvenile_myopathy',
-                'Lebers_optic_atrophy','Leighs_disease',
-                'No disease in ClinVar','Obesity','Ovary cancer',
-                'Parkinson_disease','SIDS', 'Sudden death'];      
-    var BarSzDt = [ 1, 10, 13, 19, 21, 25, 22, 18, 15, 13,
-                    11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
-            
-            //Create SVG element
-            var svg = d3.select("body")
-                        .append("svg")
-                        .attr("width", w)
-                        .attr("height", h);
-
-            svg.selectAll("rect")
-               .data(dataset)
-               .enter()
-               .append("rect")
-               .attr("x", function(d, i) {
-                    return i * (w / dataset.length);
-               })
-               .attr("y", function(d) {
-                    return h - (d * 4);
-               })
-               .attr("width", w / dataset.length - barPadding)
-               .attr("height", function(d) {
-                    return d * 4;
-               });
+    function load() { if (window.location.hash) shiftWindow(); }  
 
   </script>
 </head>
@@ -112,7 +78,10 @@
         <hr>
         <!-- First Featurette -->
         <div class="featurette" id="viz1">
-
+             <h2 class="featurette-heading">
+                  <p class="lead"> Mutations found in the mitrochondrial genomes of 1400 people. Red mutatons are pathogenic and blue are benign. </p>
+                <span class="text-muted small"><em>Choose a population</em></span>
+            </h2>
             <div class="btn-group-wrap">
                 <div id="selector" class="btn-group">
                     <button type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="British in England and Scotland">GBR</button>     
@@ -134,45 +103,14 @@
             </div>
 
             <div>
-            <script type="text/javascript">
-
-            //Width and height
-            var w = 500;
-            var h = 100;
-            var barPadding = 1;
-            
-            var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
-                            11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
-            
-            //Create SVG element
-            var svg = d3.select("body")
-                        .append("svg")
-                        .attr("width", w)
-                        .attr("height", h);
-
-            svg.selectAll("rect")
-               .data(dataset)
-               .enter()
-               .append("rect")
-               .attr("x", function(d, i) {
-                    return i * (w / dataset.length);
-               })
-               .attr("y", function(d) {
-                    return h - (d * 4);
-               })
-               .attr("width", w / dataset.length - barPadding)
-               .attr("height", function(d) {
-                    return d * 4;
-               });
-            
-        </script>
+ 
         </div>
 
 
             <img id='heat' class="heat img-responsive center-block" src="img/heatmaps/BASE.png" alt="" width="1080" height="800"> 
 
 
-            <p class="lead"> A summary of mutations found on the mitrochondrial genome. Genomes are shown on rows and and mutations are shown in columns. Blue highlighted mutations are benign, and red mutations are pathogenic. </p>
+          
     
    <hr class="featurette-divider">
 
@@ -240,7 +178,7 @@
 
         <hr class="featurette-divider">
 
-        div class="container">
+        <div class="container">
         <div class="row">
                 <div class="col-sm-4">
                     <h2 align="center"><span class="text-muted small" align="center"><em>Data</em></span></h2>
@@ -249,13 +187,16 @@
                             <h4 class="list-group-item-heading" align="center">Size</h4>
                             <p class="list-group-item-text" align="center">19.8 MB, 2,532 individuals</p>
                           </a>
-                          <a class="list-group-item">
-                            <h4 class="list-group-item-heading" align="center">Source</h4>
-                            <p class="list-group-item-text" align="center">1000 Genome and ClinVar</p>
-                          </a>
+                          <a href="http://www.1000genomes.org/" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Clincal data: ClinVar </h4>
+                            <!--<p class="list-group-item-text" align="center">1000 Genomes and ClinVar</p>
+                          </a>-->
+                          <a href="http://www.ncbi.nlm.nih.gov/clinvar/intro/" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">seqeunce data: 1000 genomes </h4>
+                        
                           <a class="list-group-item">
                             <h4 class="list-group-item-heading" align="center">Description</h4>
-                            <p class="list-group-item-text" align="center">15 ethnicities, 16 diseases, & 109 mutations</p>
+                            <p class="list-group-item-text" align="center">15 ethnicities, 14 diseases, & 109 distinct mutations</p>
                           </a>
                         </div>
                 </div>
