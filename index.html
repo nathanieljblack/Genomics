@@ -69,17 +69,17 @@
         <div class="featurette">
             <div> <h2 class="featurette-heading" id="about"> Making Genomics Accessible</h2> 
 
-            <p class="lead">As human genetic data becomes more accessible, there is a need to provide insight into what human gentic data means. Our tool provides an entry into medical genetic data </p>
+            <p class="lead">As human genetic data becomes more accessible, there is a need to provide insight into what this data means. Our tool provides an entry into medical genetic data. The total population comprises of 1400 people, who belong to different sub-populations, like "Brtish in England and Scotland", "Finnish in Finland", etc.</p>
             </div>
         </div>
 
         <!-- First Featurette -->
         <div class="featurette" id="viz1">
 
-            <h2 class="featurette-heading">
-               <p class="lead"> Mutations found in the mitrochondrial genomes of 1400 people. Pathogenic mutations are <strong> red </strong> and benign are <strong> blue </strong>. </p>
+            <h2 class="featurette-heading">Population Level
                 <span class="text-muted small"><em>Choose a population</em></span>
             </h2>
+            <p class="lead"> Mutations found in the mitrochondrial genomes of 1400 people. Pathogenic mutations are <strong> red </strong> and benign are <strong> blue </strong>. </p>
             
 
             <div class="btn-group-wrap">
@@ -277,7 +277,7 @@
         function grabPopulation(clicked_id){
                 selectedPopulation = clicked_id;
                 d3.select("#viz2SVG").remove();
-            document.location.href = '#viz2';
+                document.location.href = '#viz2';
                 updateBarChart(selectedPopulation);
         }
 
