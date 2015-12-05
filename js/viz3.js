@@ -35,6 +35,7 @@ function collapse(d) {
     }
   }
 
+root.children.forEach(collapse);
 update(root);
 
 d3.select(self.frameElement).style("height", "500px");
