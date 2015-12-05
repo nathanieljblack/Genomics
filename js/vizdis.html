@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>D3: SVG bar chart with value labels (centered)</title>
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <style type="text/css">
+      /* No style rules here yet */   
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      //Width and height
+      var w = 700;
+      var h = 500;
+      var barPadding = 1;
+      var mutcount = 109;
+
+      var diseaseDt = ['Brain_pseudoatrophy', 'Breast cancer',
+          'Cardiomyopathy','Colorectal_cancer','Cyto_C_deficient',
+          'Deafness', 'Glomerulosclerosis and cardiomyopathy',
+          'Juvenile_myopathy','Lebers_optic_atrophy','Leighs_disease',
+          'No disease in ClinVar','Obesity','Ovary cancer',
+          'Parkinson_disease','SIDS', 'Sudden death']; 
+
+      var BarSzDt = [ 1, 27, 2, 1, 1, 4, 1, 2, 18, 2, 30, 1, 14, 3, 1, 1];
+
+      var BarSzDtCuml = [ 1, 28, 30, 31, 32, 36, 37, 39, 
+            57, 59, 89, 90, 104, 107, 108, 109];
+      var BarColor = [ 1, 28, 30, 31, 32, 36, 37, 39, 
+            57, 59, 89, 90, 104, 107, 108, 109];      
+
+
+      var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+              11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+      
+      //Create SVG element
+      var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
+
+      svg.selectAll("rect")
+         .data(BarSzDtCuml)
+         .enter()
+         .append("rect")
+         .attr("x", function(d, i) {
+            return i * (BarSzDtCuml[i] / BarSzDtCuml.length);
+         })
+         .attr("y", function(d, i) {
+            return i * (BarSzDtCuml[i]/ BarSzDtCuml.length -  barPadding);
+         })
+         //})h/10)
+         .attr("width", function(d, i) {
+            return i * (BarSzDtCuml[i]/ BarSzDtCuml.length -  barPadding);
+         })
+          //w / dataset.length - barPadding)
+         .attr("height", h / BarSzDtCuml.length)
+
+         .attr("fill", function(d,i) {
+          return "rgb("+ (d * 4) + ", " + BarColor[i] + ", 50)";
+          //return "rgb(0, 0, " + (i * 50) + ")";
+          //.attr("fill", "rgb(0, 0, " + (d * 10) + ")");
+         });
+
+        //not sure how to increase the value of k
+        // want an array of cumuatively added values for numers
+        var numbers = [ 8, 100, 22, 98, 99, 45 ];
+        var k =0
+
+        for (var i = 0; i < numbers.length; i++) {
+            k=numbers[i]+=k
+            console.log(numbers[i])  //Print value to console
+        };
+      svg.selectAll("text")
+         .data(dataset)
+         .enter()
+         .append("text")
+         .text(function(d) {
+            return d;
+         })
+         .attr("text-anchor", "middle")
+         .attr("x", function(d, i) {
+            return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
+         })
+         .attr("y", function(d) {
+            return h - (d * 4) + 14;
+         })
+         .attr("font-family", "sans-serif")
+         .attr("font-size", "11px")
+         .attr("fill", "white");      
+    </script>
+  </body>
+</html>
