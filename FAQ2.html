@@ -74,18 +74,18 @@
 
         <div class="featurette">
             <div> <h2 class="featurette-heading">Genomics Background</h2> </div>
-        <dl>
-            <dt><h3><span class="text-muted"><em>What is genomics?</em></span></h3></dt>
-            <dd><p class="lead"> While classical genetics is concerned with how genes in our DNA affects inherited traits, genomics is concerned with how all genes in our DNA affect traits and biological processes.</p><dd>
+        <ul>
+            <li class="faq-question"><h3><span class="text-muted"><em>What is genomics?</em></span></h3></li>
+            <li class="faq-answer"><p class="lead"> While classical genetics is concerned with how genes in our DNA affects inherited traits, genomics is concerned with how all genes in our DNA affect traits and biological processes.</p></li>
         
 
-            <dt><h3><span class="text-muted"><em>What is a genome?</em></span></h3></dt>
-            <dd><p class="lead"> A genome is a copy of all of the DNA in an organism. It represents every gene and mutation that contributes to the traits of that individual.</p></dd>
+            <li class="faq-question"><h3><span class="text-muted"><em>What is a genome?</em></span></h3></li>
+            <li class="faq-answer"><p class="lead"> A genome is a copy of all of the DNA in an organism. It represents every gene and mutation that contributes to the traits of that individual.</p></li>
         
-            <dt><h3><span class="text-muted"><em>What is a gene?</em></span></h3></dt>
-            <dd><p class="lead"> A gene is the fundamental inherited genetic unit. Genes encode proteins which comprise the molecular machinery and materials that make the human body.</p></dd>
+            <li class="faq-question"><h3><span class="text-muted"><em>What is a gene?</em></span></h3></li>
+            <li class="faq-answer"><p class="lead"> A gene is the fundamental inherited genetic unit. Genes encode proteins which comprise the molecular machinery and materials that make the human body.</p></li>
          
-         </dl>   
+         </ul>   
             <h3><span class="text-muted"><em>How is a genome different from a gene?</em></span></h3>
             <p class="lead">A genome is a collection of genes as well as other "non-coding" DNA. </p>
 
@@ -168,14 +168,11 @@
     </div>
 
     <script type="text/javascript">
-        $('dd').hide();
-
-        $('dt').click(
-            function() {
-                var toggle = $(this).nextUntil('dt');
-                toggle.slideToggle();
-                $('dd').not(toggle).slideUp();
-            });
+        $('li.faq-answer').hide();
+        
+        $('li.faq-question').click(function () {
+            $(this).next().slideToggle();
+        });
     </script>
     </body>
 
