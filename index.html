@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -67,20 +66,21 @@
     -->
     <!-- Page Content -->
     <div class="container">
-         <div> <h2 class="featurette" id="about"> Making Genomics Accessible
-            </h2> 
+        <div class="featurette">
+            <div> <h2 class="featurette-heading"> Making Genomics Accessible</h2> 
 
-            <p class="lead">As human genetic data becomes more accessible, there is a need to provide insight into what human gentic data means. Our tool provides an entry into medical genetic data </p>
-
+            <p class="lead">As human genetic data becomes more accessible, there is a need to provide insight into what this data means. Our tool provides an entry into medical genetic data. The total population comprises of 1400 people, who belong to different sub-populations, like "British in England and Scotland", "Finnish in Finland", etc.</p>
+            </div>
         </div>
 
-        <!-- First Featurette -->
+        <hr class="featurette-divider">
+        
         <div class="featurette" id="viz1">
 
-            <h2 class="featurette-heading">
-               <p class="lead"> Mutations found in the mitrochondrial genomes of 1400 people. Pathogenic mutations are <strong> red </strong> and benign are <strong> blue </strong>. </p>
+            <h2 class="featurette-heading">Population Level
                 <span class="text-muted small"><em>Choose a population</em></span>
             </h2>
+            <p class="lead"> Mutations found in the mitrochondrial genomes of 1400 people. Pathogenic mutations are <strong> red </strong> and benign are <strong> blue </strong>. </p>
             
 
             <div class="btn-group-wrap">
@@ -108,12 +108,12 @@
  
         <hr class="featurette-divider">
 
-        <div class="featurette" id="viz2">
+        <div class="featurette">
             <h2 class="featurette-heading">Disease Level
                 <span class="text-muted small"><em>Select A Disease</em></span>
             </h2>
             <p class="lead">A comparison of the prevalence of diseases within the selected sub-population with that of the total population is presented in the chart below. The x-axis represents the various diseases, while the y-axis represents the percentage of mutations. There are a total of 5112 mutations in the overall population of genomes in the data. As an example, 44.05% of the 5112 mutations in the overall population, and 35.93% of the 295 mutations for the GBR population are associated with breast cancer.<br><br><b>Hover on the bars to see the prevalence, or hover on the disease label to see the full disease name, or click on the bars or the disease label to find out more information about the disease.</b></p>
-
+            <div id='viz2' align='center'></div>
         </div>
 
         <hr class="featurette-divider">
@@ -128,12 +128,82 @@
             <div class="container" id="part3">
                 <h3><span class="text-muted">Disease Description</span></h3>
                 <blockquote><h2><span class="lead" id="diseaseDesc"></span></h2></blockquote>
-                <div id="viz3"></div>
+                <div align="center" id="viz3"></div>
             </div>
 
         <hr class="featurette-divider">
 
-        
+        <div class="container" id="about">
+        <div class="row">
+                <div class="col-sm-4">
+                    <h2 align="center"><span class="text-muted small" align="center"><em>Data</em></span></h2>
+                    <div class="list-group">
+                          <a class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Size</h4>
+                            <p class="list-group-item-text" align="center">19.8 MB, 2,532 individuals</p>
+                          </a>
+                          <a href="http://www.1000genomes.org/" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Clinical Data</h4>
+                            <p class="list-group-item-text" align="center">ClinVar</p>
+                          </a>
+                          <a href="http://www.ncbi.nlm.nih.gov/clinvar/intro/" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Sequence Data</h4>
+                            <p class="list-group-item-text" align="center">1000 genomes</p>
+                          </a>
+                          <a class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Description</h4>
+                            <p class="list-group-item-text" align="center">15 ethnicities, 14 diseases, & 110 distinct mutations</p>
+                          </a>
+                        </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <h2 align="center"><span class="text-muted small"><em>Goals</em></span></h2>
+                        <div class="list-group">
+                          <a class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Explore</h4>
+                            <p class="list-group-item-text" align="center">Explore trends across demographics</p>
+                          </a>
+                          <a class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Inform</h4>
+                            <p class="list-group-item-text" align="center">Retrieve more information on disease mutations</p>
+                          </a>
+                          <a class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Link</h4>
+                            <p class="list-group-item-text" align="center">Clearly link demographic, disease, and mutation</p>
+                          </a>
+                          <a class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Audience</h4>
+                            <p class="list-group-item-text" align="center">Non-experts with an interest in genomics</p>
+                          </a>
+                        </div>
+
+                </div>
+
+                <div class="col-sm-4">
+                    <h2 align="center"><span class="text-muted small" align="center"><em>Tools</em></span></h2>
+                        <div class="list-group">
+                          <a href="http://getbootstrap.com/" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Bootstrap</h4>
+                            <p class="list-group-item-text" align="center">Responsive web framework toolkit</p>
+                          </a>
+                          <a href="http://www.d3js.org" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">d3.js</h4>
+                            <p class="list-group-item-text" align="center">Javascript library for visualizations</p>
+                          </a>
+                          <a href="http://pandas.pydata.org/" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Pandas</h4>
+                            <p class="list-group-item-text" align="center">Python library used for data wrangling</p>
+                          </a>
+                          <a href="http://pandas.pydata.org/" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">ggplot2</h4>
+                            <p class="list-group-item-text" align="center">R library charting library</p>
+                          </a>
+                        </div>
+                </div>
+
+            </div>
+        </div>
 
         <hr class="featurette-divider">
 
@@ -169,72 +239,6 @@
                 </div>
             </div>
           </div>
-        </div>
-
-        <hr class="featurette-divider">
-         <hr class="featurette-divider">
-
-        <div class="container">
-        <div class="row">
-                <div class="col-sm-4">
-                    <h2 align="center"><span class="text-muted small" align="center"><em>Data</em></span></h2>
-                    <div class="list-group">
-                          <a class="list-group-item">
-                            <h4 class="list-group-item-heading" align="center">Size</h4>
-                            <p class="list-group-item-text" align="center">19.8 MB, 2,532 individuals</p>
-                          </a>
-                          <a href="http://www.1000genomes.org/" class="list-group-item">
-                            <h4 class="list-group-item-heading" align="center">Clincal data: ClinVar </h4>
-                            <!--<p class="list-group-item-text" align="center">1000 Genomes and ClinVar</p>
-                          </a>-->
-                          <a href="http://www.ncbi.nlm.nih.gov/clinvar/intro/" class="list-group-item">
-                            <h4 class="list-group-item-heading" align="center">seqeunce data: 1000 genomes </h4>
-                        
-                          <a class="list-group-item">
-                            <h4 class="list-group-item-heading" align="center">Description</h4>
-                            <p class="list-group-item-text" align="center">15 ethnicities, 14 diseases, & 109 distinct mutations</p>
-                          </a>
-                        </div>
-                </div>
-
-                <div class="col-sm-4">
-                    <h2 align="center"><span class="text-muted small"><em>Goals</em></span></h2>
-                        <div class="list-group">
-                          <a class="list-group-item">
-                            <h4 class="list-group-item-heading" align="center">Explore</h4>
-                            <p class="list-group-item-text" align="center">Explore trends across demographics</p>
-                          </a>
-                          <a class="list-group-item">
-                            <h4 class="list-group-item-heading" align="center">Inform</h4>
-                            <p class="list-group-item-text" align="center">Retrieve more information on disease mutations</p>
-                          </a>
-                          <a class="list-group-item">
-                            <h4 class="list-group-item-heading" align="center">Link</h4>
-                            <p class="list-group-item-text" align="center">Clearly link demographic, disease, and mutation</p>
-                          </a>
-                        </div>
-
-                </div>
-
-                <div class="col-sm-4">
-                    <h2 align="center"><span class="text-muted small" align="center"><em>Tools</em></span></h2>
-                        <div class="list-group">
-                          <a href="http://getbootstrap.com/" class="list-group-item">
-                            <h4 class="list-group-item-heading" align="center">Bootstrap</h4>
-                            <p class="list-group-item-text" align="center">Responsive web framework toolkit</p>
-                          </a>
-                          <a href="http://www.d3js.org" class="list-group-item">
-                            <h4 class="list-group-item-heading" align="center">d3.js</h4>
-                            <p class="list-group-item-text" align="center">Javascript library for visualizations</p>
-                          </a>
-                          <a href="http://pandas.pydata.org/" class="list-group-item">
-                            <h4 class="list-group-item-heading" align="center">Pandas</h4>
-                            <p class="list-group-item-text" align="center">Python library used for data wrangling</p>
-                          </a>
-                        </div>
-                </div>
-
-            </div>
         </div>
 
         <!-- Footer -->
@@ -274,7 +278,7 @@
         function grabPopulation(clicked_id){
                 selectedPopulation = clicked_id;
                 d3.select("#viz2SVG").remove();
-            document.location.href = '#viz2';
+                document.location.href = '#viz2';
                 updateBarChart(selectedPopulation);
         }
 
