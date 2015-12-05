@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,15 +5,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Genomics Visualization FAQ">
-    <meta name="author" content="Nate Black, Gunnar Kleemann, Malini Mittal">
+    <meta name="description" content="Genomics Visualization">
+    <meta name="author" content="Nate Black, Gunnar Kleeman, Malini Mittal">
     <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
-    <title>Genomics Visualization FAQ</title>
+    <title>Genomics Visualization</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/genomics.css" rel="stylesheet">
     <link href="css/font-awesome.css" rel="stylesheet">
 
-</head>
+<script>
+    var shiftWindow = function() { scrollBy(0, -50) };
+    window.addEventListener("hashchange", shiftWindow);
+    function load() { if (window.location.hash) shiftWindow(); }
+  </script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -27,64 +30,164 @@
 
 </script>
 
+  
+</head>
+
+<body onload="load()">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Genomics Visualization</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="http://nathanieljblack.github.io/Genomics/index.html#viz1">Visualization</a>
+                    </li>
+                    <li>
+                        <a href="http://nathanieljblack.github.io/Genomics/index.html#about">About</a>
+                    </li>
+                    <li>
+                        <a href="http://nathanieljblack.github.io/Genomics/index.html#team">Team</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/nathanieljblack/Genomics">Github</a>
+                    </li>
+                    <li>
+                        <a href="http://nathanieljblack.github.io/Genomics/FAQ.html">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <div class="container">
-        <div class="featurette" id="faq">
-            <div>
-            <h2 class="featurette-heading">Genomics Visualization: Frequently Asked Questions</h2>
+        <h2 class="featurette-heading">Frequently Asked Questions</h2>
 
-            <h3><span class="text-muted"><em>What am I looking at?</em></span></h3>
-            <p class="lead"> This page presents genetic data and associated disease risks for a diverse set of more than 1400 people. The data is a combination of sequencing data from the 1000 genomes project and clinical designations listed in the national (U.S.) clinical variations repository <a href="http://www.ncbi.nlm.nih.gov/clinvar/">ClinVar </a>.What you see is a small subset of the DNA in the human body. In particular these data are from the mitochondrial genome, and organelle that serves as the body's power plant.</p>
+        <hr class="featurette-divider">
 
+        <div class="featurette">
+            <div> <h2 class="featurette-heading">Genomics Background</h2> </div>
+        <ul>
+            <li class="faq-question"><h3><span class="text-muted"><em>What is genomics?</em></span></h3></li>
+            <li class="faq-answer lead">While classical genetics is concerned with how genes in our DNA affects inherited traits, genomics is concerned with how all genes in our DNA affect traits and biological processes.</li>
+        
 
-            <h3><span class="text-muted"><em>What about the rest of the data?</em></span></h3>
-            <p class="lead"> Genome data is large and complex with the human genome  3 billon base pairs and ~20,000 genes. Because we wanted focus on designing a usable visualization we chose to focus on a subset of the human genome in this first generation of the site. Our visualization represents a subset of the data available from the <a "href=http://www.1000genomes.org/">1000 genomes project </a>, focusing on about half of the ~2500 people and on the 16,000 base pair mitochondrial genome.  Also we have removed mutations (chrMT-1438-G (95% of samples) chrMT-15326-G (99% of samples) that were clearly the dominant version of the gene and should be considered <a href="http://dictionary.reference.com/browse/wild-type"> wild-type </a>. Finally because this visualization is focused on exploring the association between a mutation and its disease risk, we only present data with <a href="http://www.ncbi.nlm.nih.gov/clinvar/docs/clinsig/#other_resources"> CLinVar listed classifications</a> of: "benign", "likely benign", "pathogenic" and "likely pathogenic". </p>
+            <li class="faq-question"><h3><span class="text-muted"><em>What is a genome?</em></span></h3></li>
+            <li class="faq-answer lead">A genome is a copy of all of the DNA in an organism. It represents every gene and mutation that contributes to the traits of that individual.</li>
+        
+            <li class="faq-question"><h3><span class="text-muted"><em>What is a gene?</em></span></h3></li>
+            <li class="faq-answer lead">A gene is the fundamental inherited genetic unit. Genes encode proteins which comprise the molecular machinery and materials that make the human body.</li>
+         
+           
+            <li class="faq-question"><h3><span class="text-muted"><em>How is a genome different from a gene?</em></span></h3></li>
+            <li class="faq-answer lead">A genome is a collection of genes as well as other "non-coding" DNA. </li>
 
-            <h3><span class="text-muted"><em>It is hard to interpret the heatmap- how should I explore the visualization?</em></span></h3>
-            <p class="lead"> Think of the heatmap as an overview of many people's mitochondrial genomes. You can see each genome as a row and the 110 mutations shown here as columns. In addition, mutation columns are arranged by disease so for example you can see the left portion of the graph shows pathogenic mutations associated with breast cancer. </p>
+            <li class="faq-question"><h3><span class="text-muted"><em>What is a chromosome?</em></span></h3></li>
+            <li class="faq-answer lead"> In basic terms, a chromosome is long string of <a href="https://en.wikipedia.org/wiki/DNA"> deoxyribonucleic acids (DNA)</a>. Zooming to a higher level, the chromosome is organized into genes (coding regions) and regions between genes (non-coding regions). The human genome has 23 pairs of chromosomes. Additionally humans carry mitochondria, which have their own genome (mtDNA). While the mitochondrial DNA is not counted in the 23 pairs of human chromosomes, it is considered part of the human genome and mutations in mtDNA cause a number of <a href="http://ghr.nlm.nih.gov/mitochondrial-dna/show/Conditions"> human diseases </a>. The mitochondrial chromosome is the basis of this web site<li>
 
-            <h3><span class="text-muted"><em>How do I use this page?</em></span></h3>
-            <p class="lead"> The page is an exploration tool meant to inspire curiosity for further research. The <strong> population panel </strong> presents a birds-eye-view of genetic differences across global populations. Mutations with disease associations are coded in red. Mutations often segregate with ethnic group. Explore the distribution of disease associated mutations in specific populations by clicking buttons on top of the population panel.</p>
+            <li class="faq-question"><h3><span class="text-muted"><em>What is a mutation?</em></span></h3></li>
+            <li class="faq-answer lead">A mutation is a difference in the DNA from a reference genome (often referred to as "wild type"). Genes within our DNA are the blueprints for the physical structures that comprise our bodies. When these instructions are randomly changed, they may not function as expected (think of a remote control that is missing a random button) and can cause a disease state. </li>
 
-            <p class="lead">The <strong> disease panel </strong> shows total and subpopulation frequency of mutations associated with a specific disease. You can get an idea of how prevalent mutations for a specific disease are. By clicking a bar or label for an associated disease you can drill down further and go to the mutations panel.</p>
+            <li class="faq-question"><h3><span class="text-muted"><em>What is meant by clinical severity?</em></span></h3></li>
+            <li class="faq-answer lead">Clinical severity or clinical significance refers to a classification system that conveys the effect of a mutation (benign, or pathogenic) on health as well as the quality of the evidence supporting that assertion (unknown, likely or known). ClinVar presents these classes <a href="http://www.ncbi.nlm.nih.gov/clinvar/docs/clinsig/#other_resources"> here</a>; note that "known" is not explicitly declared in this schema.</li>
 
-            <p class="lead">The <strong> mutations panel </strong> shows mutations associated with a single disease as tree. Mutations are represented as "leaves". The disease view allows linking out to more detailed resources about mutations or specific diseases. </p>
-
-            <h3><span class="text-muted"><em>What is genomics?</em></span></h3>
-            <p class="lead"> While classical genetics is concerned with how genes in our DNA affects inherited traits, genomics is concerned with how all genes in our DNA affect traits and biological processes.</p>
-     
-            <h3><span class="text-muted"><em>What is a gene?</em></span></h3>
-            <p class="lead"> A gene is the fundamental inherited genetic unit. Genes encode proteins which comprise the molecular machinery and materials that make the human body.</p>
-            
-      
-            <h3><span class="text-muted"><em>What is a chromosome?</em></span></h3>
-            <p class="lead"> In basic terms, a chromosome is long string of <a href="https://en.wikipedia.org/wiki/DNA"> deoxyribonucleic acids (DNA)</a>. Zooming to a higher level, the chromosome is organized into genes (coding regions) and regions between genes (non-coding regions). The human genome has 23 pairs of chromosomes. Additionally humans carry mitochondria, which have their own genome (mtDNA). While the mitochondrial DNA is not counted in the 23 pairs of human chromosomes, it is considered part of the human genome and mutations in mtDNA cause a number of <a href="http://ghr.nlm.nih.gov/mitochondrial-dna/show/Conditions"> human diseases </a>. The mitochondrial chromosome is the basis of this web site</p>
-            
-
-            <h3><span class="text-muted"><em>What is a genome?</em></span></h3>
-            <p class="lead"> A genome is a copy of all of the DNA in an organism. It represents every gene and mutation that contributes to the traits of that individual.</p>
-
-            <h3><span class="text-muted"><em>How is a genome different from a gene?</em></span></h3>
-            <p class="lead">A genome is a collection of genes as well as other "non-coding" DNA. </p>
-
-            <h3><span class="text-muted"><em>What does chrMT-XXXX-X mean?</em></span></h3>
-            <p class="lead"> This is the district code that this web page uses for each mutation. It represents the: 
-                1) Chromosome,
-                2) Position of the mutation on the chromosome (in base pair number),
-                3) The variant nucleotide (base pair).
-            For example chrMT-235947-A means that the mutation is found on the mitochondrial chromosome at the 235,847th base pair, and Adenine (A) is found instead of the reference base.</p>
-            
-            <h3><span class="text-muted"><em>What is a mutation?</em></span></h3>
-            <p class="lead">A mutation is a difference in the DNA from a reference genome (often referred to as "wild type"). Genes within our DNA are the blueprints for the physical structures that comprise our bodies. When these instructions are randomly changed, they may not function as expected (think of a remote control that is missing a random button) and can cause a disease state. </p>
-
-            <h3><span class="text-muted"><em>Do mutations mean I will contract the disease associated with that mutation?</em></span></h3>
-            <p class="lead"> Any mutation functions as part of a the complex system that is the human body. Because of this it is hard to say that having a mutation for a specific disease will lead to that disease. Instead of thinking of the effect of a mutation as absolute think of it as changing the odds of developing a particular disease state</p>
-
-        <h3><span class="text-muted"><em>What is meant by clinical severity?</em></span></h3>
-            <p class="lead"> Clinical severity or clinical significance refers to a classification system that conveys the effect of a mutation (benign, or pathogenic) on health as well as the quality of the evidence supporting that assertion (unknown, likely or known). ClinVar presents these classes <a href="http://www.ncbi.nlm.nih.gov/clinvar/docs/clinsig/#other_resources"> here</a>; note that "known" is not explicitly declared in this schema.</p>
-    
-            <h3><span class="text-muted"><em>Where can I learn more about genomics?</em></span></h3>
-            <p class="lead">There are many resources to learn about genomics. A good place to start are the general presentations and papers that are freely available on the web such as this <a href="http://groups.csail.mit.edu/medg/courses/6872/2003/slides/mit.pdf">general introduction</a> or this overview of the <a href="http://arep.med.harvard.edu/pdf/Church05s.pdf">sequencing revolution</a>. A place for deeper exploration is the <a href="http://www.ncbi.nlm.nih.gov/books"> NCBI bookshelf</a> the <a href="https://genome.ucsc.edu"> UCSC genome browser</a> <a href="http://www.amazon.com/Bioinformatics-Functional-Genomics-Jonathan-Pevsner/dp/1118581784/ref=sr_1_5?s=books&ie=UTF8&qid=1449166256&sr=1-5&keywords=genomics+and+bioinformatics"> J. Pevsner's </a>Bioinformatics and Functional Genomics. Also the major model organisms have been driving forces in genomic research.  The various model organism databases <a href="http://www.wormbase.org">Wormbase</a>, <a href="http://flybase.org/">flybase</a>, <a href="http://zfin.org/">ZFIN (zebrafish)</a>, <a href="http://www.informatics.jax.org/">and MGI (mouse)</a> are very informative and well developed. Becoming familiar with any of these will serve as a broad education in genomics.</p>
-             </div>
+            <li class="faq-question"><h3><span class="text-muted"><em>Where can I learn more about genomics?</em></span></h3></li>
+            <li class="faq-answer lead">There are many resources to learn about genomics. The following resources will help the reader gain a broad understanding of genomics.
+                <ul class="lead">
+                    <li>General</li>
+                        <ul class="lead">
+                            <li><a href="http://groups.csail.mit.edu/medg/courses/6872/2003/slides/mit.pdf">Introduction to Genomics</a></li>
+                            <li><a href="http://arep.med.harvard.edu/pdf/Church05s.pdf">Genes for All</a></li>
+                        </ul>
+                    <li>Deeper Exploration</li>
+                        <ul class="lead">
+                            <li><a href="http://www.ncbi.nlm.nih.gov/books">NCBI Bookshelf</a></li>
+                            <li><a href="https://genome.ucsc.edu">UCSC Genome Browser</a></li>
+                            <li><a href="http://www.amazon.com/Bioinformatics-Functional-Genomics-Jonathan-Pevsner/dp/1118581784/ref=sr_1_5?s=books&ie=UTF8&qid=1449166256&sr=1-5&keywords=genomics+and+bioinformatics">Bioinformatics and Functional Genomics</a></li>
+                        </ul>
+                    <li>Model Organism Databases</li>
+                        <ul class="lead">
+                            <li><a href="http://www.wormbase.org">Wormbase</a></li>
+                            <li><a href="http://flybase.org/">Flybase</a></li>
+                            <li><a href="http://zfin.org/">ZFIN (zebrafish)</a></li>
+                            <li><a href="http://www.informatics.jax.org/">MGI (mouse)</a></li>
+                        </ul>
+                </ul></li>
+            </ul> 
         </div>
+        
+        <hr class="featurette-divider">
+
+        <div class="featurette">
+            <div> <h2 class="featurette-heading">About this Visualization</h2> </div>
+            <ul>
+                <li class="faq-question"><h3><span class="text-muted"><em>What am I looking at?</em></span></h3></li>
+                <li class="faq-answer lead">This page presents genetic data and associated disease risks for a diverse set of more than 1400 people. The data is a combination of sequencing data from the 1000 genomes project and clinical designations listed in the national (U.S.) clinical variations repository <a href="http://www.ncbi.nlm.nih.gov/clinvar/">ClinVar </a>.What you see is a small subset of the DNA in the human body. In particular these data are from the mitochondrial genome, and organelle that serves as the body's power plant.</li>
+
+                <li class="faq-question"><h3><span class="text-muted"><em>How do I use this page?</em></span></h3></li>
+                <li class="faq-answer lead">The page is split into three main panels: population, disease, and mutations.
+
+                <dl class="dl-horizontal lead">
+
+                     <dt>Population</dt>
+                     <dd>Birds-eye-view of genetic differences across global populations. Mutations with disease associations are coded in red. Mutations often segregate with ethnic group. Explore the distribution of disease associated mutations in specific populations by clicking buttons on top of the population panel.</dd>
+                     <br></br>
+                     <dt>Disease</dt>
+                     <dd>Displays total and subpopulation frequency of mutations associated with a specific disease. You can get an idea of how prevalent mutations for a specific disease are. By clicking a bar or label for an associated disease you can drill down further and go to the mutations panel.</dd>
+                     <br></br>
+                     <dt>Mutation</dt>
+                     <dd>Shows mutations associated with a single disease as tree. Mutations are represented as terminal nodes in the tree. The disease view allows linking out to more detailed resources about mutations or specific diseases. </dd>
+                 </dl></li>
+
+                <li class="faq-question"><h3><span class="text-muted"><em>What about the rest of the data?</em></span></h3></li>
+                <li class="faq-answer lead">Genome data is large and complex with the human genome 3 billion base pairs and ~20,000 genes. Because we wanted focus on designing a usable visualization we chose to focus on a subset of the human genome in this first generation of the site. Our visualization represents a subset of the data available from the <a href="http://www.1000genomes.org/">1000 genomes project </a>, focusing on about half of the ~2500 people and on the 16,000 base pair mitochondrial genome.  Also we have removed mutations (chrMT-1438-G (95% of samples) chrMT-15326-G (99% of samples) that were clearly the dominant version of the gene and should be considered <a href="http://dictionary.reference.com/browse/wild-type"> wild-type </a>. Finally because this visualization is focused on exploring the association between a mutation and its disease risk, we only present data with <a href="http://www.ncbi.nlm.nih.gov/clinvar/docs/clinsig/#other_resources"> CLinVar listed classifications</a> of: "benign", "likely benign", "pathogenic" and "likely pathogenic".</li>
+
+                <li class="faq-question"><h3><span class="text-muted"><em>It is hard to interpret the heatmap- how should I explore the visualization?</em></span></h3></li>
+                <li class="faq-answer lead">Think of the heatmap as an overview of many people's mitochondrial genomes. You can see each genome as a row and the 110 mutations shown here as columns. In addition, mutation columns are arranged by disease so for example you can see the left portion of the graph shows pathogenic mutations associated with breast cancer.</li>
+                
+                <li class="faq-question"><h3><span class="text-muted"><em>What does chrMT-XXXX-X mean?</em></span></h3></li>
+                <li class="faq-answer lead">This is the district code that this web page uses for each mutation. It represents the:
+                     <ol class="lead">
+                        <li>1) Chromosome</li>
+                        <li>2) Position of the mutation on the chromosome (in base pair number)</li>
+                        <li>3) The variant nucleotide (base pair)</li>
+                    </ol>
+
+                For example, chrMT-235947-A means that the mutation is found on the mitochondrial chromosome at the 235,947th base pair, and Adenine (A) is found instead of the reference base.</li>
+                
+                <li class="faq-question"><h3><span class="text-muted"><em>Do mutations mean I will contract the disease associated with that mutation?</em></span></h3></li>
+                <li class="faq-answer lead">Any mutation functions as part of a the complex system that is the human body. Because of this it is hard to say that having a mutation for a specific disease will lead to that disease. Instead of thinking of the effect of a mutation as absolute think of it as changing the odds of developing a particular disease state.</li>
+        
+        </div>
+
+        <hr class="featurette-divider">
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Genomics Visualization 2015</p>
+                </div>
+            </div>
+        </footer>
+
     </div>
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $('li.faq-answer').hide();
+
+        $('li.faq-question').click(function () {
+            $(this).next().slideToggle();
+        });
+    </script>
+    </body>
+
+</html>
+
+
