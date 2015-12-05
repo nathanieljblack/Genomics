@@ -127,44 +127,44 @@
 
         <div class="featurette">
             <div> <h2 class="featurette-heading">About this Visualization</h2> </div>
-            <h3><span class="text-muted"><em>What am I looking at?</em></span></h3>
-            <p class="lead"> This page presents genetic data and associated disease risks for a diverse set of more than 1400 people. The data is a combination of sequencing data from the 1000 genomes project and clinical designations listed in the national (U.S.) clinical variations repository <a href="http://www.ncbi.nlm.nih.gov/clinvar/">ClinVar </a>.What you see is a small subset of the DNA in the human body. In particular these data are from the mitochondrial genome, and organelle that serves as the body's power plant.</p>
+            <ul>
+                <li class="faq-question"><h3><span class="text-muted"><em>What am I looking at?</em></span></h3></li>
+                <li class="faq-answer lead">This page presents genetic data and associated disease risks for a diverse set of more than 1400 people. The data is a combination of sequencing data from the 1000 genomes project and clinical designations listed in the national (U.S.) clinical variations repository <a href="http://www.ncbi.nlm.nih.gov/clinvar/">ClinVar </a>.What you see is a small subset of the DNA in the human body. In particular these data are from the mitochondrial genome, and organelle that serves as the body's power plant.</li>
 
-            <h3><span class="text-muted"><em>How do I use this page?</em></span></h3>
-            <p class="lead"> The page is split into three main panels: population, disease, and mutations.</p>
+                <li class="faq-question"><h3><span class="text-muted"><em>How do I use this page?</em></span></h3></li>
+                <li class="faq-answer lead">The page is split into three main panels: population, disease, and mutations.
 
-            <dl class="dl-horizontal lead">
+                <dl class="dl-horizontal lead">
 
-                 <dt>Population</dt>
-                 <dd>Birds-eye-view of genetic differences across global populations. Mutations with disease associations are coded in red. Mutations often segregate with ethnic group. Explore the distribution of disease associated mutations in specific populations by clicking buttons on top of the population panel.</dd>
-                 <br></br>
-                 <dt>Disease</dt>
-                 <dd>Displays total and subpopulation frequency of mutations associated with a specific disease. You can get an idea of how prevalent mutations for a specific disease are. By clicking a bar or label for an associated disease you can drill down further and go to the mutations panel.</dd>
-                 <br></br>
-                 <dt>Mutation</dt>
-                 <dd>Shows mutations associated with a single disease as tree. Mutations are represented as terminal nodes in the tree. The disease view allows linking out to more detailed resources about mutations or specific diseases. </dd>
-             </dl>
+                     <dt>Population</dt>
+                     <dd>Birds-eye-view of genetic differences across global populations. Mutations with disease associations are coded in red. Mutations often segregate with ethnic group. Explore the distribution of disease associated mutations in specific populations by clicking buttons on top of the population panel.</dd>
+                     <br></br>
+                     <dt>Disease</dt>
+                     <dd>Displays total and subpopulation frequency of mutations associated with a specific disease. You can get an idea of how prevalent mutations for a specific disease are. By clicking a bar or label for an associated disease you can drill down further and go to the mutations panel.</dd>
+                     <br></br>
+                     <dt>Mutation</dt>
+                     <dd>Shows mutations associated with a single disease as tree. Mutations are represented as terminal nodes in the tree. The disease view allows linking out to more detailed resources about mutations or specific diseases. </dd>
+                 </dl></li>
 
+                <li class="faq-question"><h3><span class="text-muted"><em>What about the rest of the data?</em></span></h3></li>
+                <li class="faq-answer lead">Genome data is large and complex with the human genome 3 billion base pairs and ~20,000 genes. Because we wanted focus on designing a usable visualization we chose to focus on a subset of the human genome in this first generation of the site. Our visualization represents a subset of the data available from the <a "href=http://www.1000genomes.org/">1000 genomes project </a>, focusing on about half of the ~2500 people and on the 16,000 base pair mitochondrial genome.  Also we have removed mutations (chrMT-1438-G (95% of samples) chrMT-15326-G (99% of samples) that were clearly the dominant version of the gene and should be considered <a href="http://dictionary.reference.com/browse/wild-type"> wild-type </a>. Finally because this visualization is focused on exploring the association between a mutation and its disease risk, we only present data with <a href="http://www.ncbi.nlm.nih.gov/clinvar/docs/clinsig/#other_resources"> CLinVar listed classifications</a> of: "benign", "likely benign", "pathogenic" and "likely pathogenic".</li>
 
-            <h3><span class="text-muted"><em>What about the rest of the data?</em></span></h3>
-            <p class="lead"> Genome data is large and complex with the human genome 3 billion base pairs and ~20,000 genes. Because we wanted focus on designing a usable visualization we chose to focus on a subset of the human genome in this first generation of the site. Our visualization represents a subset of the data available from the <a "href=http://www.1000genomes.org/">1000 genomes project </a>, focusing on about half of the ~2500 people and on the 16,000 base pair mitochondrial genome.  Also we have removed mutations (chrMT-1438-G (95% of samples) chrMT-15326-G (99% of samples) that were clearly the dominant version of the gene and should be considered <a href="http://dictionary.reference.com/browse/wild-type"> wild-type </a>. Finally because this visualization is focused on exploring the association between a mutation and its disease risk, we only present data with <a href="http://www.ncbi.nlm.nih.gov/clinvar/docs/clinsig/#other_resources"> CLinVar listed classifications</a> of: "benign", "likely benign", "pathogenic" and "likely pathogenic". </p>
+                <li class="faq-question"><h3><span class="text-muted"><em>It is hard to interpret the heatmap- how should I explore the visualization?</em></span></h3></li>
+                <li class="faq-answer lead">Think of the heatmap as an overview of many people's mitochondrial genomes. You can see each genome as a row and the 110 mutations shown here as columns. In addition, mutation columns are arranged by disease so for example you can see the left portion of the graph shows pathogenic mutations associated with breast cancer.</li>
+                
+                <li class="faq-question"><h3><span class="text-muted"><em>What does chrMT-XXXX-X mean?</em></span></h3></li>
+                <li class="faq-answer lead">This is the district code that this web page uses for each mutation. It represents the:
+                     <ol class="lead">
+                        <li>1) Chromosome</li>
+                        <li>2) Position of the mutation on the chromosome (in base pair number)</li>
+                        <li>3) The variant nucleotide (base pair)</li>
+                    </ol>
 
-            <h3><span class="text-muted"><em>It is hard to interpret the heatmap- how should I explore the visualization?</em></span></h3>
-            <p class="lead"> Think of the heatmap as an overview of many people's mitochondrial genomes. You can see each genome as a row and the 110 mutations shown here as columns. In addition, mutation columns are arranged by disease so for example you can see the left portion of the graph shows pathogenic mutations associated with breast cancer. </p>
-            
-            <h3><span class="text-muted"><em>What does chrMT-XXXX-X mean?</em></span></h3>
-            <p class="lead"> This is the district code that this web page uses for each mutation. It represents the:</p>
-                 <ol class="lead">
-                    <li>Chromosome</li>
-                    <li>Position of the mutation on the chromosome (in base pair number)</li>
-                    <li>The variant nucleotide (base pair)</li>
-                </ol>
-
-            <p class="lead">For example, chrMT-235947-A means that the mutation is found on the mitochondrial chromosome at the 235,947th base pair, and Adenine (A) is found instead of the reference base.</p>
-            
-            <h3><span class="text-muted"><em>Do mutations mean I will contract the disease associated with that mutation?</em></span></h3>
-            <p class="lead"> Any mutation functions as part of a the complex system that is the human body. Because of this it is hard to say that having a mutation for a specific disease will lead to that disease. Instead of thinking of the effect of a mutation as absolute think of it as changing the odds of developing a particular disease state</p>
-    
+                For example, chrMT-235947-A means that the mutation is found on the mitochondrial chromosome at the 235,947th base pair, and Adenine (A) is found instead of the reference base.</li>
+                
+                <li class="faq-question"><h3><span class="text-muted"><em>Do mutations mean I will contract the disease associated with that mutation?</em></span></h3></li>
+                <li class="faq-answer lead">Any mutation functions as part of a the complex system that is the human body. Because of this it is hard to say that having a mutation for a specific disease will lead to that disease. Instead of thinking of the effect of a mutation as absolute think of it as changing the odds of developing a particular disease state</li>
+        
         </div>
     </div>
     <script src="js/jquery.js"></script>
