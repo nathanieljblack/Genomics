@@ -843,9 +843,9 @@ var DF = [{
         ]
       }];
 
-var selectedDisease = 'BC';
+var selectedDisease = 'LOA';
 document.getElementById("diseaseDesc").innerHTML = diseaseDescriptionMap[selectedDisease];
-var root = BC[0];
+var root = LOA[0];
 
 function updateBarChart(pop) {
 
