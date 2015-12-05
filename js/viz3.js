@@ -5,9 +5,9 @@ var tip = d3.tip()
             return "<a href=" + d.link + " style='text-decoration: none' target='_blank'><span style='color:black'><center>Click the text for more info on the " + d.type + "</center></span></a>";
           });
 
-var margin = {top: 50, right: 50, bottom: 50, left: 250},
+var margin = {top: 20, right: 50, bottom: 20, left: 250},
   width = 800 - margin.right - margin.left,
-  height = 600 - margin.top - margin.bottom;
+  height = 500 - margin.top - margin.bottom;
   
 var i = 0,
   duration = 750,
@@ -35,6 +35,7 @@ function collapse(d) {
     }
   }
 
+root.children.forEach(collapse);
 update(root);
 
 d3.select(self.frameElement).style("height", "500px");
