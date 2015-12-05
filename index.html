@@ -99,22 +99,23 @@
                 <div id="selector" class="btn-group">
                     <button type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="British in England and Scotland">GBR</button>     
                     <button type="button" class="btn btn-default" value="FIN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Finnish in Finland">FIN</button>
+                    <button type="button" class="btn btn-default" value="IBS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Iberian populations in Spain">IBS</button>
                     <button type="button" class="btn btn-default" value="CHS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Southern Han Chinese, China">CHS</button>  
+                    <button type="button" class="btn btn-default" value="CDX" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Chinese Dai in Xishuangbanna, China">CDX</button> 
+                    <button type="button" class="btn btn-default" value="KHV" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Kinh in Ho Chi Minh City, Vietnam">KHV</button> 
+                    <button type="button" class="btn btn-default" value="BEB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Bengali in Bangladesh">BEB</button>  
                     <button type="button" class="btn btn-default" value="PUR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Puerto Rican in Puerto Rico">PUR</button> 
-                    <button type="button" class="btn btn-default" value="CDX" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Chinese Dai in Xishuangbanna, China">CDX</button>  
                     <button type="button" class="btn btn-default" value="CLM" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Colombian in Medellin, Colombia">CLM</button> 
-                    <button type="button" class="btn btn-default" value="IBS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Iberian populations in Spain">IBS</button> 
                     <button type="button" class="btn btn-default" value="PEL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Peruvian in Lima, Peru">PEL</button> 
                     <button type="button" class="btn btn-default" value="PJL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Punjabi in Lahore,Pakistan">PJL</button> 
-                    <button type="button" class="btn btn-default" value="KHV" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Kinh in Ho Chi Minh City, Vietnam">KHV</button> 
                     <button type="button" class="btn btn-default" value="GWD" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Gambian in Western Division, The Gambia">GWD</button>  
                     <button type="button" class="btn btn-default" value="ESN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Esan in Nigeria">ESN</button>  
-                    <button type="button" class="btn btn-default" value="BEB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Bengali in Bangladesh">BEB</button>  
+                    
                     <button type="button" class="btn btn-default" value="MSL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Mende in Sierra Leone">MSL</button>     
                     <button type="button" class="btn btn-default" value="ACB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="African Caribbean in Barbados">ACB</button>  
                 </div>          
             </div>
-            <img id='heat' class="heat img-responsive center-block" src="img/heatmaps/BASE.png" alt="" width="1080" height="800"> 
+            <img id='heat' class="heat img-responsive center-block" src="img/heatmaps2/BASE.png" alt="" width="1080" height="800"> 
 
 
  
@@ -300,14 +301,14 @@
         });
 
         $('.btn').mouseover(function() {
-            var dir = "img/heatmaps/";
+            var dir = "img/heatmaps2/";
             var f = $(this).val();
             var newImage = dir.concat(f, ".png");
             $('#heat').attr("src", newImage);
             });
 
         $('.btn').mouseout(function() {
-             $('#heat').attr("src","img/heatmaps/BASE.png");
+             $('#heat').attr("src","img/heatmaps2/BASE.png");
         });
     </script>
  <!-- Preload images-->
@@ -322,21 +323,21 @@
                 }
             }
             preload(
-                "img/heatmaps/GBR.png",
-                "img/heatmaps/ACB.png",
-                "img/heatmaps/BEB.png",
-                "img/heatmaps/CDX.png",
-                "img/heatmaps/CHS.png",
-                "img/heatmaps/CLM.png",
-                "img/heatmaps/ESN.png",
-                "img/heatmaps/FIN.png",
-                "img/heatmaps/GWD.png",
-                "img/heatmaps/IBS.png",
-                "img/heatmaps/KHV.png",
-                "img/heatmaps/MSL.png",
-                "img/heatmaps/PEL.png",
-                "img/heatmaps/PJL.png",
-                "img/heatmaps/PUR.png"
+                "img/heatmaps2/GBR.png",
+                "img/heatmaps2/ACB.png",
+                "img/heatmaps2/BEB.png",
+                "img/heatmaps2/CDX.png",
+                "img/heatmaps2/CHS.png",
+                "img/heatmaps2/CLM.png",
+                "img/heatmaps2/ESN.png",
+                "img/heatmaps2/FIN.png",
+                "img/heatmaps2/GWD.png",
+                "img/heatmaps2/IBS.png",
+                "img/heatmaps2/KHV.png",
+                "img/heatmaps2/MSL.png",
+                "img/heatmaps2/PEL.png",
+                "img/heatmaps2/PJL.png",
+                "img/heatmaps2/PUR.png"
             )
         //--><!]]>
     </script>
