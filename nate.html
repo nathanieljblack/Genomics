@@ -18,6 +18,18 @@
     window.addEventListener("hashchange", shiftWindow);
     function load() { if (window.location.hash) shiftWindow(); }
   </script>
+  
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-42473856-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
 </head>
 
 <body onload="load()">
@@ -46,109 +58,113 @@
                     <li>
                         <a href="https://github.com/nathanieljblack/Genomics">Github</a>
                     </li>
+                    <li>
+                        <a href="http://nathanieljblack.github.io/Genomics/FAQ.html">FAQ</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Header/Banner -->
-    <!--<header class="header-image">
+    <!-- 
+    <header class="header-image">
         <div class="headline">
             <div class="container">
                 <h1>Genomics</h1>
                 <h2>An Exploratory Visualization</h2>
             </div>
         </div>
-    </header>-->
-
+    </header>
+    -->
     <!-- Page Content -->
     <div class="container">
+        <div class="featurette">
+            <div> <h2 class="featurette-heading"> Making Genomics Accessible</h2> 
 
-        <div class="featurette" id="about">
-            <h2 class="featurette-heading">About
-                <span class="text-muted small"><em>Making Genomics Accessible</em></span>
-            </h2>
-            <p class="lead">Genomics is a burgeoning field in genetics allowing researchers to analyze the function and structure of the genome. The field is highly technical and often inaccessible to the non-PhDs of the world. We aim to improve the accessibility of genomics through an easy-to-use visualization.</p>
+            <p class="lead">As human genetic data becomes more accessible, there is a need to provide insight into what this data means. Our tool provides an entry into medical genetic data. The total population comprises of 1400 people, who belong to different sub-populations, like "British in England and Scotland", "Finnish in Finland", etc.</p>
+            </div>
         </div>
 
         <hr class="featurette-divider">
-        <!-- First Featurette -->
+        
         <div class="featurette" id="viz1">
-            <h2 class="featurette-heading">Summary Level
-                <span class="text-muted small"><em>Select A Demographic</em></span>
+
+            <h2 class="featurette-heading">Population Level
+                <span class="text-muted small"><em>Choose a population</em></span>
             </h2>
-            <p class="lead"> A clustered summary of the one thousand genomes data for the mitrochondrial genome, mutations are color coded for severity (red = pathogenic, white = unclassified and blue = benign). <b>Select a population to view the individual mutations within that population.</b> </p>
+            <p class="lead"> Mutations found in the mitrochondrial genomes of 1400 people. Pathogenic mutations are <strong> red </strong> and benign are <strong> blue </strong>. </p>
+            
+
             <div class="btn-group-wrap">
                 <div id="selector" class="btn-group">
-                    <button id='GBR' type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="British in England and Scotland">GBR</button>      
+                    <button type="button" class="btn btn-default active" value="GBR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="British in England and Scotland">GBR</button>     
                     <button type="button" class="btn btn-default" value="FIN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Finnish in Finland">FIN</button>
-                    <button type="button" class="btn btn-default" value="CHS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Southern Han Chinese, China">CHS</button>   
-                    <button type="button" class="btn btn-default" value="PUR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Puerto Rican in Puerto Rico">PUR</button>   
-                    <button type="button" class="btn btn-default" value="CDX" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Chinese Dai in Xishuangbanna, China">CDX</button>   
-                    <button type="button" class="btn btn-default" value="CLM" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Colombian in Medellin, Colombia">CLM</button>   
-                    <button type="button" class="btn btn-default" value="IBS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Iberian populations in Spain">IBS</button>   
-                    <button type="button" class="btn btn-default" value="PEL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Peruvian in Lima, Peru">PEL</button>   
-                    <button type="button" class="btn btn-default" value="PJL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Punjabi in Lahore,Pakistan">PJL</button>   
+                    <button type="button" class="btn btn-default" value="CHS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Southern Han Chinese, China">CHS</button>  
+                    <button type="button" class="btn btn-default" value="PUR" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Puerto Rican in Puerto Rico">PUR</button> 
+                    <button type="button" class="btn btn-default" value="CDX" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Chinese Dai in Xishuangbanna, China">CDX</button>  
+                    <button type="button" class="btn btn-default" value="CLM" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Colombian in Medellin, Colombia">CLM</button> 
+                    <button type="button" class="btn btn-default" value="IBS" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Iberian populations in Spain">IBS</button> 
+                    <button type="button" class="btn btn-default" value="PEL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Peruvian in Lima, Peru">PEL</button> 
+                    <button type="button" class="btn btn-default" value="PJL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Punjabi in Lahore,Pakistan">PJL</button> 
                     <button type="button" class="btn btn-default" value="KHV" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Kinh in Ho Chi Minh City, Vietnam">KHV</button> 
-                    <button type="button" class="btn btn-default" value="GWD" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Gambian in Western Division, The Gambia">GWD</button>   
-                    <button type="button" class="btn btn-default" value="ESN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Esan in Nigeria">ESN</button>   
-                    <button type="button" class="btn btn-default" value="BEB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Bengali in Bangladesh">BEB</button>   
+                    <button type="button" class="btn btn-default" value="GWD" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Gambian in Western Division, The Gambia">GWD</button>  
+                    <button type="button" class="btn btn-default" value="ESN" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Esan in Nigeria">ESN</button>  
+                    <button type="button" class="btn btn-default" value="BEB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Bengali in Bangladesh">BEB</button>  
                     <button type="button" class="btn btn-default" value="MSL" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="Mende in Sierra Leone">MSL</button>     
                     <button type="button" class="btn btn-default" value="ACB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="African Caribbean in Barbados">ACB</button>  
                 </div>          
             </div>
-        <img id='heat' class="heat img-responsive center-block" src="img/BASE.png" alt="" width="1080" height="800"> 
-        </div>
+            <img id='heat' class="heat img-responsive center-block" src="img/heatmaps2/BASE.png" alt="" width="1080" height="800"> 
 
+
+ 
         <hr class="featurette-divider">
 
-        <div class="featurette" id="viz2">
+        <div class="featurette">
             <h2 class="featurette-heading">Disease Level
                 <span class="text-muted small"><em>Select A Disease</em></span>
             </h2>
             <p class="lead">A comparison of the prevalence of diseases within the selected sub-population with that of the total population is presented in the chart below. The x-axis represents the various diseases, while the y-axis represents the percentage of mutations. There are a total of 5112 mutations in the overall population of genomes in the data. As an example, 44.05% of the 5112 mutations in the overall population, and 35.93% of the 295 mutations for the GBR population are associated with breast cancer.<br><br><b>Hover on the bars to see the prevalence, or hover on the disease label to see the full disease name, or click on the bars or the disease label to find out more information about the disease.</b></p>
-        
-        <div id="tooltip1" class="hidden">
-        <p><span id="value"></p>
+            <div id='viz2' align='center'></div>
         </div>
-        <div id="chart1" style='overflow:auto; width:540px; height:600px;'></div>
-        </div>
+
         <hr class="featurette-divider">
+        
         <div class="featurette" id="vizXXXX">
             <h2 class="featurette-heading">Mutation Level
                 <span class="text-muted small"><em>Select A Mutation</em></span>
             </h2>
             <p class="lead">From left to right, the tree below provides additional detail on genes and mutations related to your selected disease. <b>Click on a colored node to see the mutations associated with that gene or click on the text of the disease/gene/mutation to get more information.</b></p>
-            <!--<blockquote id="diseaseDesc"></blockquote>-->
         </div>
 
-        <hr class="featurette-divider">
             <div class="container" id="part3">
-                <br></br>
-                <div class="row">
-                    <div class="col-xs-8 col-md-6"><h2><span class="lead" id="diseaseDesc"></span></h2></div>
-                    <div class="col-xs-10 col-md-6" id="viz3"></div>
-                </div>
+                <h3><span class="text-muted">Disease Description</span></h3>
+                <blockquote><h2><span class="lead" id="diseaseDesc"></span></h2></blockquote>
+                <div align="center" id="viz3"></div>
             </div>
 
         <hr class="featurette-divider">
 
-        <div class="container">
-            <div class="row">
+        <div class="container" id="about">
+        <div class="row">
                 <div class="col-sm-4">
                     <h2 align="center"><span class="text-muted small" align="center"><em>Data</em></span></h2>
                     <div class="list-group">
                           <a class="list-group-item">
                             <h4 class="list-group-item-heading" align="center">Size</h4>
-                            <p class="list-group-item-text" align="center">X MB, 2,500 individuals</p>
+                            <p class="list-group-item-text" align="center">19.8 MB, 2,532 individuals</p>
                           </a>
-                          <a class="list-group-item">
-                            <h4 class="list-group-item-heading" align="center">Source</h4>
-                            <p class="list-group-item-text" align="center">1000 Genome and ClinVar</p>
+                          <a href="http://www.1000genomes.org/" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Clinical Data</h4>
+                            <p class="list-group-item-text" align="center">ClinVar</p>
+                          </a>
+                          <a href="http://www.ncbi.nlm.nih.gov/clinvar/intro/" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Sequence Data</h4>
+                            <p class="list-group-item-text" align="center">1000 genomes</p>
                           </a>
                           <a class="list-group-item">
                             <h4 class="list-group-item-heading" align="center">Description</h4>
-                            <p class="list-group-item-text" align="center">X ethnicities, Y diseases, & Z mutations</p>
+                            <p class="list-group-item-text" align="center">15 ethnicities, 14 diseases, & 110 distinct mutations</p>
                           </a>
                         </div>
                 </div>
@@ -167,6 +183,10 @@
                           <a class="list-group-item">
                             <h4 class="list-group-item-heading" align="center">Link</h4>
                             <p class="list-group-item-text" align="center">Clearly link demographic, disease, and mutation</p>
+                          </a>
+                          <a class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">Audience</h4>
+                            <p class="list-group-item-text" align="center">Non-experts with an interest in genomics</p>
                           </a>
                         </div>
 
@@ -187,6 +207,10 @@
                             <h4 class="list-group-item-heading" align="center">Pandas</h4>
                             <p class="list-group-item-text" align="center">Python library used for data wrangling</p>
                           </a>
+                          <a href="http://ggplot2.org//" class="list-group-item">
+                            <h4 class="list-group-item-heading" align="center">ggplot2</h4>
+                            <p class="list-group-item-text" align="center">R library charting library</p>
+                          </a>
                         </div>
                 </div>
 
@@ -196,6 +220,7 @@
         <hr class="featurette-divider">
 
         <div class="container" id="team">
+          <br></br>
           <div class="row">
             <div class="col-sm-4">
                 <div class="team-member">
@@ -210,7 +235,7 @@
             <div class="col-sm-4">
                 <div class="team-member">
               <img class='img-circle img-responsive center-block' src='img/gunnar.jpeg' alt=""/>
-              <h3>Gunnar Kleeman</h3>
+              <h3>Gunnar Kleemann</h3>
               <a href="https://github.com/gunnarklee"><i class="fa fa-github fa-4x"></i></a>
               <a href="https://www.linkedin.com/in/gunnarkleemann"><i class="fa fa-linkedin-square fa-4x"></i></a>
               <a href="mailto:gunnarklee@ischool.berkeley.edu"><i class="fa fa-envelope fa-4x"></i></a>
@@ -229,7 +254,6 @@
         </div>
 
         <hr class="featurette-divider">
-
         <!-- Footer -->
         <footer>
             <div class="row">
@@ -254,7 +278,7 @@
     <script type="text/javascript" src="data/data.js"></script>
     <script src="js/viz2.js"></script>
     <script src="js/viz3.js"></script>
-
+    <script src="js/Sidebar.js"></script>
     <script type="text/javascript">
         var selectedPopulation =  "GBR";
 
@@ -262,14 +286,12 @@
                 $('#selector button').click( function() {
                     $(this).addClass('active').siblings().removeClass('active');
                 });
-        });
+        });         
 
         function grabPopulation(clicked_id){
                 selectedPopulation = clicked_id;
                 d3.select("#viz2SVG").remove();
-                d3.select("#viz1SVG").remove();
-		document.location.href = '#viz2';
-                updateHeatMap(selectedPopulation);
+                document.location.href = '#viz2';
                 updateBarChart(selectedPopulation);
         }
 
@@ -277,15 +299,48 @@
             $('[data-toggle="tooltip"]').tooltip({container: 'body'});   
         });
 
-        $('#GBR').mouseover(function() {
-            $('#heat').attr("src","img/GBR.png");
+        $('.btn').mouseover(function() {
+            var dir = "img/heatmaps2/";
+            var f = $(this).val();
+            var newImage = dir.concat(f, ".png");
+            $('#heat').attr("src", newImage);
             });
 
-        $('#GBR').mouseout(function() {
-             $('#heat').attr("src","img/BASE.png");
+        $('.btn').mouseout(function() {
+             $('#heat').attr("src","img/heatmaps2/BASE.png");
         });
     </script>
-
+ <!-- Preload images-->
+ <div class="hidden">
+    <script type="text/javascript">
+        <!--//--><![CDATA[//><!--
+            var images = new Array()
+            function preload() {
+                for (i = 0; i < preload.arguments.length; i++) {
+                    images[i] = new Image()
+                    images[i].src = preload.arguments[i]
+                }
+            }
+            preload(
+                "img/heatmaps2/GBR.png",
+                "img/heatmaps2/ACB.png",
+                "img/heatmaps2/BEB.png",
+                "img/heatmaps2/CDX.png",
+                "img/heatmaps2/CHS.png",
+                "img/heatmaps2/CLM.png",
+                "img/heatmaps2/ESN.png",
+                "img/heatmaps2/FIN.png",
+                "img/heatmaps2/GWD.png",
+                "img/heatmaps2/IBS.png",
+                "img/heatmaps2/KHV.png",
+                "img/heatmaps2/MSL.png",
+                "img/heatmaps2/PEL.png",
+                "img/heatmaps2/PJL.png",
+                "img/heatmaps2/PUR.png"
+            )
+        //--><!]]>
+    </script>
+</div>
     
 </body>
 
