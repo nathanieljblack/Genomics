@@ -325,6 +325,10 @@ svg *::selection {
         line-height: 20px;
       }
 
+li {
+        list-style:none;
+}
+
 li.faq-question:hover {
   cursor: pointer;
 }
