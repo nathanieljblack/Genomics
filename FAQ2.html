@@ -61,13 +61,14 @@
 
         <div class="featurette">
             <div> <h2 class="featurette-heading">Genomics Background</h2> </div>
+        <dl>
+            <dt><h3><span class="text-muted"><em>What is genomics?</em></span></h3></dt>
+            <dd><p class="lead"> While classical genetics is concerned with how genes in our DNA affects inherited traits, genomics is concerned with how all genes in our DNA affect traits and biological processes.</p><dd>
+        
 
-            <h3><span class="text-muted"><em>What is genomics?</em></span></h3>
-            <p class="lead"> While classical genetics is concerned with how genes in our DNA affects inherited traits, genomics is concerned with how all genes in our DNA affect traits and biological processes.</p>
-
-            <h3><span class="text-muted"><em>What is a genome?</em></span></h3>
-            <p class="lead"> A genome is a copy of all of the DNA in an organism. It represents every gene and mutation that contributes to the traits of that individual.</p>
-
+            <dt><h3><span class="text-muted"><em>What is a genome?</em></span></h3></dt>
+            <dd><p class="lead"> A genome is a copy of all of the DNA in an organism. It represents every gene and mutation that contributes to the traits of that individual.</p></dd>
+        </dl>
             <h3><span class="text-muted"><em>What is a gene?</em></span></h3>
             <p class="lead"> A gene is the fundamental inherited genetic unit. Genes encode proteins which comprise the molecular machinery and materials that make the human body.</p>
             
@@ -131,7 +132,7 @@
 
 
             <h3><span class="text-muted"><em>What about the rest of the data?</em></span></h3>
-            <p class="lead"> Genome data is large and complex with the human genome 3 billon base pairs and ~20,000 genes. Because we wanted focus on designing a usable visualization we chose to focus on a subset of the human genome in this first generation of the site. Our visualization represents a subset of the data available from the <a "href=http://www.1000genomes.org/">1000 genomes project </a>, focusing on about half of the ~2500 people and on the 16,000 base pair mitochondrial genome.  Also we have removed mutations (chrMT-1438-G (95% of samples) chrMT-15326-G (99% of samples) that were clearly the dominant version of the gene and should be considered <a href="http://dictionary.reference.com/browse/wild-type"> wild-type </a>. Finally because this visualization is focused on exploring the association between a mutation and its disease risk, we only present data with <a href="http://www.ncbi.nlm.nih.gov/clinvar/docs/clinsig/#other_resources"> CLinVar listed classifications</a> of: "benign", "likely benign", "pathogenic" and "likely pathogenic". </p>
+            <p class="lead"> Genome data is large and complex with the human genome 3 billion base pairs and ~20,000 genes. Because we wanted focus on designing a usable visualization we chose to focus on a subset of the human genome in this first generation of the site. Our visualization represents a subset of the data available from the <a "href=http://www.1000genomes.org/">1000 genomes project </a>, focusing on about half of the ~2500 people and on the 16,000 base pair mitochondrial genome.  Also we have removed mutations (chrMT-1438-G (95% of samples) chrMT-15326-G (99% of samples) that were clearly the dominant version of the gene and should be considered <a href="http://dictionary.reference.com/browse/wild-type"> wild-type </a>. Finally because this visualization is focused on exploring the association between a mutation and its disease risk, we only present data with <a href="http://www.ncbi.nlm.nih.gov/clinvar/docs/clinsig/#other_resources"> CLinVar listed classifications</a> of: "benign", "likely benign", "pathogenic" and "likely pathogenic". </p>
 
             <h3><span class="text-muted"><em>It is hard to interpret the heatmap- how should I explore the visualization?</em></span></h3>
             <p class="lead"> Think of the heatmap as an overview of many people's mitochondrial genomes. You can see each genome as a row and the 110 mutations shown here as columns. In addition, mutation columns are arranged by disease so for example you can see the left portion of the graph shows pathogenic mutations associated with breast cancer. </p>
@@ -155,3 +156,14 @@
     </body>
 
 </html>
+
+<script type="text/javascript">
+$('dd').hide();
+
+$('dt').click(
+    function() {
+        var toggle = $(this).nextUntil('dt');
+        toggle.slideToggle();
+        $('dd').not(toggle).slideUp();
+    });
+</script>
