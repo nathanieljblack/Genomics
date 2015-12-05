@@ -164,19 +164,21 @@
             <p class="lead"> Any mutation functions as part of a the complex system that is the human body. Because of this it is hard to say that having a mutation for a specific disease will lead to that disease. Instead of thinking of the effect of a mutation as absolute think of it as changing the odds of developing a particular disease state</p>
     
         </div>
+
+    <script type="text/javascript">
+        $('dd').hide();
+
+        $('dt').click(
+            function() {
+                var toggle = $(this).nextUntil('dt');
+                toggle.slideToggle();
+                $('dd').not(toggle).slideUp();
+            });
+    </script>
     </div>
 
     </body>
 
 </html>
 
-<script type="text/javascript">
-$('dd').hide();
 
-$('dt').click(
-    function() {
-        var toggle = $(this).nextUntil('dt');
-        toggle.slideToggle();
-        $('dd').not(toggle).slideUp();
-    });
-</script>
