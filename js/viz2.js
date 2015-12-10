@@ -967,7 +967,7 @@ function updateBarChart(pop) {
         .on("mouseover", function(d) {
            tooltip.transition()
               .style('opacity', .9);
-           tooltip.html(d.value[0] + "% of " + d.value[1])
+           tooltip.html(d.value[0] + "% of " + d.value[1] + " mutations")
               .style('left', (d3.event.pageX - 15) + 'px') //position of the tooltip
               .style('top', (d3.event.pageY - 20) + 'px');
 
