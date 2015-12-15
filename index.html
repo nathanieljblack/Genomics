@@ -81,7 +81,7 @@
         <div class="featurette">
             <div> <h2 class="featurette-heading"> Making Genomics Accessible</h2> 
 
-            <p class="lead">As human genetic data becomes more accessible, there is a need to provide insight into what this data means. Our tool provides an entry into medical genetic data. The total population comprises of 1400 people, who belong to different sub-populations, like "British in England and Scotland", "Finnish in Finland", etc.</p>
+            <p class="lead">As human genetic data becomes more accessible, there is a need to provide insight into what this data means. Our tool provides an entry into medical genetic data. The total population is comprised of 1400 people, who belong to different sub-populations, like "British in England and Scotland", "Finnish in Finland", etc.</p>
             </div>
         </div>
 
@@ -92,8 +92,12 @@
             <h2 class="featurette-heading">Population Level
                 <span class="text-muted small"><em>Choose a population</em></span>
             </h2>
-            <p class="lead"> Mutations found in the mitrochondrial genomes of 1400 people. Pathogenic mutations are <strong> red </strong> and benign are <strong> blue </strong>. </p>
+            <p class="lead"> Mutations and thier associated diseases from the mitrochondrial genomes of 1400 people. Pathogenic mutations are <strong> red </strong> and benign are <strong> blue</strong>. Populations are clustered as larger ethnic groups, delimited by <strong> gray boxes</strong>.</p>
             
+            <img id='DiseaseBar' src="img/DiseaseBarA.jpg" alt="" width="925" height="185"> 
+
+
+    
 
             <div class="btn-group-wrap">
                 <div id="selector" class="btn-group">
@@ -115,6 +119,8 @@
                     <button type="button" class="btn btn-default" value="ACB" onClick="grabPopulation(this.value)" data-toggle="tooltip" title="African Caribbean in Barbados">ACB</button>  
                 </div>          
             </div>
+
+
             <img id='heat' class="heat img-responsive center-block" src="img/heatmaps2/BASE.png" alt="" width="1080" height="875"> 
 
 
